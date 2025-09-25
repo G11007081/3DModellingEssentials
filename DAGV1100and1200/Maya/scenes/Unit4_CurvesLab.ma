@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
-//Name: Lamp_Modern.ma
-//Last modified: Wed, Sep 24, 2025 05:58:07 PM
+//Name: Unit4_CurvesLab.ma
+//Last modified: Wed, Sep 24, 2025 05:55:43 PM
 //Codeset: 1252
 requires maya "2026";
 requires "mtoa" "5.5.3";
@@ -10,18 +10,18 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26100)";
-fileInfo "UUID" "DB575EF1-429B-2B70-3AE2-D784BFCE902D";
+fileInfo "UUID" "DD9A00DC-48EE-4CB4-C136-6C8F86F8A187";
 createNode transform -s -n "persp";
 	rename -uid "E0523817-42D6-8EDC-85D5-87B77159FF92";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -3.0192180542034137 2.8940632975277345 -3.6164230322557129 ;
-	setAttr ".r" -type "double3" -28.799999999999429 219.20000000004856 0 ;
+	setAttr ".t" -type "double3" 0.091703136994760182 1.7440945915030519 3.6204202540793373 ;
+	setAttr ".r" -type "double3" -382.1999999996284 1.9999999999999898 0 ;
 	setAttr ".rpt" -type "double3" 5.5891883249282436e-17 -1.3681014101949987e-16 -3.2580725039079476e-18 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "43C515A7-46C8-FCBB-5371-38B9E09324C6";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 5.4462784238797326;
+	setAttr ".coi" 4.1157188274209151;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -63,25 +63,37 @@ createNode camera -s -n "frontShape" -p "front";
 createNode transform -s -n "side";
 	rename -uid "F274628C-402B-AAA2-18CA-0488198B4B7B";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1000.1 0.76147360415266285 -0.30662055187065212 ;
+	setAttr ".t" -type "double3" 1000.1 0.74876572778808936 -0.012314747256744446 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 createNode camera -s -n "sideShape" -p "side";
 	rename -uid "4C0F1BD8-4163-CBB0-1593-46867B165F9C";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".coi" 1000.1;
-	setAttr ".ow" 5.6003333234396191;
+	setAttr ".ow" 5.8901891785964198;
 	setAttr ".imn" -type "string" "side";
 	setAttr ".den" -type "string" "side_depth";
 	setAttr ".man" -type "string" "side_mask";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
-createNode transform -n "Lamp_Mushroom";
-	rename -uid "FA654078-4981-A58A-9488-86B8A28E6D49";
-createNode mesh -n "Lamp_MushroomShape" -p "Lamp_Mushroom";
-	rename -uid "2FEA8B96-4551-7445-4C96-CCB562B9453D";
+createNode transform -n "revolvedSurface1";
+	rename -uid "E44898DE-4D01-C090-9104-9CB533554B2B";
+createNode mesh -n "revolvedSurfaceShape1" -p "revolvedSurface1";
+	rename -uid "F369DAC5-4913-BCF2-8452-D0A07B2D7CDF";
 	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.5 0.5 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode mesh -n "polySurfaceShape1" -p "revolvedSurface1";
+	rename -uid "4599FD85-44C1-AFF8-C978-65A654917EEE";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -179,38 +191,38 @@ createNode mesh -n "Lamp_MushroomShape" -p "Lamp_Mushroom";
 		 0.25087011 1.48341203 0.3452931 0.15529937 1.62922764 0.050459825 0 1.65067959 0
 		 0.095980287 1.62922764 0.13210553;
 	setAttr -s 310 ".ed";
-	setAttr ".ed[0:165]"  150 111 0 111 151 0 151 150 0 79 0 0 0 34 0 34 80 0
-		 80 79 0 45 1 0 1 47 0 47 46 0 46 45 0 23 3 0 3 25 0 25 24 0 24 23 0 11 4 0 4 14 0
-		 14 13 0 13 11 0 7 6 0 6 10 0 10 9 0 9 7 0 8 5 0 5 7 0 9 8 0 58 8 0 9 58 0 10 58 0
-		 12 2 0 2 11 0 13 12 0 5 12 0 13 7 0 14 6 0 15 20 0 20 19 0 19 18 0 18 15 0 6 16 0
-		 16 17 0 17 10 0 17 58 0 16 18 0 19 17 0 19 58 0 20 58 0 4 21 0 21 22 0 22 14 0 22 16 0
-		 21 23 0 24 22 0 24 18 0 25 15 0 33 26 0 26 36 0 36 35 0 35 33 0 29 28 0 28 32 0 32 31 0
-		 31 29 0 30 27 0 27 29 0 31 30 0 2 30 0 31 11 0 32 4 0 0 33 0 35 34 0 27 34 0 35 29 0
-		 36 28 0 37 42 0 42 41 0 41 40 0 40 37 0 28 38 0 38 39 0 39 32 0 39 21 0 38 40 0 41 39 0
-		 41 23 0 42 3 0 26 43 0 43 44 0 44 36 0 44 38 0 43 45 0 46 44 0 46 40 0 47 37 0 12 64 0
-		 64 63 0 63 2 0 53 48 0 48 55 0 55 54 0 54 53 0 51 50 0 50 49 0 49 52 0 52 51 0 15 50 0
-		 51 20 0 51 58 0 52 58 0 3 53 0 54 25 0 54 50 0 55 49 0 8 60 0 60 59 0 59 5 0 49 56 0
-		 56 57 0 57 52 0 57 58 0 56 59 0 60 57 0 60 58 0 48 61 0 61 62 0 62 55 0 62 56 0 61 63 0
-		 64 62 0 64 59 0 70 65 0 65 72 0 72 71 0 71 70 0 66 69 0 69 68 0 68 67 0 67 66 0 37 67 0
-		 68 42 0 68 53 0 69 48 0 1 70 0 71 47 0 71 67 0 72 66 0 30 76 0 76 75 0 75 27 0 66 73 0
-		 73 74 0 74 69 0 74 61 0 73 75 0 76 74 0 76 63 0 65 77 0 77 78 0 78 72 0 78 73 0 77 79 0
-		 80 78 0 80 75 0 150 122 0 122 121 0 121 150 0;
-	setAttr ".ed[166:309]" 102 82 0 82 104 0 104 103 0 103 102 0 90 83 0 83 93 0
-		 93 92 0 92 90 0 86 85 0 85 89 0 89 88 0 88 86 0 87 84 0 84 86 0 88 87 0 0 87 0 88 33 0
-		 89 26 0 91 81 0 81 90 0 92 91 0 84 91 0 92 86 0 93 85 0 94 99 0 99 98 0 98 97 0 97 94 0
-		 85 95 0 95 96 0 96 89 0 96 43 0 95 97 0 98 96 0 98 45 0 99 1 0 83 100 0 100 101 0
-		 101 93 0 101 95 0 100 102 0 103 101 0 103 97 0 104 94 0 150 113 0 113 112 0 112 150 0
-		 107 106 0 106 110 0 110 109 0 109 107 0 108 105 0 105 107 0 109 108 0 81 108 0 109 90 0
-		 110 83 0 112 111 0 105 111 0 112 107 0 113 106 0 114 119 0 119 118 0 118 117 0 117 114 0
-		 106 115 0 115 116 0 116 110 0 116 100 0 115 117 0 118 116 0 118 102 0 119 82 0 150 120 0
-		 120 113 0 120 115 0 121 120 0 121 117 0 122 114 0 91 138 0 138 137 0 137 81 0 128 123 0
-		 123 130 0 130 129 0 129 128 0 126 125 0 125 124 0 124 127 0 127 126 0 94 125 0 126 99 0
-		 126 70 0 127 65 0 82 128 0 129 104 0 129 125 0 130 124 0 87 134 0 134 133 0 133 84 0
-		 124 131 0 131 132 0 132 127 0 132 77 0 131 133 0 134 132 0 134 79 0 123 135 0 135 136 0
-		 136 130 0 136 131 0 135 137 0 138 136 0 138 133 0 150 144 0 144 143 0 143 150 0 139 142 0
-		 142 141 0 141 140 0 140 139 0 114 140 0 141 119 0 141 128 0 142 123 0 143 122 0 143 140 0
-		 144 139 0 108 148 0 148 147 0 147 105 0 139 145 0 145 146 0 146 142 0 146 135 0 145 147 0
-		 148 146 0 148 137 0 150 149 0 149 144 0 149 145 0 151 149 0 151 147 0;
+	setAttr ".ed[0:165]"  150 111 1 111 151 1 151 150 1 79 0 1 0 34 1 34 80 1
+		 80 79 1 45 1 1 1 47 1 47 46 1 46 45 1 23 3 1 3 25 1 25 24 1 24 23 1 11 4 1 4 14 1
+		 14 13 1 13 11 1 7 6 1 6 10 1 10 9 1 9 7 1 8 5 1 5 7 1 9 8 1 58 8 1 9 58 1 10 58 1
+		 12 2 1 2 11 1 13 12 1 5 12 1 13 7 1 14 6 1 15 20 1 20 19 1 19 18 1 18 15 1 6 16 1
+		 16 17 1 17 10 1 17 58 1 16 18 1 19 17 1 19 58 1 20 58 1 4 21 1 21 22 1 22 14 1 22 16 1
+		 21 23 1 24 22 1 24 18 1 25 15 1 33 26 1 26 36 1 36 35 1 35 33 1 29 28 1 28 32 1 32 31 1
+		 31 29 1 30 27 1 27 29 1 31 30 1 2 30 1 31 11 1 32 4 1 0 33 1 35 34 1 27 34 1 35 29 1
+		 36 28 1 37 42 1 42 41 1 41 40 1 40 37 1 28 38 1 38 39 1 39 32 1 39 21 1 38 40 1 41 39 1
+		 41 23 1 42 3 1 26 43 1 43 44 1 44 36 1 44 38 1 43 45 1 46 44 1 46 40 1 47 37 1 12 64 1
+		 64 63 1 63 2 1 53 48 1 48 55 1 55 54 1 54 53 1 51 50 1 50 49 1 49 52 1 52 51 1 15 50 1
+		 51 20 1 51 58 1 52 58 1 3 53 1 54 25 1 54 50 1 55 49 1 8 60 1 60 59 1 59 5 1 49 56 1
+		 56 57 1 57 52 1 57 58 1 56 59 1 60 57 1 60 58 1 48 61 1 61 62 1 62 55 1 62 56 1 61 63 1
+		 64 62 1 64 59 1 70 65 1 65 72 1 72 71 1 71 70 1 66 69 1 69 68 1 68 67 1 67 66 1 37 67 1
+		 68 42 1 68 53 1 69 48 1 1 70 1 71 47 1 71 67 1 72 66 1 30 76 1 76 75 1 75 27 1 66 73 1
+		 73 74 1 74 69 1 74 61 1 73 75 1 76 74 1 76 63 1 65 77 1 77 78 1 78 72 1 78 73 1 77 79 1
+		 80 78 1 80 75 1 150 122 1 122 121 1 121 150 1;
+	setAttr ".ed[166:309]" 102 82 1 82 104 1 104 103 1 103 102 1 90 83 1 83 93 1
+		 93 92 1 92 90 1 86 85 1 85 89 1 89 88 1 88 86 1 87 84 1 84 86 1 88 87 1 0 87 1 88 33 1
+		 89 26 1 91 81 1 81 90 1 92 91 1 84 91 1 92 86 1 93 85 1 94 99 1 99 98 1 98 97 1 97 94 1
+		 85 95 1 95 96 1 96 89 1 96 43 1 95 97 1 98 96 1 98 45 1 99 1 1 83 100 1 100 101 1
+		 101 93 1 101 95 1 100 102 1 103 101 1 103 97 1 104 94 1 150 113 1 113 112 1 112 150 1
+		 107 106 1 106 110 1 110 109 1 109 107 1 108 105 1 105 107 1 109 108 1 81 108 1 109 90 1
+		 110 83 1 112 111 1 105 111 1 112 107 1 113 106 1 114 119 1 119 118 1 118 117 1 117 114 1
+		 106 115 1 115 116 1 116 110 1 116 100 1 115 117 1 118 116 1 118 102 1 119 82 1 150 120 1
+		 120 113 1 120 115 1 121 120 1 121 117 1 122 114 1 91 138 1 138 137 1 137 81 1 128 123 1
+		 123 130 1 130 129 1 129 128 1 126 125 1 125 124 1 124 127 1 127 126 1 94 125 1 126 99 1
+		 126 70 1 127 65 1 82 128 1 129 104 1 129 125 1 130 124 1 87 134 1 134 133 1 133 84 1
+		 124 131 1 131 132 1 132 127 1 132 77 1 131 133 1 134 132 1 134 79 1 123 135 1 135 136 1
+		 136 130 1 136 131 1 135 137 1 138 136 1 138 133 1 150 144 1 144 143 1 143 150 1 139 142 1
+		 142 141 1 141 140 1 140 139 1 114 140 1 141 119 1 141 128 1 142 123 1 143 122 1 143 140 1
+		 144 139 1 108 148 1 148 147 1 147 105 1 139 145 1 145 146 1 146 142 1 146 135 1 145 147 1
+		 148 146 1 148 137 1 150 149 1 149 144 1 149 145 1 151 149 1 151 147 1;
 	setAttr -s 160 -ch 620 ".fc[0:159]" -type "polyFaces" 
 		f 3 0 1 2
 		mu 0 3 150 111 151
@@ -537,20 +549,20 @@ createNode mesh -n "Lamp_MushroomShape" -p "Lamp_Mushroom";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "2187EFC2-4EA7-9778-299A-CCB702742B64";
+	rename -uid "90582F23-4E5C-1513-80D3-BBB6DE62FCFA";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "C026D160-4919-5098-63ED-918378C277C5";
+	rename -uid "BF6DCA9F-4A41-0FB0-66A4-A0BC1B78FF7D";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "274ED4B2-450A-520C-993C-15907EB300AD";
+	rename -uid "5F33D527-4B6B-2382-C1F8-D38285933F97";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "2AF02FF3-4676-B5CC-0B68-93816E0757DC";
+	rename -uid "9739555E-4C2B-4B4B-28BA-4688C2A2246B";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "17916EC9-4017-69D0-DD01-38A275640624";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "F49F0DD3-4BE2-5F96-0A34-199202D5A3E2";
+	rename -uid "B15BEA05-4CF7-4364-2F0C-8D9FA4664AA2";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "103B9870-49E1-F909-29D7-7CB1190E19BF";
 	setAttr ".g" yes;
@@ -601,6 +613,12 @@ createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "7A13970A-4D9A-14D8-F301-3A9369D23CD2";
 	setAttr ".b" -type "string" "playbackOptions -min 1 -max 120 -ast 1 -aet 200 ";
 	setAttr ".st" 6;
+createNode polySoftEdge -n "polySoftEdge1";
+	rename -uid "47F59CC1-4A20-E9B8-78D0-BB9EFB445BE3";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "e[*]";
+	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".a" 0;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -647,12 +665,15 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
+connectAttr "polySoftEdge1.out" "revolvedSurfaceShape1.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
+connectAttr "polySurfaceShape1.o" "polySoftEdge1.ip";
+connectAttr "revolvedSurfaceShape1.wm" "polySoftEdge1.mp";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-connectAttr "Lamp_MushroomShape.iog" ":initialShadingGroup.dsm" -na;
-// End of Lamp_Modern.ma
+connectAttr "revolvedSurfaceShape1.iog" ":initialShadingGroup.dsm" -na;
+// End of Unit4_CurvesLab.ma
