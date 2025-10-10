@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: Monitor_Curved.ma
-//Last modified: Fri, Oct 10, 2025 03:18:58 PM
+//Last modified: Fri, Oct 10, 2025 03:22:08 PM
 //Codeset: 1252
 requires maya "2026";
 requires "mtoa" "5.5.3";
@@ -10,17 +10,17 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26100)";
-fileInfo "UUID" "06F32CCC-46AE-7CB7-D208-55BFF1C8D593";
+fileInfo "UUID" "C8AC29B2-4ADD-8683-3B56-22B1563A8D0E";
 createNode transform -s -n "persp";
 	rename -uid "FB0D4E77-42D7-9A50-35A5-DEAA65F4AEB2";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0.24027973827828064 2.6000614864301448 4.8482666562608854 ;
-	setAttr ".r" -type "double3" -14.738353327894609 -7555.7999999989415 -4.9829986461482117e-16 ;
+	setAttr ".t" -type "double3" 0.54913633584796506 2.330575557228348 4.9039392944811961 ;
+	setAttr ".r" -type "double3" -11.138353327894704 -7554.9999999989514 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "63BDE3E8-4C7E-FB76-CCE1-6095B75C469F";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 5.1285097333027405;
+	setAttr ".coi" 5.128509733302776;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -85,7 +85,7 @@ createNode mesh -n "MonitorShape" -p "Monitor";
 	setAttr -s 2 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.30576318502426147 0.309315507702282 ;
+	setAttr ".pv" -type "double2" 0.49847383797168732 0.50727564096450806 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
