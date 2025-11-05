@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: Futuristic_Room_Scene_TEXTURE.ma
-//Last modified: Sat, Nov 01, 2025 03:20:40 PM
+//Last modified: Sat, Nov 01, 2025 11:38:35 PM
 //Codeset: 1252
 file -rdi 1 -ns "Monitor_Curved" -rfn "Monitor_CurvedRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/GitHub/3DModellingEssentials/DAGV1100and1200/Maya//scenes/Monitor_Curved.ma";
@@ -35,12 +35,12 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26100)";
-fileInfo "UUID" "DF6AB125-4970-2FFE-A7F8-D4A3BA7C469A";
+fileInfo "UUID" "78775DE2-4F00-54C9-5D9D-38905AEEC444";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "F8753848-4472-24BF-F67F-4EA526529C04";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 21.939543197843907 15.33268487635095 26.139076933300494 ;
+	setAttr ".t" -type "double3" 28.843996988601994 18.698451930218795 33.861288260470758 ;
 	setAttr ".r" -type "double3" -18.000000003079023 -3198.1999999986592 0 ;
 	setAttr ".rp" -type "double3" 0 -1.7763568394002505e-15 0 ;
 	setAttr ".rpt" -type "double3" -3.1172776269788423e-16 2.6493827527887337e-15 -1.5077976811097382e-15 ;
@@ -48,7 +48,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "CE0E59B2-4036-EE91-2D23-F8B3E16C4860";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 45.170188606210253;
+	setAttr ".coi" 56.062039587154402;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -9425,13 +9425,13 @@ createNode place2dTexture -n "place2dTexture1";
 	rename -uid "D02AC329-4CB7-3549-F772-E4A5B0213C6F";
 createNode file -n "file1";
 	rename -uid "1099A7B0-4B86-4C84-F48F-2594736F05D1";
-	setAttr ".ftn" -type "string" "C:/GitHub/3DModellingEssentials/DAGV1100and1200/Maya//images/Palette_16_template.png";
+	setAttr ".ftn" -type "string" "C:/GitHub/3DModellingEssentials/DAGV1100and1200/Maya/images/Palette_16_template.png";
 	setAttr ".cs" -type "string" "sRGB Encoded Rec.709 (sRGB)";
 createNode place2dTexture -n "place2dTexture2";
 	rename -uid "250757EE-4B54-3DF9-5EA6-23B4726B03E3";
 createNode file -n "file2";
 	rename -uid "9B6F5CF0-4FB5-2F9C-91F8-24945A2489D8";
-	setAttr ".ftn" -type "string" "C:/GitHub/3DModellingEssentials/DAGV1100and1200/Maya//images/Palette_16_template.png";
+	setAttr ".ftn" -type "string" "C:/GitHub/3DModellingEssentials/DAGV1100and1200/Maya/images/Palette_16_template.png";
 	setAttr ".cs" -type "string" "sRGB Encoded Rec.709 (sRGB)";
 createNode place2dTexture -n "place2dTexture3";
 	rename -uid "F4F7ABC4-4FE7-802F-913A-61A90DF7BE9C";
