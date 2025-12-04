@@ -1,13 +1,16 @@
 //Maya ASCII 2026 scene
 //Name: Scene_2.ma
-//Last modified: Mon, Dec 01, 2025 05:39:24 PM
+//Last modified: Thu, Dec 04, 2025 11:21:15 AM
 //Codeset: 1252
 file -rdi 1 -ns "Asset_2" -rfn "Asset_2RN" -op "v=0;" -typ "mayaAscii" "C:/Github_G/3DModellingEssentials/DAGV1100and1200/Maya//scenes/Asset_2.ma";
 file -rdi 1 -ns "Asset_1" -rfn "Asset_1RN" -op "v=0;" -typ "mayaAscii" "C:/Github_G/3DModellingEssentials/DAGV1100and1200/Maya//scenes/Asset_1.ma";
-file -rdi 1 -ns "Asset_3" -rfn "Asset_3RN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/3DModellingEssentials/DAGV1100and1200/Maya//scenes/Asset_3.ma";
+file -rdi 1 -ns "Asset_3" -dr 1 -rfn "Asset_3RN" -op "v=0;" -typ "mayaAscii"
+		 "C:/GitHub/3DModellingEssentials/DAGV1100and1200/Maya//scenes/Asset_3.ma";
+file -rdi 1 -ns "Asset_4" -rfn "Asset_3RN1" -op "v=0;" -typ "mayaAscii" "C:/GitHub/3DModellingEssentials/DAGV1100and1200/Maya//scenes/Asset_3.ma";
 file -r -ns "Asset_2" -dr 1 -rfn "Asset_2RN" -op "v=0;" -typ "mayaAscii" "C:/Github_G/3DModellingEssentials/DAGV1100and1200/Maya//scenes/Asset_2.ma";
 file -r -ns "Asset_1" -dr 1 -rfn "Asset_1RN" -op "v=0;" -typ "mayaAscii" "C:/Github_G/3DModellingEssentials/DAGV1100and1200/Maya//scenes/Asset_1.ma";
 file -r -ns "Asset_3" -dr 1 -rfn "Asset_3RN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/3DModellingEssentials/DAGV1100and1200/Maya//scenes/Asset_3.ma";
+file -r -ns "Asset_4" -dr 1 -rfn "Asset_3RN1" -op "v=0;" -typ "mayaAscii" "C:/GitHub/3DModellingEssentials/DAGV1100and1200/Maya//scenes/Asset_3.ma";
 requires maya "2026";
 requires -nodeType "materialxStack" -dataType "MxDocumentStackData" "LookdevXMaya" "1.9.0";
 requires "stereoCamera" "10.0";
@@ -19,23 +22,23 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26100)";
-fileInfo "UUID" "84F57D09-4612-582F-5A9D-47A86A437B59";
+fileInfo "UUID" "4B8794CE-4208-F709-DC87-5CB56CE62C0F";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "4CD3EA28-4055-0E0F-6F0E-3F9C39474657";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 13.179135158768235 7.9488717845450534 7.8406545975138418 ;
-	setAttr ".r" -type "double3" -18.338352730143605 412.9999999977922 -2.6424686647422842e-15 ;
+	setAttr ".t" -type "double3" 11.939052773192575 7.8718055209451609 11.64466004602372 ;
+	setAttr ".r" -type "double3" -17.138352720990362 404.59999999848156 1.1167269439398477e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "92A7C604-4450-99E9-8726-1D80EAB9BD8B";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 19.395892303648839;
+	setAttr ".coi" 15.895650910198981;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -15.961957164081632 12.402497885119885 -1.1286818741602334 ;
+	setAttr ".tp" -type "double3" -1.272642826441408 2.069514357215172 4.6682644019428832 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "C635C478-480D-AE49-E8C1-EA8A216244B0";
@@ -87,247 +90,117 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
-createNode transform -n "pCube1";
-	rename -uid "08B80B8E-4DD5-6928-1663-E2930973E70A";
-	setAttr ".t" -type "double3" 0 -0.5 0 ;
-	setAttr ".s" -type "double3" 24.024551896698121 1 24.024551896698121 ;
-	setAttr ".rp" -type "double3" 0 0 -0.95372176274126974 ;
-	setAttr ".sp" -type "double3" 0 0 -0.039697796106338501 ;
-	setAttr ".spt" -type "double3" 0 0 -0.91402396663493124 ;
-createNode transform -n "transform8" -p "pCube1";
-	rename -uid "4283EDBE-42E1-B08B-26DA-4EA588DD86F6";
-	setAttr ".v" no;
-createNode mesh -n "pCubeShape1" -p "transform8";
-	rename -uid "10670016-4DC4-E8AD-F068-3CA095D34617";
+createNode transform -n "materialXStack1";
+	rename -uid "068B92AD-43D8-389F-487D-BAA3569BDDDF";
+createNode materialxStack -n "materialXStackShape1" -p "materialXStack1";
+	rename -uid "A7D76799-44FE-43AB-F984-829D43E422EF";
 	setAttr -k off ".v";
-	setAttr ".io" yes;
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:5]";
+	setAttr ".docs" -type "string" "[\n    {\n        \"document\": \"AAABOHics7GvyM1RKEstKs7Mz7NVMtQzULK347LJTSxJLcpMzKlAljK2ULLjUlCwKS4tSktMTlXIS8xNtVWC8gyVFEoqCxD84ozElNQiJYW8/JTUlNQ0WyU/l3iolJKCPrI5MLug5gWjmQeTxmoUXBJkINDIzLyC0hJUh8EcgtN16N6AOE4fzQZgoOjDQ8WOCwAM9WnJ\",\n        \"name\": \"document1\"\n    }\n]\n";
+createNode transform -n "pCube12";
+	rename -uid "013FFBE7-4B2A-79DA-411D-F9A5D40F60EF";
+	setAttr ".rp" -type "double3" -2.5983205935799472 10.768995761871338 -1.6337115340918045 ;
+	setAttr ".sp" -type "double3" -2.5983205935799472 10.768995761871338 -1.6337115340918045 ;
+createNode transform -n "polySurface7" -p "pCube12";
+	rename -uid "3E60297D-4298-0AEB-30A9-3CA024E3FFB8";
+	setAttr ".s" -type "double3" 0.54234770240954977 0.54234770240954977 0.54234770240954977 ;
+createNode mesh -n "polySurfaceShape8" -p "polySurface7";
+	rename -uid "AF9823C2-4712-7DAD-715A-4FA7CB7A70B4";
+	setAttr -k off ".v";
+	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:8]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr -s 6 ".gtag";
+	setAttr -s 7 ".gtag";
 	setAttr ".gtag[0].gtagnm" -type "string" "back";
-	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[2]";
-	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
-	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[3]";
-	setAttr ".gtag[2].gtagnm" -type "string" "front";
-	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[0]";
-	setAttr ".gtag[3].gtagnm" -type "string" "left";
-	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
-	setAttr ".gtag[4].gtagnm" -type "string" "right";
-	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
-	setAttr ".gtag[5].gtagnm" -type "string" "top";
-	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
-	setAttr ".pv" -type "double2" 0.5 0.5 ;
+	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[8]";
+	setAttr ".gtag[1].gtagnm" -type "string" "booleanIntersection";
+	setAttr ".gtag[1].gtagcmp" -type "componentList" 0;
+	setAttr ".gtag[2].gtagnm" -type "string" "bottom";
+	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[1]";
+	setAttr ".gtag[3].gtagnm" -type "string" "front";
+	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[7]";
+	setAttr ".gtag[4].gtagnm" -type "string" "left";
+	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[3]";
+	setAttr ".gtag[5].gtagnm" -type "string" "right";
+	setAttr ".gtag[5].gtagcmp" -type "componentList" 2 "f[2]" "f[6]";
+	setAttr ".gtag[6].gtagnm" -type "string" "top";
+	setAttr ".gtag[6].gtagcmp" -type "componentList" 2 "f[0]" "f[4:5]";
+	setAttr ".pv" -type "double2" 0.5 0.12513062357902527 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
-		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
-		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr -s 21 ".uvst[0].uvsp[0:20]" -type "float2" 0.375 0.25 0.625
+		 0.75 0.625 1 0.375 1 0.125 0 0.125 0.25 0.375 0.5 0.625 0 0.875 0 0.60331875 0.25
+		 0.875 0.23826216 0.375 0 0.625 0.23826215 0.62499994 0.51173788 0.375 0.75 0.60331845
+		 0.5 0.625 0.25 0.61442679 0.25026125 0.61432284 0.49999478 0.875 0.25 0.625 0.5;
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".pt[0:7]" -type "float3"  0 0 0.081371896 0 0 0.081371896 
-		0 0 0.081371896 0 0 0.081371896 0 0 -0.1607675 0 0 -0.1607675 0 0 -0.1607675 0 0 
-		-0.1607675;
-	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
-		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
-	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
-		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
-	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
-		f 4 0 5 -2 -5
-		mu 0 4 0 1 3 2
-		f 4 1 7 -3 -7
-		mu 0 4 2 3 5 4
-		f 4 2 9 -4 -9
-		mu 0 4 4 5 7 6
-		f 4 3 11 -1 -11
-		mu 0 4 6 7 9 8
-		f 4 -12 -10 -8 -6
-		mu 0 4 1 10 11 3
-		f 4 10 4 6 8
-		mu 0 4 12 0 2 13;
+	setAttr -s 7 ".pt";
+	setAttr ".pt[0]" -type "float3" 0 0 -2.781714 ;
+	setAttr ".pt[1]" -type "float3" 0 0 -2.781714 ;
+	setAttr ".pt[2]" -type "float3" 0 0 -2.781714 ;
+	setAttr ".pt[6]" -type "float3" 0 0 -2.781714 ;
+	setAttr ".pt[7]" -type "float3" 0 0 -2.781714 ;
+	setAttr ".pt[8]" -type "float3" 0 0 -2.781714 ;
+	setAttr ".pt[9]" -type "float3" 0 0 -2.781714 ;
+	setAttr -s 14 ".vt[0:13]"  -15.31993389 -1.000000476837 13.96720219
+		 -12.012276649 -1.000000476837 13.96720219 -15.31993389 5.10972452 13.96720219 -15.31993389 5.10972452 -14.66548443
+		 -15.31993389 -1.000000476837 -14.66548443 -12.012276649 -1.000000476837 -14.66548443
+		 -12.050708771 4.96629524 13.96720219 -12.15570641 5.0712924 13.96720219 -12.29913616 5.10972452 13.96720219
+		 -12.012276649 4.82286501 13.96720219 -12.012276649 4.82286501 -14.66548443 -12.29913616 5.10972452 -14.66548443
+		 -12.15570641 5.0712924 -14.66548443 -12.050708771 4.96629524 -14.66548443;
+	setAttr -s 21 ".ed[0:20]"  0 1 0 2 8 0 3 11 0 4 5 0 0 2 0 1 9 0 2 3 0
+		 3 4 0 4 0 0 5 1 0 10 5 0 8 11 1 10 9 1 8 7 0 7 12 1 12 11 0 7 6 0 6 13 0 13 12 0
+		 6 9 0 10 13 0;
+	setAttr -s 9 -ch 42 ".fc[0:8]" -type "polyFaces" 
+		f 4 1 11 -3 -7
+		mu 0 4 0 9 15 6
+		f 4 3 9 -1 -9
+		mu 0 4 14 1 2 3
+		f 4 -10 -11 12 -6
+		mu 0 4 7 8 10 12
+		f 4 8 4 6 7
+		mu 0 4 4 11 0 5
+		f 4 13 14 15 -12
+		mu 0 4 9 17 18 15
+		f 4 16 17 18 -15
+		mu 0 4 17 16 20 18
+		f 4 19 -13 20 -18
+		mu 0 4 16 12 10 19
+		f 7 -17 -14 -2 -5 0 5 -20
+		mu 0 7 16 17 9 0 11 7 12
+		f 7 10 -4 -8 2 -16 -19 -21
+		mu 0 7 13 1 14 6 15 18 20;
 	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pCube2";
-	rename -uid "EFA34839-44A4-E87C-3D0D-C9BB469D5F7B";
-	setAttr ".t" -type "double3" -6.4673050622645327 0.41354638255882292 8.4098215981583646 ;
-	setAttr -av ".tx";
-	setAttr -av ".ty";
-	setAttr -av ".tz";
-	setAttr ".r" -type "double3" 0 0 0 ;
-	setAttr -av ".ry";
-	setAttr ".s" -type "double3" 11.09441983464027 1.2215741401196787 11.09441983464027 ;
-	setAttr -av ".sx";
-	setAttr -av ".sy";
-	setAttr -av ".sz";
-	setAttr ".rp" -type "double3" 6.4673050215415717 -0.074520856786720047 4.4035987245520349 ;
-	setAttr ".sp" -type "double3" 0.58293314278125763 -0.22246833145618439 0.39692014455795288 ;
-	setAttr ".spt" -type "double3" 5.8843718787603141 0.14794747466946434 4.0066785799940821 ;
-createNode transform -n "transform9" -p "pCube2";
-	rename -uid "BE0B129F-4D16-38E3-D8A4-2AAE0F3BB002";
-	setAttr ".v" no;
-createNode mesh -n "pCubeShape2" -p "transform9";
-	rename -uid "55FCF5AF-4A31-AACE-D89A-27A7A57D9DC2";
+createNode transform -n "polySurface10" -p "pCube12";
+	rename -uid "8CCCC90A-463C-BCFC-FB84-21BF01386797";
+	setAttr ".s" -type "double3" 0.54234770240954977 0.38854585728463559 0.54234770240954977 ;
+	setAttr ".rp" -type "double3" -0.85570264699678489 -0.54234772920608476 -8.9783677652409306 ;
+	setAttr ".sp" -type "double3" -1.5777750015258789 -1.0000000494084071 -16.554634094238281 ;
+	setAttr ".spt" -type "double3" 0.7220723545290898 0.45765232020232416 7.5762663289973506 ;
+createNode mesh -n "polySurfaceShape11" -p "polySurface10";
+	rename -uid "A011977D-4AEC-F961-CB76-17829D9DC456";
 	setAttr -k off ".v";
-	setAttr ".io" yes;
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:5]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr -s 6 ".gtag";
+	setAttr -s 7 ".gtag";
 	setAttr ".gtag[0].gtagnm" -type "string" "back";
 	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[2]";
-	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
-	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[3]";
-	setAttr ".gtag[2].gtagnm" -type "string" "front";
-	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[0]";
-	setAttr ".gtag[3].gtagnm" -type "string" "left";
-	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
-	setAttr ".gtag[4].gtagnm" -type "string" "right";
-	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
-	setAttr ".gtag[5].gtagnm" -type "string" "top";
-	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
-	setAttr ".pv" -type "double2" 0.5 0.375 ;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
-		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
-		 0.875 0.25 0.125 0 0.125 0.25;
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".pt[0:7]" -type "float3"  0.00020183875 0 0.00091645762 
-		1.1656644 0 0.00091645762 0.00020183875 -0.44493666 0.00091645762 1.1656644 -0.44493666 
-		0.00091645762 0.00020183875 -0.44493666 0.79292381 1.1656644 -0.44493666 0.79292381 
-		0.00020183875 0 0.79292381 1.1656644 0 0.79292381;
-	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
-		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
-	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
-		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
-	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
-		f 4 0 5 -2 -5
-		mu 0 4 0 1 3 2
-		f 4 1 7 -3 -7
-		mu 0 4 2 3 5 4
-		f 4 2 9 -4 -9
-		mu 0 4 4 5 7 6
-		f 4 3 11 -1 -11
-		mu 0 4 6 7 9 8
-		f 4 -12 -10 -8 -6
-		mu 0 4 1 10 11 3
-		f 4 10 4 6 8
-		mu 0 4 12 0 2 13;
-	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
-	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
-	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
-	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pCube3";
-	rename -uid "26A94B97-486E-3424-D7F5-A8865123BFEF";
-	setAttr ".t" -type "double3" 1.9032109704038658 0.41354638255882292 2.2712154385392389 ;
-	setAttr -av ".tx";
-	setAttr -av ".ty";
-	setAttr -av ".tz";
-	setAttr ".s" -type "double3" 11.09441983464027 1.2215741401196787 11.09441983464027 ;
-	setAttr -av ".sx";
-	setAttr -av ".sy";
-	setAttr -av ".sz";
-	setAttr ".rp" -type "double3" 8.6789351220560889 -0.074520838583846893 -4.3787154588208406 ;
-	setAttr ".sp" -type "double3" 0.78227931261062622 -0.22246831655502319 -0.39467728137969971 ;
-	setAttr ".spt" -type "double3" 7.8966558094454617 0.1479474779711763 -3.9840381774411413 ;
-createNode transform -n "transform6" -p "pCube3";
-	rename -uid "6A82A5DC-4441-A338-A390-8D8C5ED5DF08";
-	setAttr ".v" no;
-createNode mesh -n "pCubeShape3" -p "transform6";
-	rename -uid "A5AD7138-4B3E-88E1-0A26-49945C74A1CF";
-	setAttr -k off ".v";
-	setAttr ".io" yes;
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:5]";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr -s 6 ".gtag";
-	setAttr ".gtag[0].gtagnm" -type "string" "back";
-	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[2]";
-	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
-	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[3]";
-	setAttr ".gtag[2].gtagnm" -type "string" "front";
-	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[0]";
-	setAttr ".gtag[3].gtagnm" -type "string" "left";
-	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
-	setAttr ".gtag[4].gtagnm" -type "string" "right";
-	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
-	setAttr ".gtag[5].gtagnm" -type "string" "top";
-	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
-	setAttr ".pv" -type "double2" 0.5 0.375 ;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
-		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
-		 0.875 0.25 0.125 0 0.125 0.25;
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".pt[0:7]" -type "float3"  1.1533741 0 0.34622955 0.41118452 
-		0 0.34622955 1.1533741 -0.44493663 0.34622955 0.41118452 -0.44493663 0.34622955 1.1533741 
-		-0.44493663 -1.1355841 0.41118452 -0.44493663 -1.1355841 1.1533741 0 -1.1355841 0.41118452 
-		0 -1.1355841;
-	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
-		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
-	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
-		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
-	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
-		f 4 0 5 -2 -5
-		mu 0 4 0 1 3 2
-		f 4 1 7 -3 -7
-		mu 0 4 2 3 5 4
-		f 4 2 9 -4 -9
-		mu 0 4 4 5 7 6
-		f 4 3 11 -1 -11
-		mu 0 4 6 7 9 8
-		f 4 -12 -10 -8 -6
-		mu 0 4 1 10 11 3
-		f 4 10 4 6 8
-		mu 0 4 12 0 2 13;
-	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
-	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
-	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
-	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pCube7";
-	rename -uid "C879869C-4C7C-71B2-9661-9E96621F6B05";
-	setAttr ".t" -type "double3" 0 0 -0.0024032930626805005 ;
-	setAttr ".rp" -type "double3" -10.919838970434011 1.1113792047776161 -1.0986001069001468 ;
-	setAttr ".sp" -type "double3" -10.919838970434011 1.1113792047776161 -1.0986001069001468 ;
-createNode transform -n "polySurface2" -p "pCube7";
-	rename -uid "C0FB8C4F-464C-D5C9-B373-71AB6B521E14";
-	setAttr ".t" -type "double3" 0 0 1.162910319512227 ;
-	setAttr ".s" -type "double3" 0.7801358003138098 1 1 ;
-	setAttr ".rp" -type "double3" -10.767677446012726 1.6952495574951172 6.8108913898468018 ;
-	setAttr ".sp" -type "double3" -10.416914939880371 1.6952495574951172 6.8108913898468018 ;
-	setAttr ".spt" -type "double3" -0.35076250613235427 0 0 ;
-createNode transform -n "transform3" -p "polySurface2";
-	rename -uid "F306F27E-4C14-9403-A14F-42821C10F0AC";
-	setAttr ".v" no;
-createNode mesh -n "polySurfaceShape2" -p "transform3";
-	rename -uid "1FD6FF53-4ED0-E91C-C51F-F686167087AC";
-	setAttr -k off ".v";
-	setAttr ".io" yes;
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:5]";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr -s 6 ".gtag";
-	setAttr ".gtag[0].gtagnm" -type "string" "back";
-	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[2]";
-	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
-	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[3]";
-	setAttr ".gtag[2].gtagnm" -type "string" "front";
-	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[0]";
-	setAttr ".gtag[3].gtagnm" -type "string" "left";
-	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
-	setAttr ".gtag[4].gtagnm" -type "string" "right";
-	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
-	setAttr ".gtag[5].gtagnm" -type "string" "top";
-	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
-	setAttr ".pv" -type "double2" 0.5 0.625 ;
+	setAttr ".gtag[1].gtagnm" -type "string" "booleanIntersection";
+	setAttr ".gtag[1].gtagcmp" -type "componentList" 0;
+	setAttr ".gtag[2].gtagnm" -type "string" "bottom";
+	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[3]";
+	setAttr ".gtag[3].gtagnm" -type "string" "front";
+	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[0]";
+	setAttr ".gtag[4].gtagnm" -type "string" "left";
+	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[5]";
+	setAttr ".gtag[5].gtagnm" -type "string" "right";
+	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[4]";
+	setAttr ".gtag[6].gtagnm" -type "string" "top";
+	setAttr ".gtag[6].gtagcmp" -type "componentList" 1 "f[1]";
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.625
 		 0.25 0.375 0.25 0.625 0.5 0.375 0.5 0.625 0.75 0.375 0.75 0.625 1 0.375 1 0.875 0
@@ -336,11 +209,9 @@ createNode mesh -n "polySurfaceShape2" -p "transform3";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 4 ".pt[4:7]" -type "float3"  0 0 -0.66101688 0 0 -0.66101688 
-		0 0 -0.66101688 0 0 -0.66101688;
-	setAttr -s 8 ".vt[0:7]"  -12.012274742 0 9.46601105 -8.82155514 0 9.46601105
-		 -12.012274742 3.39049911 9.46601105 -8.82155514 3.39049911 9.46601105 -12.012274742 3.39049911 4.81678867
-		 -8.82155514 3.39049911 4.81678867 -12.012274742 0 4.81678867 -8.82155514 0 4.81678867;
+	setAttr -s 8 ".vt[0:7]"  -15.1678257 -1 -15.87464333 12.012275696 -1 -15.87464333
+		 -15.1678257 22.53799248 -15.87464333 12.012275696 22.53799248 -15.87464333 -15.1678257 22.53799248 -17.23462486
+		 12.012275696 22.53799248 -17.23462486 -15.1678257 -1 -17.23462486 12.012275696 -1 -17.23462486;
 	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
 		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
 	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
@@ -360,37 +231,34 @@ createNode mesh -n "polySurfaceShape2" -p "transform3";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "polySurface3" -p "pCube7";
-	rename -uid "BA53533B-401B-1878-676F-3A88199F7AD8";
-	setAttr ".t" -type "double3" 0 0 -17.070113651928821 ;
-	setAttr ".s" -type "double3" 0.7801358003138098 1 1 ;
-	setAttr ".rp" -type "double3" -10.767677446012726 1.6952495574951172 6.8108913898468018 ;
-	setAttr ".sp" -type "double3" -10.416914939880371 1.6952495574951172 6.8108913898468018 ;
-	setAttr ".spt" -type "double3" -0.35076250613235427 0 0 ;
-createNode transform -n "transform5" -p "polySurface3";
-	rename -uid "21173DFE-49C6-121E-962E-5188E1B05B9E";
-	setAttr ".v" no;
-createNode mesh -n "polySurfaceShape3" -p "transform5";
-	rename -uid "4AEACE6B-44FE-3C70-6FCF-4E92C467E4AF";
+createNode transform -n "polySurface12" -p "pCube12";
+	rename -uid "62FCCF47-4256-8672-73CD-CEA3A0855EC8";
+	setAttr ".s" -type "double3" 0.54234770240954977 0.3932536450035064 0.54234770240954977 ;
+	setAttr ".rp" -type "double3" -7.084145061999167 -0.54234796762466941 -8.281683283560735 ;
+	setAttr ".sp" -type "double3" -13.061998844146729 -1.0000004890130674 -15.270062446594238 ;
+	setAttr ".spt" -type "double3" 5.9778537821474478 0.45765252138839885 6.9883791630332901 ;
+createNode mesh -n "polySurfaceShape13" -p "polySurface12";
+	rename -uid "9B921C5F-4939-E5BB-E294-2982F3ED21D6";
 	setAttr -k off ".v";
-	setAttr ".io" yes;
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:5]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr -s 6 ".gtag";
+	setAttr -s 7 ".gtag";
 	setAttr ".gtag[0].gtagnm" -type "string" "back";
 	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[2]";
-	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
-	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[3]";
-	setAttr ".gtag[2].gtagnm" -type "string" "front";
-	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[0]";
-	setAttr ".gtag[3].gtagnm" -type "string" "left";
-	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
-	setAttr ".gtag[4].gtagnm" -type "string" "right";
-	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
-	setAttr ".gtag[5].gtagnm" -type "string" "top";
-	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
-	setAttr ".pv" -type "double2" 0.5 0.625 ;
+	setAttr ".gtag[1].gtagnm" -type "string" "booleanIntersection";
+	setAttr ".gtag[1].gtagcmp" -type "componentList" 0;
+	setAttr ".gtag[2].gtagnm" -type "string" "bottom";
+	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[3]";
+	setAttr ".gtag[3].gtagnm" -type "string" "front";
+	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[0]";
+	setAttr ".gtag[4].gtagnm" -type "string" "left";
+	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[5]";
+	setAttr ".gtag[5].gtagnm" -type "string" "right";
+	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[4]";
+	setAttr ".gtag[6].gtagnm" -type "string" "top";
+	setAttr ".gtag[6].gtagcmp" -type "componentList" 1 "f[1]";
+	setAttr ".pv" -type "double2" 0.5 0.375 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.625
 		 0.25 0.375 0.25 0.625 0.5 0.375 0.5 0.625 0.75 0.375 0.75 0.625 1 0.375 1 0.875 0
@@ -399,11 +267,12 @@ createNode mesh -n "polySurfaceShape3" -p "transform5";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 4 ".pt[4:7]" -type "float3"  0 0 -0.66101688 0 0 -0.66101688 
-		0 0 -0.66101688 0 0 -0.66101688;
-	setAttr -s 8 ".vt[0:7]"  -12.012274742 0 9.46601105 -8.82155514 0 9.46601105
-		 -12.012274742 3.39049911 9.46601105 -8.82155514 3.39049911 9.46601105 -12.012274742 3.39049911 4.81678867
-		 -8.82155514 3.39049911 4.81678867 -12.012274742 0 4.81678867 -8.82155514 0 4.81678867;
+	setAttr -s 4 ".pt[2:5]" -type "float3"  0 -0.28178161 0 0 -0.28178161 
+		0 0 -0.28178161 0 0 -0.28178161 0;
+	setAttr -s 8 ".vt[0:7]"  -15.1678257 -1.000000476837 -14.66548157
+		 -10.95617199 -1.000000476837 -14.66548157 -15.1678257 22.53799248 -14.66548157 -10.95617199 22.53799248 -14.66548157
+		 -15.1678257 22.53799248 -15.87464333 -10.95617199 22.53799248 -15.87464333 -15.1678257 -1.000000476837 -15.87464333
+		 -10.95617199 -1.000000476837 -15.87464333;
 	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
 		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
 	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
@@ -423,244 +292,72 @@ createNode mesh -n "polySurfaceShape3" -p "transform5";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pCube8";
-	rename -uid "6DB97788-4115-F1F9-A1AD-EEAED96687C0";
-	setAttr ".t" -type "double3" -6.4673041085902128 -0.58645361744117719 -21.432019623805793 ;
-	setAttr ".s" -type "double3" 11.09441983464027 1.2215741401196787 11.09441983464027 ;
-	setAttr ".rp" -type "double3" 4.8895293135113809 11.355449345560626 4.8773865787326338 ;
-	setAttr ".sp" -type "double3" 0.44071969389915466 9.1342868804931641 0.43962520360946655 ;
-	setAttr ".spt" -type "double3" 4.4488096196122262 2.221162465067462 4.4377613751231673 ;
-createNode transform -n "transform4" -p "pCube8";
-	rename -uid "B42B9056-49FA-B95E-B38B-8380A7E158C0";
-	setAttr ".v" no;
-createNode mesh -n "pCubeShape8" -p "transform4";
-	rename -uid "68C525AA-4681-1996-B35E-6BB5AD67B997";
+createNode transform -n "polySurface13" -p "pCube12";
+	rename -uid "56526D35-4A71-2922-12FB-F489CA2247E1";
+	setAttr ".s" -type "double3" 0.54234770240954977 0.54234770240954977 0.54234770240954977 ;
+	setAttr ".rp" -type "double3" -8.8209734217663254 5.4260926211824918 -0.32141043535868991 ;
+	setAttr ".sp" -type "double3" -16.264424800872803 10.004822731018066 -0.59262800216674805 ;
+	setAttr ".spt" -type "double3" 7.4434513791064782 -4.5787301098355746 0.27121756680805814 ;
+createNode mesh -n "polySurfaceShape14" -p "polySurface13";
+	rename -uid "E250856D-4354-3E31-FA5E-99A56C0C1FD4";
 	setAttr -k off ".v";
-	setAttr ".io" yes;
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:5]";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr -s 6 ".gtag";
-	setAttr ".gtag[0].gtagnm" -type "string" "back";
-	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[2]";
-	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
-	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[3]";
-	setAttr ".gtag[2].gtagnm" -type "string" "front";
-	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[0]";
-	setAttr ".gtag[3].gtagnm" -type "string" "left";
-	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
-	setAttr ".gtag[4].gtagnm" -type "string" "right";
-	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
-	setAttr ".gtag[5].gtagnm" -type "string" "top";
-	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
-	setAttr ".pv" -type "double2" 0.5 0.375 ;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
-		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
-		 0.875 0.25 0.125 0 0.125 0.25;
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".pt[0:7]" -type "float3"  -0.28422505 0 0.00091645762 
-		1.1656644 0 0.00091645762 -0.28422505 18.268574 0.00091645762 1.1656644 18.268574 
-		0.00091645762 -0.28422505 18.268574 0.87833393 1.1656644 18.268574 0.87833393 -0.28422505 
-		0 0.87833393 1.1656644 0 0.87833393;
-	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
-		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
-	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
-		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
-	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
-		f 4 0 5 -2 -5
-		mu 0 4 0 1 3 2
-		f 4 1 7 -3 -7
-		mu 0 4 2 3 5 4
-		f 4 2 9 -4 -9
-		mu 0 4 4 5 7 6
-		f 4 3 11 -1 -11
-		mu 0 4 6 7 9 8
-		f 4 -12 -10 -8 -6
-		mu 0 4 1 10 11 3
-		f 4 10 4 6 8
-		mu 0 4 12 0 2 13;
-	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
-	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
-	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
-	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pCube9";
-	rename -uid "46C03F62-47E4-FD15-FE57-B48E5BF16F0C";
-	setAttr ".t" -type "double3" -14.556510592630822 4.3016969734456243 -15.262095021987392 ;
-	setAttr ".s" -type "double3" 1.5274601339550471 1.2215741401196787 11.09441983464027 ;
-	setAttr ".rp" -type "double3" 0.89040713635948676 -2.2468346122485405 14.91295498107489 ;
-	setAttr ".sp" -type "double3" 0.58293314278125763 -2.0007588863372803 1.3441852033138275 ;
-	setAttr ".spt" -type "double3" 0.30747399357822913 -0.24607572591126026 13.568769777761062 ;
-createNode transform -n "transform7" -p "pCube9";
-	rename -uid "25782B69-4EA8-3F4A-8E04-928FF5F5DDC5";
-	setAttr ".v" no;
-createNode mesh -n "pCubeShape9" -p "transform7";
-	rename -uid "5B36F535-4582-589F-0AF0-7E86E8C1BCF2";
-	setAttr -k off ".v";
-	setAttr ".io" yes;
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:5]";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr -s 6 ".gtag";
-	setAttr ".gtag[0].gtagnm" -type "string" "back";
-	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[2]";
-	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
-	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[3]";
-	setAttr ".gtag[2].gtagnm" -type "string" "front";
-	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[0]";
-	setAttr ".gtag[3].gtagnm" -type "string" "left";
-	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
-	setAttr ".gtag[4].gtagnm" -type "string" "right";
-	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
-	setAttr ".gtag[5].gtagnm" -type "string" "top";
-	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
-	setAttr ".pv" -type "double2" 0.5 0.625 ;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
-		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
-		 0.875 0.25 0.125 0 0.125 0.25;
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".pt[0:7]" -type "float3"  0.00020183875 -4.0015178 
-		2.1345944 1.1656644 -4.0015178 2.1345944 0.00020183875 5.5511151e-17 2.1345944 1.1656644 
-		5.5511151e-17 2.1345944 0.00020183875 -2.7755576e-16 0.55377597 1.1656644 -2.7755576e-16 
-		0.55377597 0.00020183875 -4.0015178 0.55377597 1.1656644 -4.0015178 0.55377597;
-	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
-		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
-	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
-		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
-	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
-		f 4 0 5 -2 -5
-		mu 0 4 0 1 3 2
-		f 4 1 7 -3 -7
-		mu 0 4 2 3 5 4
-		f 4 2 9 -4 -9
-		mu 0 4 4 5 7 6
-		f 4 3 11 -1 -11
-		mu 0 4 6 7 9 8
-		f 4 -12 -10 -8 -6
-		mu 0 4 1 10 11 3
-		f 4 10 4 6 8
-		mu 0 4 12 0 2 13;
-	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
-	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
-	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
-	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pCube11";
-	rename -uid "41AD6EA4-4842-AF05-8A31-90908EB35A32";
-	setAttr ".t" -type "double3" -14.556510592630822 4.3016969734456243 -18.22073875301092 ;
-	setAttr ".s" -type "double3" 1.5274601339550471 1.2215741401196787 0.25564401737759002 ;
-	setAttr ".rp" -type "double3" 1.4945119584223667 6.4672990044780594 2.9506766240842088 ;
-	setAttr ".sp" -type "double3" 0.97842943668365479 5.1327693462371826 -0.87722957134246826 ;
-	setAttr ".spt" -type "double3" 0.51608252173871194 1.3345296582408768 3.8279061954266771 ;
-createNode transform -n "transform2" -p "pCube11";
-	rename -uid "60914C7F-459F-7B27-64D2-3D9874490035";
-	setAttr ".v" no;
-createNode mesh -n "pCubeShape11" -p "transform2";
-	rename -uid "D6EE7FFC-407A-1DAD-E02A-29A507196A96";
-	setAttr -k off ".v";
-	setAttr ".io" yes;
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:5]";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr -s 6 ".gtag";
-	setAttr ".gtag[0].gtagnm" -type "string" "back";
-	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[2]";
-	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
-	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[3]";
-	setAttr ".gtag[2].gtagnm" -type "string" "front";
-	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[0]";
-	setAttr ".gtag[3].gtagnm" -type "string" "left";
-	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
-	setAttr ".gtag[4].gtagnm" -type "string" "right";
-	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
-	setAttr ".gtag[5].gtagnm" -type "string" "top";
-	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
-	setAttr ".pv" -type "double2" 0.5 0.375 ;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
-		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
-		 0.875 0.25 0.125 0 0.125 0.25;
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 8 ".pt[0:7]" -type "float3"  0.099783182 -4.0015178 0.9877041 
-		1.8570756 -4.0015178 0.9877041 0.099783182 14.267056 0.9877041 1.8570756 14.267056 
-		0.9877041 0.099783182 14.267056 -2.7421632 1.8570756 14.267056 -2.7421632 0.099783182 
-		-4.0015178 -2.7421632 1.8570756 -4.0015178 -2.7421632;
-	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
-		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
-	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
-		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
-	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
-		f 4 0 5 -2 -5
-		mu 0 4 0 1 3 2
-		f 4 1 7 -3 -7
-		mu 0 4 2 3 5 4
-		f 4 2 9 -4 -9
-		mu 0 4 4 5 7 6
-		f 4 3 11 -1 -11
-		mu 0 4 6 7 9 8
-		f 4 -12 -10 -8 -6
-		mu 0 4 1 10 11 3
-		f 4 10 4 6 8
-		mu 0 4 12 0 2 13;
-	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
-	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
-	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
-	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "polySurface4";
-	rename -uid "A7335246-4141-EBBE-D327-4390ED6B6680";
-	setAttr ".rp" -type "double3" -16.264424800872803 10.768995761871338 -1.6337118148803711 ;
-	setAttr ".sp" -type "double3" -16.264424800872803 10.768995761871338 -1.6337118148803711 ;
-createNode transform -n "transform1" -p "polySurface4";
-	rename -uid "2A79D248-41BA-ED05-6141-50B271E808B5";
-	setAttr ".v" no;
-createNode mesh -n "polySurfaceShape5" -p "transform1";
-	rename -uid "8995630D-415C-C709-4300-44B29B8D7CEE";
-	setAttr -k off ".v";
-	setAttr ".io" yes;
-	setAttr -s 2 ".iog[0].og";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 2 "f[0:3]" "f[12:13]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr -s 7 ".gtag";
 	setAttr ".gtag[0].gtagnm" -type "string" "back";
 	setAttr ".gtag[0].gtagcmp" -type "componentList" 3 "f[3]" "f[9]" "f[11]";
 	setAttr ".gtag[1].gtagnm" -type "string" "booleanIntersection";
-	setAttr ".gtag[1].gtagcmp" -type "componentList" 7 "e[13]" "e[15:16]" "e[18]" "e[20:22]" "e[24]" "e[26:29]" "e[32:35]";
+	setAttr ".gtag[1].gtagcmp" -type "componentList" 16 "e[13]" "e[15]" "e[16]" "e[18]" "e[20]" "e[21]" "e[22]" "e[24]" "e[26]" "e[27]" "e[28]" "e[29]" "e[32]" "e[33]" "e[34]" "e[35]";
 	setAttr ".gtag[2].gtagnm" -type "string" "bottom";
 	setAttr ".gtag[2].gtagcmp" -type "componentList" 2 "f[1]" "f[7]";
 	setAttr ".gtag[3].gtagnm" -type "string" "front";
-	setAttr ".gtag[3].gtagcmp" -type "componentList" 2 "f[0]" "f[4:6]";
+	setAttr ".gtag[3].gtagcmp" -type "componentList" 4 "f[0]" "f[4]" "f[5]" "f[6]";
 	setAttr ".gtag[4].gtagnm" -type "string" "left";
 	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[12]";
 	setAttr ".gtag[5].gtagnm" -type "string" "right";
 	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[13]";
 	setAttr ".gtag[6].gtagnm" -type "string" "top";
 	setAttr ".gtag[6].gtagcmp" -type "componentList" 3 "f[2]" "f[8]" "f[10]";
+	setAttr ".pv" -type "double2" 0.5 0.125 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 48 ".uvst[0].uvsp[0:47]" -type "float2" 0.375 0 0.625 0 0.625
-		 0.25 0.375 0.25 0.125 0.25 0.125 0 0.14792381 0.073477566 0.14792381 0.24272947 0.15135571
-		 0.24727876 0.36532739 0.24727876 0.36875924 0.24272949 0.36875927 0.073477566 0.36532736
-		 0.068928286 0.15135571 0.068928279 0.375 1 0.375 0.75 0.625 0.75 0.625 1 0.875 0
-		 0.85207623 0.073477566 0.84864432 0.068928279 0.63467264 0.068928286 0.63124073 0.073477566
-		 0.63124079 0.24272949 0.63467264 0.24727876 0.84864432 0.24727876 0.85207617 0.24272947
-		 0.875 0.25 0.625 0.5 0.375 0.5 0.40619367 0.24362311 0.53189337 0.24362311 0.53189337
-		 0.0063769072 0.40619367 0.0063769072 0.53288472 0 0.40327808 0 0.40619367 0.25388512
-		 0.53189337 0.25388515 0.40619367 0.99611485 0.53189337 0.99611491 0.53189337 0.75388515
-		 0.40619367 0.75388515 0.40619367 0.49611488 0.53189337 0.49611491 0.40619367 0.74362314
-		 0.53189337 0.74362314 0.40619367 0.50637686 0.53189337 0.50637686;
+		 0.25 0.375 0.25 0.375 1 0.375 0.75 0.625 0.75 0.625 1 0.625 0.5 0.375 0.5 0.40619367
+		 0.24362311 0.53189337 0.24362311 0.53189337 0.0063769072 0.40619367 0.0063769072
+		 0.53288472 0 0.40327808 0 0.40619367 0.25388512 0.53189337 0.25388515 0.40619367
+		 0.99611485 0.53189337 0.99611491 0.53189337 0.75388515 0.40619367 0.75388515 0.40619367
+		 0.49611488 0.53189337 0.49611491 0.40619367 0.74362314 0.53189337 0.74362314 0.40619367
+		 0.50637686 0.53189337 0.50637686 0.125 0.25 0.125 0 0.14792381 0.073477566 0.14792381
+		 0.24272947 0.15135571 0.24727876 0.36532739 0.24727876 0.36875924 0.24272949 0.36875927
+		 0.073477566 0.36532736 0.068928286 0.15135571 0.068928279 0.875 0 0.875 0.25 0.85207623
+		 0.073477566 0.84864432 0.068928279 0.63467264 0.068928286 0.63124073 0.073477566
+		 0.63124079 0.24272949 0.63467264 0.24727876 0.84864432 0.24727876 0.85207617 0.24272947;
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 22 ".pt";
+	setAttr ".pt[0]" -type "float3" 0 0 -2.781714 ;
+	setAttr ".pt[1]" -type "float3" 0 0 -2.781714 ;
+	setAttr ".pt[2]" -type "float3" 0 -6.6750274 -2.781714 ;
+	setAttr ".pt[3]" -type "float3" 0 -6.6750274 -2.781714 ;
+	setAttr ".pt[5]" -type "float3" 0 0.17223276 0.044520885 ;
+	setAttr ".pt[6]" -type "float3" 0 -7.9341021 0.044520885 ;
+	setAttr ".pt[7]" -type "float3" 0 -7.9341021 0.049310155 ;
+	setAttr ".pt[8]" -type "float3" 0 -7.9341021 -3.8937385 ;
+	setAttr ".pt[9]" -type "float3" 0 -7.9341021 -3.8889492 ;
+	setAttr ".pt[10]" -type "float3" 0 0.17223276 -3.8889492 ;
+	setAttr ".pt[11]" -type "float3" 0 0.17223276 -3.8937385 ;
+	setAttr ".pt[12]" -type "float3" 0 0.17223276 0.049310155 ;
+	setAttr ".pt[13]" -type "float3" 0 -6.6750274 0 ;
+	setAttr ".pt[15]" -type "float3" 0 0.17223276 0.044520885 ;
+	setAttr ".pt[16]" -type "float3" 0 0.17223276 0.049310155 ;
+	setAttr ".pt[17]" -type "float3" 0 0.17223276 -3.8937385 ;
+	setAttr ".pt[18]" -type "float3" 0 0.17223276 -3.8889492 ;
+	setAttr ".pt[19]" -type "float3" 0 -7.9341021 -3.8889492 ;
+	setAttr ".pt[20]" -type "float3" 0 -7.9341021 -3.8937385 ;
+	setAttr ".pt[21]" -type "float3" 0 -7.9341021 0.049310155 ;
+	setAttr ".pt[22]" -type "float3" 0 -7.9341021 0.044520885 ;
+	setAttr ".pt[23]" -type "float3" 0 -6.6750274 0 ;
 	setAttr -s 24 ".vt[0:23]"  -17.20891762 -1.000000953674 13.96720123
 		 -15.31993198 -1.000000953674 13.96720123 -15.31993198 22.53799248 13.96720123 -17.20891762 22.53799248 13.96720123
 		 -17.20891762 -1.000000953674 -17.23462486 -17.20891762 5.91805744 -14.37356567 -17.20891762 21.8534584 -14.37356567
@@ -692,196 +389,39 @@ createNode mesh -n "polySurfaceShape5" -p "transform1";
 		f 4 0 1 2 3
 		mu 0 4 0 1 2 3
 		f 4 4 5 6 -1
-		mu 0 4 14 15 16 17
+		mu 0 4 4 5 6 7
 		f 4 7 8 9 -3
-		mu 0 4 2 28 29 3
+		mu 0 4 2 8 9 3
 		f 4 10 -9 11 -6
-		mu 0 4 15 29 28 16
+		mu 0 4 5 9 8 6
 		f 4 12 13 14 15
-		mu 0 4 30 31 32 33
+		mu 0 4 10 11 12 13
 		f 4 -15 16 17 18
-		mu 0 4 33 32 34 35
+		mu 0 4 13 12 14 15
 		f 4 19 20 -13 21
-		mu 0 4 36 37 31 30
+		mu 0 4 16 17 11 10
 		f 4 -18 22 23 24
-		mu 0 4 38 39 40 41
+		mu 0 4 18 19 20 21
 		f 4 25 26 -20 27
-		mu 0 4 42 43 37 36
+		mu 0 4 22 23 17 16
 		f 4 28 -24 29 30
-		mu 0 4 44 41 40 45
+		mu 0 4 24 21 20 25
 		f 4 31 32 -26 33
-		mu 0 4 46 47 43 42
+		mu 0 4 26 27 23 22
 		f 4 -31 34 -32 35
-		mu 0 4 44 45 47 46
+		mu 0 4 24 25 27 26
 		f 4 -4 -10 -11 -5
-		mu 0 4 0 3 4 5
+		mu 0 4 0 3 28 29
 		h 8 -36 -34 -28 -22 -16 -19 -25 -29
-		mu 0 8 6 7 8 9 10 11 12 13
+		mu 0 8 30 31 32 33 34 35 36 37
 		f 4 -12 -8 -2 -7
-		mu 0 4 18 27 2 1
+		mu 0 4 38 39 2 1
 		h 8 -30 -23 -17 -14 -21 -27 -33 -35
-		mu 0 8 19 20 21 22 23 24 25 26;
+		mu 0 8 40 41 42 43 44 45 46 47;
 	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "materialXStack1";
-	rename -uid "068B92AD-43D8-389F-487D-BAA3569BDDDF";
-createNode materialxStack -n "materialXStackShape1" -p "materialXStack1";
-	rename -uid "A7D76799-44FE-43AB-F984-829D43E422EF";
-	setAttr -k off ".v";
-	setAttr ".docs" -type "string" "[\n    {\n        \"document\": \"AAABOHics7GvyM1RKEstKs7Mz7NVMtQzULK347LJTSxJLcpMzKlAljK2ULLjUlCwKS4tSktMTlXIS8xNtVWC8gyVFEoqCxD84ozElNQiJYW8/JTUlNQ0WyU/l3iolJKCPrI5MLug5gWjmQeTxmoUXBJkINDIzLyC0hJUh8EcgtN16N6AOE4fzQZgoOjDQ8WOCwAM9WnJ\",\n        \"name\": \"document1\"\n    }\n]\n";
-createNode transform -n "pCube12";
-	rename -uid "013FFBE7-4B2A-79DA-411D-F9A5D40F60EF";
-	setAttr ".rp" -type "double3" -2.5983205935799472 10.768995761871338 -1.6337115340918045 ;
-	setAttr ".sp" -type "double3" -2.5983205935799472 10.768995761871338 -1.6337115340918045 ;
-createNode transform -n "polySurface5" -p "pCube12";
-	rename -uid "55A58234-4AA3-1DD8-4C62-CD89AA7E2F33";
-	setAttr ".s" -type "double3" 0.54234770240954977 0.54234770240954977 0.54234770240954977 ;
-createNode transform -n "transform11" -p "polySurface5";
-	rename -uid "0FA6C3B0-4FF0-7C44-DBB3-E0B0F9AFEECD";
-	setAttr ".v" no;
-createNode mesh -n "polySurfaceShape6" -p "transform11";
-	rename -uid "5617DD05-4E6E-72E7-E1B8-52B94C106938";
-	setAttr -k off ".v";
-	setAttr ".io" yes;
-	setAttr -s 2 ".iog[0].og";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.75 0.125 ;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 6 ".pt";
-	setAttr ".pt[0]" -type "float3" 0 0 2.6211023 ;
-	setAttr ".pt[1]" -type "float3" 3.7362125 0 2.6211023 ;
-	setAttr ".pt[2]" -type "float3" 0 0 2.6211023 ;
-	setAttr ".pt[3]" -type "float3" 3.7362125 0 2.6211023 ;
-	setAttr ".pt[5]" -type "float3" 3.7362125 0 0 ;
-	setAttr ".pt[7]" -type "float3" 3.7362125 0 0 ;
-createNode transform -n "polySurface6" -p "pCube12";
-	rename -uid "50FC7B18-4BC5-2E00-1D86-43A2763ED563";
-	setAttr ".s" -type "double3" 0.54234770240954977 0.54234770240954977 0.54234770240954977 ;
-createNode transform -n "transform12" -p "polySurface6";
-	rename -uid "E9A1F2DF-4CE7-BF8D-96B9-D2ABC61F5903";
-	setAttr ".v" no;
-createNode mesh -n "polySurfaceShape7" -p "transform12";
-	rename -uid "0A01A818-4363-7B7E-05D7-70BA2EE697C0";
-	setAttr -k off ".v";
-	setAttr ".io" yes;
-	setAttr -s 2 ".iog[0].og";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.75 0.125 ;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 6 ".pt";
-	setAttr ".pt[0]" -type "float3" 0 0 2.6211033 ;
-	setAttr ".pt[1]" -type "float3" 3.7362125 0 2.6211033 ;
-	setAttr ".pt[2]" -type "float3" 0 0 2.6211033 ;
-	setAttr ".pt[3]" -type "float3" 3.7362125 0 2.6211033 ;
-	setAttr ".pt[5]" -type "float3" 3.7362125 0 0 ;
-	setAttr ".pt[7]" -type "float3" 3.7362125 0 0 ;
-createNode transform -n "polySurface7" -p "pCube12";
-	rename -uid "3E60297D-4298-0AEB-30A9-3CA024E3FFB8";
-	setAttr ".s" -type "double3" 0.54234770240954977 0.54234770240954977 0.54234770240954977 ;
-createNode mesh -n "polySurfaceShape8" -p "polySurface7";
-	rename -uid "AF9823C2-4712-7DAD-715A-4FA7CB7A70B4";
-	setAttr -k off ".v";
-	setAttr -s 2 ".iog[0].og";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-createNode transform -n "polySurface8" -p "pCube12";
-	rename -uid "86EE7204-4473-CEA1-856F-A48FDDD3C96D";
-	setAttr ".s" -type "double3" 0.54234770240954977 0.54234770240954977 0.54234770240954977 ;
-createNode transform -n "transform13" -p "|pCube12|polySurface8";
-	rename -uid "9CE2AC6F-48F4-0CC8-8620-B7A5185E0F50";
-	setAttr ".v" no;
-createNode mesh -n "polySurfaceShape9" -p "transform13";
-	rename -uid "9B154A61-45E1-8B0D-358D-FCACF5B4C966";
-	setAttr -k off ".v";
-	setAttr ".io" yes;
-	setAttr -s 2 ".iog[0].og";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.75 0.125 ;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 4 ".pt";
-	setAttr ".pt[1]" -type "float3" 3.7362115 0 0 ;
-	setAttr ".pt[3]" -type "float3" 3.7362115 0 0 ;
-	setAttr ".pt[5]" -type "float3" 3.7362115 0 0 ;
-	setAttr ".pt[7]" -type "float3" 3.7362115 0 0 ;
-createNode transform -n "polySurface10" -p "pCube12";
-	rename -uid "8CCCC90A-463C-BCFC-FB84-21BF01386797";
-	setAttr ".s" -type "double3" 0.54234770240954977 0.54234770240954977 0.54234770240954977 ;
-createNode mesh -n "polySurfaceShape11" -p "polySurface10";
-	rename -uid "A011977D-4AEC-F961-CB76-17829D9DC456";
-	setAttr -k off ".v";
-	setAttr -s 2 ".iog[0].og";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-createNode transform -n "polySurface12" -p "pCube12";
-	rename -uid "62FCCF47-4256-8672-73CD-CEA3A0855EC8";
-	setAttr ".s" -type "double3" 0.54234770240954977 0.54234770240954977 0.54234770240954977 ;
-createNode mesh -n "polySurfaceShape13" -p "polySurface12";
-	rename -uid "9B921C5F-4939-E5BB-E294-2982F3ED21D6";
-	setAttr -k off ".v";
-	setAttr -s 2 ".iog[0].og";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-createNode transform -n "polySurface13" -p "pCube12";
-	rename -uid "56526D35-4A71-2922-12FB-F489CA2247E1";
-	setAttr ".s" -type "double3" 0.54234770240954977 0.54234770240954977 0.54234770240954977 ;
-createNode mesh -n "polySurfaceShape14" -p "polySurface13";
-	rename -uid "E250856D-4354-3E31-FA5E-99A56C0C1FD4";
-	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.46904352307319641 0.87500002980232239 ;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-createNode transform -n "transform10" -p "pCube12";
-	rename -uid "3CF8586B-4CCA-4542-ECA6-CFAD62F17FB5";
-	setAttr ".v" no;
-createNode mesh -n "pCube12Shape" -p "transform10";
-	rename -uid "1E02F6D8-4E23-C2FF-86A7-10A6849C18EC";
-	setAttr -k off ".v";
-	setAttr ".io" yes;
-	setAttr -s 2 ".iog[0].og";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
 createNode transform -n "Nightstand";
 	rename -uid "2AC6A542-4E8A-0009-9287-1AA800D137C2";
 	setAttr ".t" -type "double3" -6.5148301124572754 -0.64367090769532176 -5.041613550299461 ;
@@ -1397,14 +937,33 @@ createNode transform -n "polySurface8";
 	rename -uid "3D1BE2DF-41F5-0C7D-361B-94B6B71F056D";
 	setAttr ".rp" -type "double3" 1.0131631950249669 -0.087304119285379539 0.19352599577952923 ;
 	setAttr ".sp" -type "double3" 1.0131631950249669 -0.087304119285379539 0.19352599577952923 ;
-createNode mesh -n "polySurface8Shape" -p "|polySurface8";
+createNode mesh -n "polySurface8Shape" -p "polySurface8";
 	rename -uid "47EE0E71-4B53-56B0-C0BD-73A18B6BFA8D";
 	setAttr -k off ".v";
-	setAttr -s 2 ".iog[0].og";
+	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:17]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.5 0.5 ;
+	setAttr -s 6 ".gtag";
+	setAttr ".gtag[0].gtagnm" -type "string" "back";
+	setAttr ".gtag[0].gtagcmp" -type "componentList" 3 "f[2]" "f[8]" "f[14]";
+	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
+	setAttr ".gtag[1].gtagcmp" -type "componentList" 3 "f[3]" "f[9]" "f[15]";
+	setAttr ".gtag[2].gtagnm" -type "string" "front";
+	setAttr ".gtag[2].gtagcmp" -type "componentList" 3 "f[0]" "f[6]" "f[12]";
+	setAttr ".gtag[3].gtagnm" -type "string" "left";
+	setAttr ".gtag[3].gtagcmp" -type "componentList" 3 "f[5]" "f[11]" "f[17]";
+	setAttr ".gtag[4].gtagnm" -type "string" "right";
+	setAttr ".gtag[4].gtagcmp" -type "componentList" 3 "f[4]" "f[10]" "f[16]";
+	setAttr ".gtag[5].gtagnm" -type "string" "top";
+	setAttr ".gtag[5].gtagcmp" -type "componentList" 3 "f[1]" "f[7]" "f[13]";
+	setAttr ".pv" -type "double2" 0.5 0.125 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 42 ".uvst[0].uvsp[0:41]" -type "float2" 0.375 0 0.625 0 0.625
+		 0.25 0.375 0.25 0.625 0.5 0.375 0.5 0.625 0.75 0.375 0.75 0.625 1 0.375 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25 0.375 0 0.625 0 0.625 0.25 0.375 0.25 0.625 0.5 0.375
+		 0.5 0.625 0.75 0.375 0.75 0.625 1 0.375 1 0.875 0 0.875 0.25 0.125 0 0.125 0.25 0.375
+		 0 0.625 0 0.625 0.25 0.375 0.25 0.625 0.5 0.375 0.5 0.625 0.75 0.375 0.75 0.625 1
+		 0.375 1 0.875 0 0.875 0.25 0.125 0 0.125 0.25;
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
@@ -1414,129 +973,123 @@ createNode mesh -n "polySurface8Shape" -p "|polySurface8";
 	setAttr ".pt[3]" -type "float3" -1.5985696 0 0 ;
 	setAttr ".pt[5]" -type "float3" -1.5985696 0 0 ;
 	setAttr ".pt[7]" -type "float3" -1.5985696 0 0 ;
-	setAttr ".pt[8]" -type "float3" 0 0 0.5146262 ;
-	setAttr ".pt[9]" -type "float3" -1.5985696 0 0.5146262 ;
-	setAttr ".pt[10]" -type "float3" 0 0 0.5146262 ;
-	setAttr ".pt[11]" -type "float3" -1.5985696 0 0.5146262 ;
+	setAttr ".pt[8]" -type "float3" 0 0 -1.7659956 ;
+	setAttr ".pt[9]" -type "float3" -1.5985696 0 -1.7659956 ;
+	setAttr ".pt[10]" -type "float3" 0 0 -1.7659956 ;
+	setAttr ".pt[11]" -type "float3" -1.5985696 0 -1.7659956 ;
 	setAttr ".pt[13]" -type "float3" -1.5985696 0 0 ;
 	setAttr ".pt[15]" -type "float3" -1.5985696 0 0 ;
-	setAttr ".pt[16]" -type "float3" 0 0 0.5146262 ;
-	setAttr ".pt[17]" -type "float3" -1.5985696 0 0.5146262 ;
-	setAttr ".pt[18]" -type "float3" 0 0 0.5146262 ;
-	setAttr ".pt[19]" -type "float3" -1.5985696 0 0.5146262 ;
+	setAttr ".pt[16]" -type "float3" 0 0 -1.7659956 ;
+	setAttr ".pt[17]" -type "float3" -1.5985696 0 -1.7659956 ;
+	setAttr ".pt[18]" -type "float3" 0 0 -1.7659956 ;
+	setAttr ".pt[19]" -type "float3" -1.5985696 0 -1.7659956 ;
 	setAttr ".pt[21]" -type "float3" -1.5985696 0 0 ;
 	setAttr ".pt[23]" -type "float3" -1.5985696 0 0 ;
-createNode transform -n "pCube13";
-	rename -uid "C2D052E8-40E8-95D0-79FD-419718A943B8";
-	setAttr ".t" -type "double3" -7.0148302316702509 -0.042347553286061768 8.0750799942332918 ;
-	setAttr ".s" -type "double3" 2.8272956599867092 12.943676108628997 1.9407309067439544 ;
-	setAttr ".rp" -type "double3" 0.49999964237581729 -0.50000017592002344 -0.50000007632557697 ;
-	setAttr ".sp" -type "double3" 0.49999964237581729 -0.50000017592002344 -0.50000007632557697 ;
-createNode mesh -n "pCubeShape12" -p "pCube13";
-	rename -uid "6CB2B766-4AA0-CE9A-5F82-45A435F31D94";
-	setAttr -k off ".v";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 24 ".vt[0:23]"  4.96357536 0 6.32357979 8.54115582 0 6.32357979
+		 4.96357536 0.36773947 6.32357979 8.54115582 0.36773947 6.32357979 4.96357536 0.36773947 -8.60957527
+		 8.54115582 0.36773947 -8.60957527 4.96357536 0 -8.60957527 8.54115582 0 -8.60957527
+		 -6.51483059 -0.54234773 8.99662781 8.54115677 -0.54234773 8.99662781 -6.51483059 0 8.99662781
+		 8.54115677 0 8.99662781 -6.51483059 0 -8.60957623 8.54115677 0 -8.60957623 -6.51483059 -0.54234773 -8.60957623
+		 8.54115677 -0.54234773 -8.60957623 -6.51483059 0 8.99662781 8.54115677 0 8.99662781
+		 -6.51483059 0.36773944 8.99662781 8.54115677 0.36773944 8.99662781 -6.51483059 0.36773944 6.32357979
+		 8.54115677 0.36773944 6.32357979 -6.51483059 0 6.32357979 8.54115677 0 6.32357979;
+	setAttr -s 36 ".ed[0:35]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0 8 9 0 10 11 0 12 13 0 14 15 0 8 10 0 9 11 0 10 12 0
+		 11 13 0 12 14 0 13 15 0 14 8 0 15 9 0 16 17 0 18 19 0 20 21 0 22 23 0 16 18 0 17 19 0
+		 18 20 0 19 21 0 20 22 0 21 23 0 22 16 0 23 17 0;
+	setAttr -s 18 -ch 72 ".fc[0:17]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 2 3
+		f 4 1 7 -3 -7
+		mu 0 4 3 2 4 5
+		f 4 2 9 -4 -9
+		mu 0 4 5 4 6 7
+		f 4 3 11 -1 -11
+		mu 0 4 7 6 8 9
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 2
+		f 4 10 4 6 8
+		mu 0 4 12 0 3 13
+		f 4 12 17 -14 -17
+		mu 0 4 14 15 16 17
+		f 4 13 19 -15 -19
+		mu 0 4 17 16 18 19
+		f 4 14 21 -16 -21
+		mu 0 4 19 18 20 21
+		f 4 15 23 -13 -23
+		mu 0 4 21 20 22 23
+		f 4 -24 -22 -20 -18
+		mu 0 4 15 24 25 16
+		f 4 22 16 18 20
+		mu 0 4 26 14 17 27
+		f 4 24 29 -26 -29
+		mu 0 4 28 29 30 31
+		f 4 25 31 -27 -31
+		mu 0 4 31 30 32 33
+		f 4 26 33 -28 -33
+		mu 0 4 33 32 34 35
+		f 4 27 35 -25 -35
+		mu 0 4 35 34 36 37
+		f 4 -36 -34 -32 -30
+		mu 0 4 29 38 39 30
+		f 4 34 28 30 32
+		mu 0 4 40 28 31 41;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pCube14";
-	rename -uid "A5EAC72B-4765-E931-1210-829DC8C881E1";
-	setAttr ".t" -type "double3" -8.8332176208496094 3.4773442482873467 -6.7859429004083482 ;
-	setAttr ".rp" -type "double3" -0.5 -0.50000021218505175 -0.5 ;
-	setAttr ".sp" -type "double3" -0.5 -0.50000021218505175 -0.5 ;
+	rename -uid "5782CBB7-416F-DAA1-7B95-61913890AF80";
+	setAttr ".t" -type "double3" -8.987872551686527 8.9047966605839122 -14.847380428011462 ;
+	setAttr ".rp" -type "double3" 0 -0.5000000602421153 -0.49999986060376456 ;
+	setAttr ".sp" -type "double3" 0 -0.5000000602421153 -0.49999986060376456 ;
 createNode mesh -n "pCubeShape13" -p "pCube14";
-	rename -uid "C5DF1BF7-4BD5-02C4-B5B7-F8A0FC4E1FA4";
+	rename -uid "34AA4A3B-41CC-FACE-9D2C-3F919350F7CE";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.84375 0.09375 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 9 ".pt";
-	setAttr ".pt[1]" -type "float3" 0.083483599 0 0 ;
-	setAttr ".pt[8]" -type "float3" 0.041183542 0 0 ;
-	setAttr ".pt[10]" -type "float3" 0.056425061 0 0 ;
-	setAttr ".pt[11]" -type "float3" 0.048262771 0 0 ;
-	setAttr ".pt[12]" -type "float3" 0.048262771 0 0 ;
-	setAttr ".pt[18]" -type "float3" 0.083483599 0 0 ;
-	setAttr ".pt[28]" -type "float3" 0.056425061 0 0 ;
-	setAttr ".pt[32]" -type "float3" -0.042300053 0 0 ;
-	setAttr ".pt[36]" -type "float3" 0.048262771 0 0 ;
+createNode transform -n "pCube15";
+	rename -uid "94360315-4ED9-8B74-0884-9B86445D2D93";
+	setAttr ".t" -type "double3" -7.5157961748131221 -4.7657682441767921 21.739077622171276 ;
+	setAttr ".rp" -type "double3" 0.50000035406187138 -0.5 -0.49999970647702696 ;
+	setAttr ".sp" -type "double3" 0.50000035406187138 -0.5 -0.49999970647702696 ;
+createNode mesh -n "pCubeShape14" -p "pCube15";
+	rename -uid "CE183950-4D45-1E71-A0C6-EEBC131FB087";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.5 0.875 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".pt[0:7]" -type "float3"  0 2.9802322e-07 2.4448316 
+		0 2.9802322e-07 2.4448316 0 2.3135958 2.4448316 0 2.3135958 2.4448316 0 2.3135958 
+		0 0 2.3135958 0 0 2.9802322e-07 0 0 2.9802322e-07 0;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "8FB1C927-41E3-F6AE-AFA0-F68E1E9D4508";
+	rename -uid "1BF3D471-4D4E-B8D3-217B-9E8864E7281A";
 	setAttr -s 6 ".lnk";
 	setAttr -s 6 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "A8879E78-42B7-4274-AB9F-308FE1141CC9";
+	rename -uid "D5040CF2-46E9-7E9B-BD3F-78AFAC0149B0";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "C3CB9638-40E6-FB6A-094F-708990B4C7E7";
+	rename -uid "B0CD3A6E-4902-A5AA-B128-60B02743DD74";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "5B31D0DA-4833-D982-8509-769EBB53EF78";
+	rename -uid "8D719BD1-4171-22E6-FF0F-73ACE87F7C33";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "9D04B662-498A-B623-5CD3-3DAD7CFD86C4";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "90E0CC10-499A-8EB8-2906-3BB4DD9FF6BF";
+	rename -uid "B28B074A-4FB3-2186-5D7F-DE851C621B90";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "3FD1385C-4CEC-2892-E7B4-DDBF70F701DB";
 	setAttr ".g" yes;
-createNode animCurveTU -n "pCube2_scaleX";
-	rename -uid "DDF29C17-4C82-CACE-DE8C-5192E8527486";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 5.8253831339481597;
-createNode animCurveTU -n "pCube2_scaleY";
-	rename -uid "594878C2-4BC2-9546-BD5D-4595240E745B";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0.82709274288978663;
-createNode animCurveTU -n "pCube2_scaleZ";
-	rename -uid "04AB73E5-4BE6-4F2D-49CA-7F867AB3049B";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 5.8253831339481597;
-createNode animCurveTU -n "pCube2_visibility";
-	rename -uid "8ED1DB1B-45F4-831B-1F02-08BC812D0BC4";
-	setAttr ".tan" 9;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 1;
-	setAttr ".kot[0]"  5;
-createNode animCurveTL -n "pCube2_translateX";
-	rename -uid "16E08F10-45DD-A904-F8A6-408FF776924A";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
-createNode animCurveTL -n "pCube2_translateY";
-	rename -uid "1BAF25EB-4E18-E51A-55B1-E3BC0122FE70";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 1.2604702332422988;
-createNode animCurveTL -n "pCube2_translateZ";
-	rename -uid "E7C82540-41A9-34B0-0ADA-61A001864DC9";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
-createNode animCurveTA -n "pCube2_rotateX";
-	rename -uid "BDA7277B-4983-4E58-7C43-F2932CB69D5E";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
-createNode animCurveTA -n "pCube2_rotateY";
-	rename -uid "6390E665-47A2-0C48-F447-139D4B96724E";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
-createNode animCurveTA -n "pCube2_rotateZ";
-	rename -uid "369837BF-4C87-9516-D3A3-69B2223B0DBD";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
 createNode script -n "uiConfigurationScriptNode";
 	rename -uid "22D44FB4-4B11-8179-5D41-06B17D5B8321";
 	setAttr ".b" -type "string" (
@@ -1553,7 +1106,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n"
 		+ "            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
 		+ "            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 0\n"
-		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 827\n            -height 842\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1314\n            -height 791\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n"
 		+ "            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"animLayerEditor\" \n            -sortOrder \"none\" \n"
 		+ "            -longNames 0\n            -niceNames 1\n            -selectCommand \"print(\\\"\\\")\" \n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n"
@@ -1580,8 +1133,8 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n"
 		+ "                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -bluePencil 1\n                -greasePencils 0\n                -excludeObjectPreset \"All\" \n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n"
 		+ "                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 0\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 827\\n    -height 842\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 0\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 827\\n    -height 842\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 0\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1314\\n    -height 791\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 0\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1314\\n    -height 791\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -1603,12 +1156,6 @@ createNode aiAOVDriver -s -n "defaultArnoldDisplayDriver";
 	setAttr ".output_mode" 0;
 createNode aiImagerDenoiserOidn -s -n "defaultArnoldDenoiser";
 	rename -uid "E50E3FC0-4BE0-A899-4196-FC8BFF9C435F";
-createNode groupId -n "groupId9";
-	rename -uid "67FD8B81-4E28-22E9-0158-CE942C5A9175";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId14";
-	rename -uid "CEC6BE71-4DC9-8F2F-129A-E7B15B60D845";
-	setAttr ".ihi" 0;
 createNode shadingEngine -n "Surface1SG";
 	rename -uid "53B654B9-4168-EC10-7524-FC8400C27BF1";
 	setAttr ".ihi" 0;
@@ -1621,7 +1168,7 @@ createNode openPBRSurface -n "Scene_2_Mat";
 createNode shadingEngine -n "openPBRSurface1SG";
 	rename -uid "FF7910AB-4FC1-F732-A6B9-D5A1B2620DC1";
 	setAttr ".ihi" 0;
-	setAttr -s 4 ".dsm";
+	setAttr -s 5 ".dsm";
 	setAttr ".ro" yes;
 createNode materialInfo -n "materialInfo2";
 	rename -uid "53F7F7C9-4E5D-0247-7C67-E6B1320A0750";
@@ -1680,114 +1227,12 @@ createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
 	setAttr ".tgi[0].ni[3].x" -343.724365234375;
 	setAttr ".tgi[0].ni[3].y" -248.56214904785156;
 	setAttr ".tgi[0].ni[3].nvs" 1923;
-createNode groupId -n "groupId15";
-	rename -uid "738CB433-47F8-72A5-388F-D681F9D38C88";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId16";
-	rename -uid "BB363632-48AB-3FDB-FD57-C9AF18405235";
-	setAttr ".ihi" 0;
-createNode polyUnite -n "polyUnite1";
-	rename -uid "1EE8A14C-4F18-7C3C-3ED6-188CD42F70C2";
-	setAttr -s 9 ".ip";
-	setAttr -s 9 ".im";
-createNode groupId -n "groupId17";
-	rename -uid "8A7079C4-4677-3C8D-836C-C5B9FF969BF2";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId18";
-	rename -uid "A8537E9C-40A2-179C-DA9A-71A0371DED00";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId19";
-	rename -uid "AD07A951-4787-9726-739A-FDBD783B7A5A";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId20";
-	rename -uid "0AC898F1-465C-790B-A970-AC84818C39FC";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId21";
-	rename -uid "EDA146FC-4C54-8E8B-BA1E-4491AB690324";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId22";
-	rename -uid "F77409F0-499D-5B6A-3EB7-D58231F00CC2";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId23";
-	rename -uid "6C66547C-469D-3168-3C2F-83B4C49DAF6E";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId24";
-	rename -uid "57D30216-42E8-10F8-C404-7FB1728E4F57";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId25";
-	rename -uid "741D095B-45E0-232F-182B-DA851AE0310F";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId26";
-	rename -uid "1E1FC66E-4D3A-465E-AAD7-1AB3D8312826";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId27";
-	rename -uid "AFD69C38-46B1-462E-FA97-3896654E8446";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId28";
-	rename -uid "7FBB70EE-42AE-AB05-C31B-51975F6F3573";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId29";
-	rename -uid "69134E98-48F7-27F3-F8EA-0DA01E0529DF";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts1";
-	rename -uid "CF0C2688-4A14-EA44-D6DF-D4B8FF164147";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 2 "f[0:51]" "f[60:61]";
-createNode groupId -n "groupId30";
-	rename -uid "2045AAB7-419C-0B9C-7252-3AA4BF4F717B";
-	setAttr ".ihi" 0;
-createNode polySeparate -n "polySeparate1";
-	rename -uid "D6FF74B2-4205-21C8-BF59-59B2EFFE864E";
-	setAttr ".ic" 9;
-	setAttr -s 7 ".out";
-createNode groupId -n "groupId31";
-	rename -uid "93F09214-41A9-1DD9-43D4-9C86258850BE";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts2";
-	rename -uid "D4FDD453-473F-B781-D061-EBB9B00E6C74";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "f[0:5]";
-createNode groupId -n "groupId32";
-	rename -uid "5403BC51-421A-2173-C04D-57A0631378D6";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts3";
-	rename -uid "E0981952-4470-564B-7955-86B316EDD851";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "f[0:5]";
-createNode groupId -n "groupId33";
-	rename -uid "0C8428BA-44AB-7C37-7874-A1B9F5F17E7E";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts4";
-	rename -uid "5B439B0C-4719-1113-74F5-F8A457F5CCDE";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "f[0:5]";
-createNode groupId -n "groupId34";
-	rename -uid "88D2BD0F-4500-1BC8-F927-E5A0893D988D";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts5";
-	rename -uid "D609369E-4743-A1C2-3B95-15A479CABB75";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "f[0:5]";
 createNode groupId -n "groupId35";
 	rename -uid "0802935F-4389-334A-01BC-CF98E69E7BCB";
 	setAttr ".ihi" 0;
-createNode groupId -n "groupId36";
-	rename -uid "E0FBC4B2-4AF0-9C29-5E19-25B3DA0606E0";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts7";
-	rename -uid "7354120C-443A-B682-2A4C-E18B8B4DC305";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "f[0:5]";
 createNode groupId -n "groupId37";
 	rename -uid "4979E600-4064-B25C-7D03-0BAAC1A975FB";
 	setAttr ".ihi" 0;
-createNode groupId -n "groupId38";
-	rename -uid "F4C5A343-4BA8-10DB-27F0-20A36F003F42";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts9";
-	rename -uid "04A3AF6C-4AB8-2552-ACCA-CE83961B4D3D";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "f[0:5]";
 createNode polyTweakUV -n "polyTweakUV2";
 	rename -uid "B05C38D2-41B0-2FCB-0A8B-088149FD1183";
 	setAttr ".uopa" yes;
@@ -4742,15 +4187,6 @@ createNode reference -n "Asset_2RN";
 		+ "5615669000000001 0.49576259 0.27579847000000002 0.49576259 0.42875415 -0.072379320999999996 0.37173790000000001 -0.06628713 0.36788523000000001 0.53344882000000005 0.12037045 0.53344882000000005 -0.033117360999999998 0.24987817000000001 0.54493981999999996 0.24329846999999999 0.54522996999999995 0.24361079999999999 0.53466409000000004 0.25020218 0.53527468 0.054441899000000002 0.12037045 0.054441899000000002 -0.033117360999999998 0.27640664999999998 0.35944967999999999 0.26900714999999997 0.35912340999999998 0.18857173999999999 0.27579847000000002 0.18857173999999999 0.42875415 0.25469729000000002 0.56336134999999998 0.25643912000000002 0.55706184999999997 0.032070189999999998 -0.033117360999999998 0.032070189999999998 0.12037045 0.26162866000000001 0.37275594000000001 0.26358756 0.37984055 0.20289604 0.42875415 0.20289604 0.27579847000000002 0.24642384000000001 0.55615658000000001 0.25184100999999998 0.55273074 0.043058783000000003 -0.033117360999999998 0.043058783000000003 0.12037045 0.26679968999999998 0.3"
 		+ "6788504999999999 0.27289194 0.37173783999999999 0.19659106000000001 0.42875415 0.19659106000000001 0.27579847000000002 0.23083143 0.12603249 0.23083143 0.26667836 0.55819141999999999 0.27579847000000002 0.55819141999999999 0.42875415 0.53799503999999998 0.49197837999999999 0.26186618 0.49197819999999998 0.25349799000000001 0.29203670999999998 -0.055012553999999998 0.29956239000000001 -0.14145379999999999 0.42875421000000002 -0.14145379999999999 0.27579847000000002"
 		)
-		3 "Asset_2:groupId45.message" ":initialShadingGroup.groupNodes" "-na"
-		3 "Asset_2:groupId45.groupId" "Asset_2:groupParts4.groupId" ""
-		3 "Asset_2:groupId44.groupId" "Asset_2:groupParts3.groupId" ""
-		3 "|Asset_2:Nightstand|Asset_2:NightstandShape.instObjGroups.objectGroups[0]" 
-		"Asset_2:standardSurface1SG.dagSetMembers" "-na"
-		3 "Asset_2:groupId44.message" "Asset_2:standardSurface1SG.groupNodes" "-na"
-		
-		3 "|Asset_2:Nightstand|Asset_2:NightstandShape.compInstObjGroups.compObjectGroups[0]" 
-		"Asset_2:standardSurface1SG.dagSetMembers" "-na"
 		3 "Asset_2:groupId44.groupId" "|Asset_2:Nightstand|Asset_2:NightstandShape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
 		3 "Asset_2:standardSurface1SG.memberWireframeColor" "|Asset_2:Nightstand|Asset_2:NightstandShape.instObjGroups.objectGroups[0].objectGrpColor" 
@@ -4763,6 +4199,15 @@ createNode reference -n "Asset_2RN";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "Asset_2:groupId46.groupId" "|Asset_2:Nightstand|Asset_2:NightstandShape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
 		""
+		3 "|Asset_2:Nightstand|Asset_2:NightstandShape.instObjGroups.objectGroups[0]" 
+		"Asset_2:standardSurface1SG.dagSetMembers" "-na"
+		3 "Asset_2:groupId44.message" "Asset_2:standardSurface1SG.groupNodes" "-na"
+		
+		3 "|Asset_2:Nightstand|Asset_2:NightstandShape.compInstObjGroups.compObjectGroups[0]" 
+		"Asset_2:standardSurface1SG.dagSetMembers" "-na"
+		3 "Asset_2:groupId45.groupId" "Asset_2:groupParts4.groupId" ""
+		3 "Asset_2:groupId45.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "Asset_2:groupId44.groupId" "Asset_2:groupParts3.groupId" ""
 		5 3 "Asset_2RN" "|Asset_2:Nightstand|Asset_2:NightstandShape.instObjGroups" 
 		"Asset_2RN.placeHolderList[1]" "";
 	setAttr ".ptag" -type "string" "";
@@ -7725,146 +7170,20 @@ createNode polyTweakUV -n "polyTweakUV3";
 		 0.32613665 0.097773358 0.48357278 0.088149786 0.33508217 0.10014872 0.47345781 0.089772463
 		 0.34489667 0.09735994 0.46331799 0.090280116 0.35471237 0.094352007 0.45212251 0.090610981
 		 0.36586791 0.092179835 0.44085515 0.0902327 0.37743253 0.091281235 0.42947191 0.090237737;
-createNode polyUnite -n "polyUnite2";
-	rename -uid "E90F4137-4B4F-7EC5-01DA-87B31DFC8849";
-	setAttr -s 3 ".ip";
-	setAttr -s 3 ".im";
-createNode groupId -n "groupId39";
-	rename -uid "FB3C74DC-4160-F186-5595-C9B61BB52FB6";
-	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts10";
-	rename -uid "6D913C4E-40C9-4F97-6DA5-71A0D089928D";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "f[0:17]";
 createNode groupId -n "groupId40";
 	rename -uid "E4D8B546-43C0-56AC-05A8-14AC6E636207";
 	setAttr ".ihi" 0;
-createNode polyCube -n "polyCube1";
-	rename -uid "3B6F72F1-42FF-8834-7969-E6BC364D10A2";
-	setAttr ".cuv" 4;
-createNode polyBevel3 -n "polyBevel1";
-	rename -uid "51C841FA-4031-B309-EC46-27893C2C2CFD";
-	setAttr ".uopa" yes;
-	setAttr ".ics" -type "componentList" 1 "e[7]";
-	setAttr ".ix" -type "matrix" 0.54234770240954977 0 0 0 0 0.54234770240954977 0 0
-		 0 0 0.54234770240954977 0 0 0 0 1;
-	setAttr ".ws" yes;
-	setAttr ".oaf" yes;
-	setAttr ".f" 0.08673469365897532;
-	setAttr ".sg" 3;
-	setAttr ".at" 180;
-	setAttr ".sn" yes;
-	setAttr ".mv" yes;
-	setAttr ".mvt" 0.0001;
-	setAttr ".sa" 30;
-createNode polyCube -n "polyCube2";
-	rename -uid "88EF8F6C-4EBB-71CD-3136-3DB3E60AA447";
-	setAttr ".cuv" 4;
-createNode polySubdFace -n "polySubdFace1";
-	rename -uid "06B49B88-4E39-CBE5-14FC-9390C08607F2";
-	setAttr ".ics" -type "componentList" 1 "f[4:5]";
-	setAttr ".dv" 2;
-createNode polySplit -n "polySplit1";
-	rename -uid "51AEECAC-4D67-D22B-46C5-CBB313C8C85B";
-	setAttr -s 2 ".e[0:1]"  0 1;
-	setAttr -s 2 ".d[0:1]"  -2147483589 -2147483641;
-	setAttr ".sma" 180;
-	setAttr ".m2015" yes;
-createNode polySplit -n "polySplit2";
-	rename -uid "421A061B-4DD8-DB24-B31E-89A21A6BC021";
-	setAttr -s 3 ".e[0:2]"  0 1 0;
-	setAttr -s 3 ".d[0:2]"  -2147483633 -2147483586 -2147483630;
-	setAttr ".sma" 180;
-	setAttr ".m2015" yes;
-createNode polySplit -n "polySplit3";
-	rename -uid "357A6DBA-4C70-A5CF-2DE5-B9BA2DC945BD";
-	setAttr -s 4 ".e[0:3]"  0 0 0 1;
-	setAttr -s 4 ".d[0:3]"  -2147483620 -2147483613 -2147483595 -2147483634;
-	setAttr ".sma" 180;
-	setAttr ".m2015" yes;
-createNode polySplit -n "polySplit4";
-	rename -uid "131A3C15-45BC-3FAE-FAE7-389C9BAB5E29";
-	setAttr -s 5 ".e[0:4]"  0 1 1 1 0;
-	setAttr -s 5 ".d[0:4]"  -2147483643 -2147483615 -2147483618 -2147483592 -2147483639;
-	setAttr ".sma" 180;
-	setAttr ".m2015" yes;
-createNode polySplit -n "polySplit5";
-	rename -uid "90B8D398-439C-9D24-9539-1280DDDDE280";
-	setAttr -s 4 ".e[0:3]"  1 1 0 0;
-	setAttr -s 4 ".d[0:3]"  -2147483636 -2147483632 -2147483599 -2147483597;
-	setAttr ".sma" 180;
-	setAttr ".m2015" yes;
-createNode polySplit -n "polySplit6";
-	rename -uid "650C3A32-461A-62E5-5448-A59C53BA74E3";
-	setAttr -s 3 ".e[0:2]"  0 1 0;
-	setAttr -s 3 ".d[0:2]"  -2147483632 -2147483601 -2147483635;
-	setAttr ".sma" 180;
-	setAttr ".m2015" yes;
-createNode polySplit -n "polySplit7";
-	rename -uid "CDEB694B-41A8-31F3-0153-4FAD6DA4FD2F";
-	setAttr -s 2 ".e[0:1]"  1 0;
-	setAttr -s 2 ".d[0:1]"  -2147483637 -2147483603;
-	setAttr ".sma" 180;
-	setAttr ".m2015" yes;
-createNode polySplit -n "polySplit8";
-	rename -uid "C49DBA42-4F4C-2B7B-C084-95A0A9D84EBC";
-	setAttr -s 2 ".e[0:1]"  1 0;
-	setAttr -s 2 ".d[0:1]"  -2147483642 -2147483577;
-	setAttr ".sma" 180;
-	setAttr ".m2015" yes;
-createNode polySplit -n "polySplit9";
-	rename -uid "C0791256-4597-E405-79FB-E5AF8E33E1E8";
-	setAttr -s 3 ".e[0:2]"  0 1 0;
-	setAttr -s 3 ".d[0:2]"  -2147483622 -2147483572 -2147483623;
-	setAttr ".sma" 180;
-	setAttr ".m2015" yes;
-createNode polySplit -n "polySplit10";
-	rename -uid "8C3D43FB-4A3D-A34F-5E5D-6F9D5099C7AF";
-	setAttr -s 4 ".e[0:3]"  0 1 0 1;
-	setAttr -s 4 ".d[0:3]"  -2147483583 -2147483623 -2147483572 -2147483626;
-	setAttr ".sma" 180;
-	setAttr ".m2015" yes;
-createNode polySplit -n "polySplit11";
-	rename -uid "655336EA-4965-29AD-A665-C89F941A3217";
-	setAttr -s 3 ".e[0:2]"  0 1 1;
-	setAttr -s 3 ".d[0:2]"  -2147483640 -2147483567 -2147483609;
-	setAttr ".sma" 180;
-	setAttr ".m2015" yes;
-createNode polySplit -n "polySplit12";
-	rename -uid "EB8C8AC0-44B7-2319-F62F-1599297A06A5";
-	setAttr -s 3 ".e[0:2]"  1 1 0;
-	setAttr -s 3 ".d[0:2]"  -2147483582 -2147483579 -2147483644;
-	setAttr ".sma" 180;
-	setAttr ".m2015" yes;
-createNode polySplit -n "polySplit13";
-	rename -uid "C1C28145-4283-C35E-F21C-4CB5A9850239";
-	setAttr -s 4 ".e[0:3]"  0 1 0 1;
-	setAttr -s 4 ".d[0:3]"  -2147483569 -2147483621 -2147483606 -2147483628;
-	setAttr ".sma" 180;
-	setAttr ".m2015" yes;
-createNode polySplit -n "polySplit14";
-	rename -uid "4C54978D-4005-A9E3-6AA8-D7A78F4C6ECF";
-	setAttr -s 3 ".e[0:2]"  0 1 0;
-	setAttr -s 3 ".d[0:2]"  -2147483621 -2147483608 -2147483624;
-	setAttr ".sma" 180;
-	setAttr ".m2015" yes;
-createNode polySplit -n "polySplit15";
-	rename -uid "FC77A3C6-43CD-5A74-2822-15A7985A895E";
-	setAttr -s 2 ".e[0:1]"  0 1;
-	setAttr -s 2 ".d[0:1]"  -2147483612 -2147483638;
-	setAttr ".sma" 180;
-	setAttr ".m2015" yes;
 createNode reference -n "Asset_3RN";
 	rename -uid "7862EE23-48B2-9224-B1A5-C99F8B3CF3EA";
 	setAttr -s 4 ".phl";
-	setAttr ".phl[1]" 0;
-	setAttr ".phl[2]" 0;
-	setAttr ".phl[3]" 0;
 	setAttr ".phl[4]" 0;
+	setAttr ".phl[5]" -type "TdataCompound" ;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Asset_3RN"
-		"Asset_3RN" 0
-		"Asset_3RN" 909
+		"Asset_3RN" 23
+		2 "Asset_3:groupParts33" "inputRemoveComponent" " -type \"componentList\" 1 \"f[0:797]\""
+		
+		2 "Asset_3:groupParts33" "groupId" " 455"
 		2 "|Asset_3:polySurface67" "translate" " -type \"double3\" 1.56811621880675078 0.037021209425908808 -6.26142493316538484"
 		
 		2 "|Asset_3:polySurface67" "rotate" " -type \"double3\" 0 0 0"
@@ -7875,1789 +7194,56 @@ createNode reference -n "Asset_3RN";
 		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "uvSet[0].uvSetName" 
 		" -type \"string\" \"map1\""
 		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts" " -s 889"
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[0]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[2]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[3]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[4]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[5]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[6]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[7]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[8]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[9]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[10]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[11]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[12]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[13]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[14]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[15]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[16]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[17]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[18]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[19]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[20]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[21]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[22]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[23]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[24]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[25]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[26]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[27]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[28]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[29]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[30]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[31]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[32]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[33]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[34]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[35]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[36]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[37]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[38]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[39]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[40]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[41]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[42]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[43]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[44]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[45]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[46]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[47]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[48]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[49]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[50]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[51]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[52]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[53]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[54]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[55]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[56]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[57]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[58]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[59]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[60]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[61]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[62]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[63]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[64]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[65]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[66]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[67]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[68]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[69]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[70]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[71]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[72]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[73]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[74]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[75]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[76]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[77]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[78]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[79]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[80]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[81]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[82]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[83]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[84]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[85]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[86]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[87]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[88]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[89]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[90]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[91]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[92]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[93]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[94]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[95]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[96]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[97]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[98]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[99]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[100]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[101]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[102]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[103]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[104]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[105]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[106]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[107]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[108]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[109]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[110]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[111]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[112]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[113]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[114]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[115]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[116]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[117]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[118]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[119]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[120]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[121]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[122]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[123]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[124]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[125]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[126]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[127]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[128]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[129]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[130]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[131]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[132]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[133]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[134]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[135]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[136]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[137]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[138]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[139]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[140]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[141]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[142]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[143]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[144]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[145]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[146]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[147]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[148]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[149]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[150]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[151]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[152]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[153]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[154]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[155]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[156]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[157]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[158]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[159]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[160]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[161]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[162]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[163]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[164]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[165]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[166]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[167]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[168]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[169]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[170]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[171]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[172]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[173]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[174]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[175]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[176]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[177]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[178]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[179]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[180]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[181]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[182]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[183]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[184]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[185]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[186]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[187]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[188]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[189]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[190]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[191]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[192]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[193]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[194]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[195]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[196]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[197]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[198]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[199]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[200]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[201]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[202]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[203]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[204]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[205]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[206]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[207]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[208]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[209]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[210]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[211]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[212]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[213]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[214]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[215]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[216]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[217]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[218]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[219]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[220]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[221]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[222]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[223]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[224]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[225]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[226]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[227]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[228]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[229]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[230]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[231]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[232]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[233]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[234]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[235]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[236]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[237]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[238]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[239]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[240]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[241]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[242]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[243]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[244]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[245]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[246]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[247]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[248]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[249]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[250]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[251]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[252]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[253]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[254]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[255]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[256]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[257]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[258]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[259]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[260]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[261]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[262]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[263]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[264]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[265]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[266]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[267]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[268]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[269]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[270]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[271]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[272]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[273]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[274]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[275]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[276]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[277]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[278]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[279]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[280]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[281]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[282]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[283]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[284]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[285]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[286]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[287]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[288]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[289]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[290]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[291]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[292]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[293]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[294]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[295]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[296]" " -type \"float3\" 0 0 0"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[424]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[425]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[426]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[427]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[428]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[429]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[430]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[431]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[432]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[433]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[434]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[435]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[436]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[437]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[438]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[439]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[440]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[441]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[442]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[443]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[444]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[445]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[446]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[447]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[448]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[449]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[450]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[451]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[452]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[453]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[454]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[455]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[456]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[457]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[458]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[459]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[460]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[461]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[462]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[463]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[464]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[465]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[466]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[467]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[468]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[469]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[470]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[471]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[472]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[473]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[474]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[475]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[476]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[477]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[478]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[479]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[480]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[481]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[482]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[483]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[484]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[485]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[486]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[487]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[488]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[489]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[490]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[491]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[492]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[493]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[494]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[495]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[496]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[497]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[498]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[499]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[500]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[501]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[502]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[503]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[504]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[505]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[506]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[507]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[508]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[509]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[510]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[511]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[512]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[513]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[514]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[515]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[516]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[517]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[518]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[519]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[520]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[521]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[522]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[523]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[524]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[525]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[526]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[527]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[528]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[529]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[530]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[531]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[532]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[533]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[534]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[535]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[536]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[537]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[538]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[539]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[540]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[541]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[542]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[543]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[544]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[545]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[546]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[547]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[548]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[549]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[550]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[551]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[552]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[553]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[554]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[555]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[556]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[557]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[558]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[559]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[560]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[561]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[562]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[563]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[564]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[565]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[566]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[567]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[568]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[569]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[570]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[571]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[572]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[573]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[574]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[575]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[576]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[577]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[578]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[579]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[580]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[581]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[582]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[583]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[584]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[585]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[586]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[587]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[588]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[589]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[590]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[591]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[592]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[593]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[594]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[595]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[596]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[597]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[598]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[599]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[600]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[601]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[602]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[603]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[604]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[605]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[606]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[607]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[608]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[609]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[610]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[611]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[612]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[613]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[614]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[615]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[616]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[617]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[618]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[619]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[620]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[621]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[622]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[623]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[624]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[625]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[626]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[627]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[628]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[629]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[630]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[631]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[632]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[633]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[634]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[635]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[636]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[637]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[638]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[639]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[640]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[641]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[642]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[643]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[644]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[645]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[646]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[647]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[648]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[649]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[650]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[651]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[652]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[653]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[654]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[655]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[656]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[657]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[658]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[659]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[660]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[661]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[662]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[663]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[664]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[665]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[666]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[667]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[668]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[669]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[670]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[671]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[672]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[673]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[674]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[675]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[676]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[677]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[678]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[679]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[680]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[681]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[682]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[683]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[684]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[685]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[686]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[687]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[688]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[689]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[690]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[691]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[692]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[693]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[694]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[695]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[696]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[697]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[698]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[699]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[700]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[701]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[702]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[703]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[704]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[705]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[706]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[707]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[708]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[709]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[710]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[711]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[712]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[713]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[714]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[715]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[716]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[717]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[718]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[719]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[744]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[745]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[746]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[747]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[748]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[749]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[750]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[751]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[752]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[753]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[754]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[755]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[756]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[757]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[758]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[759]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[760]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[761]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[762]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[763]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[764]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[765]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[766]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[767]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[768]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[769]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[770]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[771]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[772]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[773]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[774]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[775]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[776]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[777]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[778]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[779]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[780]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[781]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[782]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[783]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[784]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[785]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[786]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[787]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[788]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[789]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[790]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[791]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[792]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[793]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[794]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[795]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[796]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[797]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[798]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[799]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[800]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[801]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[802]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[803]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[804]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[805]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[806]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[807]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[808]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[809]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[810]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[811]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[812]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[813]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[814]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[815]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[816]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[817]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[818]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[819]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[820]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[821]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[822]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[823]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[824]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[825]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[826]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[827]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[828]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[829]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[830]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[831]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[832]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[833]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[834]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[835]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[836]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[837]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[838]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[839]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[840]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[841]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[842]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[843]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[844]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[845]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[846]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[847]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[848]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[849]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[850]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[851]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[852]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[853]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[854]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[855]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[856]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[857]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[858]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[859]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[860]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[861]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[862]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[863]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[864]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[865]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[866]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[867]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[868]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[869]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[870]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[871]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[872]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[873]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[874]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[875]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[876]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[877]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[878]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[879]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[880]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[881]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[882]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[883]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[884]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[885]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[886]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[887]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[888]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[889]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[890]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[891]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[892]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[893]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[894]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[895]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[896]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[897]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[898]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[899]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[900]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[901]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[902]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[903]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[904]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[905]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[906]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[907]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[908]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[909]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[910]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[911]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[912]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[913]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[914]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[915]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[916]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[917]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[918]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[919]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[920]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[921]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[922]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[923]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[924]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[925]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[926]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[927]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[928]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[929]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[930]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[931]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[932]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[933]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[934]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[935]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[936]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[937]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[938]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[939]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[940]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[941]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[942]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[943]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[944]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[945]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[946]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[947]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[948]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[949]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[950]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[951]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[952]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[953]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[954]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[955]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[956]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[957]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[958]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[959]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[960]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[961]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[962]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[963]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[964]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[965]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[966]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[967]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[968]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[969]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[970]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[971]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[972]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[973]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[974]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[975]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[976]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[977]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[978]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[979]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[980]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[981]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[982]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[983]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[984]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[985]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[986]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[987]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[988]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[989]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[990]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[991]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[992]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[993]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[994]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[995]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[996]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[997]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[998]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[999]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1000]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1001]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1002]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1003]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1004]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1005]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1006]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1007]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1008]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1009]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1010]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1011]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1012]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1013]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1014]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1015]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1016]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1017]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1018]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1019]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1020]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1021]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1022]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1023]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1024]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1025]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1026]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1027]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1028]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1029]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1030]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1031]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1032]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1033]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1034]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1035]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1036]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1037]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1038]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pnts[1039]" " -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999"
-		
-		2 "Asset_3:groupParts33" "inputRemoveComponent" " -type \"componentList\" 1 \"f[0:797]\""
-		
-		2 "Asset_3:groupParts33" "groupId" " 455"
+		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pt[0:296]" (" -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.003418606199999999"
+		+ "9 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.00341860"
+		+ "61999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -"
+		+ "0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.0100056209"
+		+ "99999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0."
+		+ "010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.003418606199999"
+		+ "9999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.00341"
+		+ "86061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.01000562099999999"
+		+ "9 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.0100056"
+		+ "20999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 "
+		+ "-0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.003418606199"
+		+ "9999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.00"
+		+ "34186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.01000562099999"
+		+ "9999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 0 0 0"
+		)
+		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pt[424:719]" (" -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.003418606199999999"
+		+ "9 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.00341860"
+		+ "61999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -"
+		+ "0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.0100056209"
+		+ "99999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0."
+		+ "010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.003418606199999"
+		+ "9999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.00341"
+		+ "86061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.01000562099999999"
+		+ "9 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.0100056"
+		+ "20999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 "
+		+ "-0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.003418606199"
+		+ "9999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.00"
+		+ "34186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.01000562099999"
+		+ "9999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999"
+		)
+		2 "|Asset_3:polySurface67|Asset_3:polySurface67Shape" "pt[744:1039]" (" -type \"float3\" -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.003418606199999999"
+		+ "9 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.00341860"
+		+ "61999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -"
+		+ "0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.0100056209"
+		+ "99999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0."
+		+ "010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.003418606199999"
+		+ "9999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.00341"
+		+ "86061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.01000562099999999"
+		+ "9 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.0100056"
+		+ "20999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 "
+		+ "-0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.003418606199"
+		+ "9999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.00"
+		+ "34186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.01000562099999"
+		+ "9999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999 -0.0034186061999999999 0 -0.010005620999999999"
+		)
+		3 "Asset_3:groupId130.message" ":initialShadingGroup.groupNodes" "-na"
+		3 "Asset_3:groupParts33.outputGeometry" "|Asset_3:polySurface67|Asset_3:polySurface67Shape.inMesh" 
+		""
 		3 "Asset_3:groupId130.groupId" "Asset_3:groupParts33.groupId" ""
-		3 "Asset_3:groupId130.groupId" "|Asset_3:polySurface67|Asset_3:polySurface67Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		3 "Asset_3:groupId132.groupId" "|Asset_3:polySurface67|Asset_3:polySurface67Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
 		3 ":initialShadingGroup.memberWireframeColor" "|Asset_3:polySurface67|Asset_3:polySurface67Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
@@ -9667,17 +7253,14 @@ createNode reference -n "Asset_3RN";
 		""
 		3 "|Asset_3:polySurface67|Asset_3:polySurface67Shape.compInstObjGroups.compObjectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "Asset_3:groupParts33.outputGeometry" "|Asset_3:polySurface67|Asset_3:polySurface67Shape.inMesh" 
-		""
-		3 "Asset_3:groupId130.message" ":initialShadingGroup.groupNodes" "-na"
-		5 4 "Asset_3RN" "|Asset_3:polySurface67|Asset_3:polySurface67Shape.inMesh" 
-		"Asset_3RN.placeHolderList[1]" ""
-		5 3 "Asset_3RN" "|Asset_3:polySurface67|Asset_3:polySurface67Shape.instObjGroups" 
-		"Asset_3RN.placeHolderList[2]" ""
-		5 4 "Asset_3RN" "|Asset_3:polySurface67|Asset_3:polySurface67Shape.uvSet[0].uvSetTweakLocation" 
-		"Asset_3RN.placeHolderList[3]" ""
 		5 3 "Asset_3RN" "Asset_3:groupParts33.outputGeometry" "Asset_3RN.placeHolderList[4]" 
-		"Asset_3:polySurface67Shape.i";
+		"Asset_3:polySurface67Shape.i"
+		5 3 "Asset_3RN" "|Asset_3:polySurface67|Asset_3:polySurface67Shape.instObjGroups" 
+		"Asset_3RN.placeHolderList[5]" ""
+		5 4 "Asset_3RN" "|Asset_3:polySurface67|Asset_3:polySurface67Shape.uvSet[0].uvSetTweakLocation" 
+		"Asset_3RN.placeHolderList[6]" ""
+		5 4 "Asset_3RN" "|Asset_3:polySurface67|Asset_3:polySurface67Shape.inMesh" 
+		"Asset_3RN.placeHolderList[7]" "";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode polyTweakUV -n "polyTweakUV4";
@@ -10124,6 +7707,3383 @@ createNode polyTweakUV -n "polyTweakUV4";
 		 -0.85259128 -0.12926613 -0.84965491 -0.12632941 -0.80384302 -0.12926613 -0.80384302
 		 -0.12632941 -0.80090642 -0.094195366 -0.80090642 -0.16140033 -0.80384302 -0.16140033
 		 -0.84965491;
+createNode groupId -n "groupId42";
+	rename -uid "B2C58406-4177-C8C3-3C40-0DAEA97CC505";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId43";
+	rename -uid "8BE27024-403C-DA9B-A76F-699A6497F9FE";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId44";
+	rename -uid "E1F76C21-4080-0303-0943-BAA81EAA642E";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId41";
+	rename -uid "32D9132B-4FA4-654E-4423-A0BCDAE3B4BD";
+	setAttr ".ihi" 0;
+createNode polyCube -n "polyCube1";
+	rename -uid "F341CAE1-4E6E-54F4-6310-0D90E27580DB";
+	setAttr ".cuv" 4;
+createNode polyCube -n "polyCube2";
+	rename -uid "0DEE296F-45FA-E550-7CBC-AF98C46696F0";
+	setAttr ".cuv" 4;
+createNode reference -n "sharedReferenceNode";
+	rename -uid "A8F70C8B-496C-0750-B066-A1991F647680";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"sharedReferenceNode";
+createNode reference -n "Asset_3RN1";
+	rename -uid "881747BF-4095-D230-C577-A488B6F71426";
+	setAttr ".phl[1]" 0;
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"Asset_3RN1"
+		"Asset_3RN1" 0
+		"Asset_3RN1" 1648
+		2 "|Asset_4:polySurface67" "translate" " -type \"double3\" 1.29667855149065137 0 -6.11435753731575371"
+		
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvPivot" " -type \"double2\" 0.62350612878799438 0.56054773926734924"
+		
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints" 
+		" -s 1638"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[0]" 
+		" -type \"float2\" 0.58861065000000001 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1]" 
+		" -type \"float2\" 0.58861065000000001 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[2]" 
+		" -type \"float2\" 0.56789493999999996 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[3]" 
+		" -type \"float2\" 0.56690644999999995 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[4]" 
+		" -type \"float2\" 0.54668497999999999 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[5]" 
+		" -type \"float2\" 0.54569643999999995 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[6]" 
+		" -type \"float2\" 0.52498071999999996 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[7]" 
+		" -type \"float2\" 0.52498071999999996 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[8]" 
+		" -type \"float2\" 0.54569643999999995 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[9]" 
+		" -type \"float2\" 0.54668497999999999 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[10]" 
+		" -type \"float2\" 0.56690644999999995 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[11]" 
+		" -type \"float2\" 0.56789493999999996 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[12]" 
+		" -type \"float2\" 0.52498071999999996 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[13]" 
+		" -type \"float2\" 0.54569643999999995 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[14]" 
+		" -type \"float2\" 0.56789493999999996 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[15]" 
+		" -type \"float2\" 0.58861065000000001 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[16]" 
+		" -type \"float2\" 0.56789493999999996 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[17]" 
+		" -type \"float2\" 0.58861065000000001 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[18]" 
+		" -type \"float2\" 0.54668497999999999 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[19]" 
+		" -type \"float2\" 0.56690644999999995 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[20]" 
+		" -type \"float2\" 0.52498071999999996 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[21]" 
+		" -type \"float2\" 0.54569643999999995 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[22]" 
+		" -type \"float2\" 0.54668497999999999 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[23]" 
+		" -type \"float2\" 0.56690644999999995 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[24]" 
+		" -type \"float2\" 0.54668497999999999 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[25]" 
+		" -type \"float2\" 0.54569643999999995 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[26]" 
+		" -type \"float2\" 0.54569643999999995 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[27]" 
+		" -type \"float2\" 0.54668497999999999 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[28]" 
+		" -type \"float2\" 0.54569643999999995 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[29]" 
+		" -type \"float2\" 0.54569643999999995 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[30]" 
+		" -type \"float2\" 0.54668497999999999 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[31]" 
+		" -type \"float2\" 0.54668497999999999 0.93908691"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[32]" 
+		" -type \"float2\" 0.54569643999999995 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[33]" 
+		" -type \"float2\" 0.54668497999999999 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[34]" 
+		" -type \"float2\" 0.54569643999999995 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[35]" 
+		" -type \"float2\" 0.54668497999999999 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[36]" 
+		" -type \"float2\" 0.56690644999999995 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[37]" 
+		" -type \"float2\" 0.56789493999999996 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[38]" 
+		" -type \"float2\" 0.56690644999999995 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[39]" 
+		" -type \"float2\" 0.56789493999999996 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[40]" 
+		" -type \"float2\" 0.58861065000000001 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[41]" 
+		" -type \"float2\" 0.58861065000000001 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[42]" 
+		" -type \"float2\" 0.52498071999999996 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[43]" 
+		" -type \"float2\" 0.52498071999999996 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[44]" 
+		" -type \"float2\" 0.54569643999999995 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[45]" 
+		" -type \"float2\" 0.54668497999999999 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[46]" 
+		" -type \"float2\" 0.56690644999999995 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[47]" 
+		" -type \"float2\" 0.56789493999999996 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[48]" 
+		" -type \"float2\" 0.52498071999999996 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[49]" 
+		" -type \"float2\" 0.56789493999999996 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[50]" 
+		" -type \"float2\" 0.58861065000000001 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[51]" 
+		" -type \"float2\" 0.58861065000000001 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[52]" 
+		" -type \"float2\" 0.52498071999999996 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[53]" 
+		" -type \"float2\" 0.54569643999999995 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[54]" 
+		" -type \"float2\" 0.54668497999999999 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[55]" 
+		" -type \"float2\" 0.56690644999999995 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[56]" 
+		" -type \"float2\" 0.58861065000000001 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[57]" 
+		" -type \"float2\" 0.58861065000000001 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[58]" 
+		" -type \"float2\" 0.56789493999999996 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[59]" 
+		" -type \"float2\" 0.56690644999999995 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[60]" 
+		" -type \"float2\" 0.54668497999999999 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[61]" 
+		" -type \"float2\" 0.54569643999999995 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[62]" 
+		" -type \"float2\" 0.52498071999999996 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[63]" 
+		" -type \"float2\" 0.52498071999999996 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[64]" 
+		" -type \"float2\" 0.54569643999999995 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[65]" 
+		" -type \"float2\" 0.54668497999999999 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[66]" 
+		" -type \"float2\" 0.56690644999999995 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[67]" 
+		" -type \"float2\" 0.56789493999999996 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[68]" 
+		" -type \"float2\" 0.52498071999999996 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[69]" 
+		" -type \"float2\" 0.54569643999999995 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[70]" 
+		" -type \"float2\" 0.56789493999999996 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[71]" 
+		" -type \"float2\" 0.58861065000000001 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[72]" 
+		" -type \"float2\" 0.56789493999999996 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[73]" 
+		" -type \"float2\" 0.58861065000000001 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[74]" 
+		" -type \"float2\" 0.54668497999999999 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[75]" 
+		" -type \"float2\" 0.56690644999999995 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[76]" 
+		" -type \"float2\" 0.52498071999999996 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[77]" 
+		" -type \"float2\" 0.54569643999999995 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[78]" 
+		" -type \"float2\" 0.54668497999999999 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[79]" 
+		" -type \"float2\" 0.56690644999999995 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[80]" 
+		" -type \"float2\" 0.58861065000000001 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[81]" 
+		" -type \"float2\" 0.58861065000000001 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[82]" 
+		" -type \"float2\" 0.56789493999999996 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[83]" 
+		" -type \"float2\" 0.56690644999999995 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[84]" 
+		" -type \"float2\" 0.52498071999999996 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[85]" 
+		" -type \"float2\" 0.52498071999999996 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[86]" 
+		" -type \"float2\" 0.54569643999999995 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[87]" 
+		" -type \"float2\" 0.54668497999999999 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[88]" 
+		" -type \"float2\" 0.56690644999999995 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[89]" 
+		" -type \"float2\" 0.56789493999999996 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[90]" 
+		" -type \"float2\" 0.52498071999999996 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[91]" 
+		" -type \"float2\" 0.56789493999999996 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[92]" 
+		" -type \"float2\" 0.58861065000000001 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[93]" 
+		" -type \"float2\" 0.56789493999999996 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[94]" 
+		" -type \"float2\" 0.58861065000000001 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[95]" 
+		" -type \"float2\" 0.56690644999999995 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[96]" 
+		" -type \"float2\" 0.52498071999999996 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[97]" 
+		" -type \"float2\" 0.54569643999999995 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[98]" 
+		" -type \"float2\" 0.54668497999999999 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[99]" 
+		" -type \"float2\" 0.56690644999999995 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[100]" 
+		" -type \"float2\" 0.54668497999999999 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[101]" 
+		" -type \"float2\" 0.54569643999999995 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[102]" 
+		" -type \"float2\" 0.54569643999999995 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[103]" 
+		" -type \"float2\" 0.54668497999999999 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[104]" 
+		" -type \"float2\" 0.54569643999999995 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[105]" 
+		" -type \"float2\" 0.54569643999999995 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[106]" 
+		" -type \"float2\" 0.54668497999999999 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[107]" 
+		" -type \"float2\" 0.54668497999999999 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[108]" 
+		" -type \"float2\" 0.56789493999999996 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[109]" 
+		" -type \"float2\" 0.56690644999999995 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[110]" 
+		" -type \"float2\" 0.56690644999999995 0.93908691"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[111]" 
+		" -type \"float2\" 0.56789493999999996 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[112]" 
+		" -type \"float2\" 0.58861065000000001 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[113]" 
+		" -type \"float2\" 0.58861065000000001 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[114]" 
+		" -type \"float2\" 0.56789493999999996 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[115]" 
+		" -type \"float2\" 0.56690644999999995 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[116]" 
+		" -type \"float2\" 0.52498071999999996 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[117]" 
+		" -type \"float2\" 0.52498071999999996 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[118]" 
+		" -type \"float2\" 0.52498071999999996 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[119]" 
+		" -type \"float2\" 0.58861065000000001 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[120]" 
+		" -type \"float2\" 0.56789493999999996 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[121]" 
+		" -type \"float2\" 0.58861065000000001 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[122]" 
+		" -type \"float2\" 0.56690644999999995 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[123]" 
+		" -type \"float2\" 0.52498071999999996 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[124]" 
+		" -type \"float2\" 0.56789493999999996 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[125]" 
+		" -type \"float2\" 0.56690644999999995 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[126]" 
+		" -type \"float2\" 0.56690644999999995 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[127]" 
+		" -type \"float2\" 0.56789493999999996 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[128]" 
+		" -type \"float2\" 0.56690644999999995 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[129]" 
+		" -type \"float2\" 0.56789493999999996 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[130]" 
+		" -type \"float2\" 0.56690644999999995 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[131]" 
+		" -type \"float2\" 0.56789493999999996 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[132]" 
+		" -type \"float2\" 0.54569643999999995 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[133]" 
+		" -type \"float2\" 0.54668497999999999 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[134]" 
+		" -type \"float2\" 0.54569643999999995 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[135]" 
+		" -type \"float2\" 0.54668497999999999 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[136]" 
+		" -type \"float2\" 0.66177005 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[137]" 
+		" -type \"float2\" 0.66177005 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[138]" 
+		" -type \"float2\" 0.64105427000000004 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[139]" 
+		" -type \"float2\" 0.64006591000000002 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[140]" 
+		" -type \"float2\" 0.61984432 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[141]" 
+		" -type \"float2\" 0.61885583 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[142]" 
+		" -type \"float2\" 0.59814005999999997 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[143]" 
+		" -type \"float2\" 0.59814005999999997 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[144]" 
+		" -type \"float2\" 0.61885583 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[145]" 
+		" -type \"float2\" 0.61984432 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[146]" 
+		" -type \"float2\" 0.64006591000000002 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[147]" 
+		" -type \"float2\" 0.64105427000000004 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[148]" 
+		" -type \"float2\" 0.59814005999999997 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[149]" 
+		" -type \"float2\" 0.61885583 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[150]" 
+		" -type \"float2\" 0.64105427000000004 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[151]" 
+		" -type \"float2\" 0.66177005 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[152]" 
+		" -type \"float2\" 0.64105427000000004 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[153]" 
+		" -type \"float2\" 0.66177005 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[154]" 
+		" -type \"float2\" 0.61984432 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[155]" 
+		" -type \"float2\" 0.64006591000000002 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[156]" 
+		" -type \"float2\" 0.59814005999999997 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[157]" 
+		" -type \"float2\" 0.61885583 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[158]" 
+		" -type \"float2\" 0.61984432 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[159]" 
+		" -type \"float2\" 0.64006591000000002 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[160]" 
+		" -type \"float2\" 0.61984432 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[161]" 
+		" -type \"float2\" 0.61885583 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[162]" 
+		" -type \"float2\" 0.61885583 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[163]" 
+		" -type \"float2\" 0.61984432 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[164]" 
+		" -type \"float2\" 0.61885583 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[165]" 
+		" -type \"float2\" 0.61885583 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[166]" 
+		" -type \"float2\" 0.61984432 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[167]" 
+		" -type \"float2\" 0.61984432 0.93908691"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[168]" 
+		" -type \"float2\" 0.61885583 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[169]" 
+		" -type \"float2\" 0.61984432 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[170]" 
+		" -type \"float2\" 0.61885583 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[171]" 
+		" -type \"float2\" 0.61984432 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[172]" 
+		" -type \"float2\" 0.64006591000000002 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[173]" 
+		" -type \"float2\" 0.64105427000000004 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[174]" 
+		" -type \"float2\" 0.64006591000000002 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[175]" 
+		" -type \"float2\" 0.64105427000000004 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[176]" 
+		" -type \"float2\" 0.66177005 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[177]" 
+		" -type \"float2\" 0.66177005 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[178]" 
+		" -type \"float2\" 0.59814005999999997 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[179]" 
+		" -type \"float2\" 0.59814005999999997 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[180]" 
+		" -type \"float2\" 0.61885583 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[181]" 
+		" -type \"float2\" 0.61984432 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[182]" 
+		" -type \"float2\" 0.64006591000000002 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[183]" 
+		" -type \"float2\" 0.64105427000000004 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[184]" 
+		" -type \"float2\" 0.59814005999999997 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[185]" 
+		" -type \"float2\" 0.64105427000000004 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[186]" 
+		" -type \"float2\" 0.66177005 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[187]" 
+		" -type \"float2\" 0.66177005 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[188]" 
+		" -type \"float2\" 0.59814005999999997 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[189]" 
+		" -type \"float2\" 0.61885583 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[190]" 
+		" -type \"float2\" 0.61984432 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[191]" 
+		" -type \"float2\" 0.64006591000000002 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[192]" 
+		" -type \"float2\" 0.66177005 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[193]" 
+		" -type \"float2\" 0.66177005 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[194]" 
+		" -type \"float2\" 0.64105427000000004 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[195]" 
+		" -type \"float2\" 0.64006591000000002 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[196]" 
+		" -type \"float2\" 0.61984432 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[197]" 
+		" -type \"float2\" 0.61885583 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[198]" 
+		" -type \"float2\" 0.59814005999999997 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[199]" 
+		" -type \"float2\" 0.59814005999999997 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[200]" 
+		" -type \"float2\" 0.61885583 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[201]" 
+		" -type \"float2\" 0.61984432 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[202]" 
+		" -type \"float2\" 0.64006591000000002 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[203]" 
+		" -type \"float2\" 0.64105427000000004 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[204]" 
+		" -type \"float2\" 0.59498638000000004 0.97549224000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[205]" 
+		" -type \"float2\" 0.66492379000000001 0.97549224000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[206]" 
+		" -type \"float2\" 0.52182698000000005 0.97549224000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[207]" 
+		" -type \"float2\" 0.59176445 0.97549224000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[208]" 
+		" -type \"float2\" 0.59176445 0.77188504000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[209]" 
+		" -type \"float2\" 0.52182698000000005 0.77188504000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[210]" 
+		" -type \"float2\" 0.59814005999999997 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[211]" 
+		" -type \"float2\" 0.61885583 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[212]" 
+		" -type \"float2\" 0.64105427000000004 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[213]" 
+		" -type \"float2\" 0.66177005 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[214]" 
+		" -type \"float2\" 0.52498071999999996 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[215]" 
+		" -type \"float2\" 0.58861065000000001 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[216]" 
+		" -type \"float2\" 0.52498071999999996 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[217]" 
+		" -type \"float2\" 0.58861065000000001 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[218]" 
+		" -type \"float2\" 0.58861065000000001 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[219]" 
+		" -type \"float2\" 0.52498071999999996 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[220]" 
+		" -type \"float2\" 0.58861065000000001 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[221]" 
+		" -type \"float2\" 0.52498071999999996 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[222]" 
+		" -type \"float2\" 0.64105427000000004 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[223]" 
+		" -type \"float2\" 0.66177005 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[224]" 
+		" -type \"float2\" 0.61984432 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[225]" 
+		" -type \"float2\" 0.64006591000000002 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[226]" 
+		" -type \"float2\" 0.59814005999999997 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[227]" 
+		" -type \"float2\" 0.61885583 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[228]" 
+		" -type \"float2\" 0.61984432 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[229]" 
+		" -type \"float2\" 0.64006591000000002 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[230]" 
+		" -type \"float2\" 0.66177005 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[231]" 
+		" -type \"float2\" 0.66177005 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[232]" 
+		" -type \"float2\" 0.64105427000000004 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[233]" 
+		" -type \"float2\" 0.64006591000000002 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[234]" 
+		" -type \"float2\" 0.59814005999999997 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[235]" 
+		" -type \"float2\" 0.59814005999999997 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[236]" 
+		" -type \"float2\" 0.61885583 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[237]" 
+		" -type \"float2\" 0.61984432 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[238]" 
+		" -type \"float2\" 0.64006591000000002 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[239]" 
+		" -type \"float2\" 0.64105427000000004 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[240]" 
+		" -type \"float2\" 0.59814005999999997 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[241]" 
+		" -type \"float2\" 0.64105427000000004 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[242]" 
+		" -type \"float2\" 0.66177005 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[243]" 
+		" -type \"float2\" 0.64105427000000004 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[244]" 
+		" -type \"float2\" 0.66177005 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[245]" 
+		" -type \"float2\" 0.64006591000000002 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[246]" 
+		" -type \"float2\" 0.59814005999999997 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[247]" 
+		" -type \"float2\" 0.61885583 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[248]" 
+		" -type \"float2\" 0.61984432 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[249]" 
+		" -type \"float2\" 0.64006591000000002 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[250]" 
+		" -type \"float2\" 0.61984432 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[251]" 
+		" -type \"float2\" 0.61885583 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[252]" 
+		" -type \"float2\" 0.61885583 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[253]" 
+		" -type \"float2\" 0.61984432 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[254]" 
+		" -type \"float2\" 0.61885583 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[255]" 
+		" -type \"float2\" 0.61885583 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[256]" 
+		" -type \"float2\" 0.61984432 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[257]" 
+		" -type \"float2\" 0.61984432 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[258]" 
+		" -type \"float2\" 0.64105427000000004 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[259]" 
+		" -type \"float2\" 0.64006591000000002 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[260]" 
+		" -type \"float2\" 0.64006591000000002 0.93908691"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[261]" 
+		" -type \"float2\" 0.64105427000000004 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[262]" 
+		" -type \"float2\" 0.66177005 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[263]" 
+		" -type \"float2\" 0.66177005 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[264]" 
+		" -type \"float2\" 0.64105427000000004 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[265]" 
+		" -type \"float2\" 0.64006591000000002 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[266]" 
+		" -type \"float2\" 0.59814005999999997 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[267]" 
+		" -type \"float2\" 0.59814005999999997 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[268]" 
+		" -type \"float2\" 0.59814005999999997 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[269]" 
+		" -type \"float2\" 0.66177005 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[270]" 
+		" -type \"float2\" 0.64105427000000004 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[271]" 
+		" -type \"float2\" 0.66177005 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[272]" 
+		" -type \"float2\" 0.64006591000000002 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[273]" 
+		" -type \"float2\" 0.59814005999999997 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[274]" 
+		" -type \"float2\" 0.64105427000000004 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[275]" 
+		" -type \"float2\" 0.64006591000000002 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[276]" 
+		" -type \"float2\" 0.64006591000000002 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[277]" 
+		" -type \"float2\" 0.64105427000000004 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[278]" 
+		" -type \"float2\" 0.64006591000000002 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[279]" 
+		" -type \"float2\" 0.64105427000000004 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[280]" 
+		" -type \"float2\" 0.64006591000000002 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[281]" 
+		" -type \"float2\" 0.64105427000000004 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[282]" 
+		" -type \"float2\" 0.61885583 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[283]" 
+		" -type \"float2\" 0.61984432 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[284]" 
+		" -type \"float2\" 0.61885583 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[285]" 
+		" -type \"float2\" 0.61984432 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[286]" 
+		" -type \"float2\" 0.59498638000000004 0.77188504000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[287]" 
+		" -type \"float2\" 0.66492379000000001 0.77188504000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[288]" 
+		" -type \"float2\" 0.66177005 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[289]" 
+		" -type \"float2\" 0.59814005999999997 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[290]" 
+		" -type \"float2\" 0.66177005 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[291]" 
+		" -type \"float2\" 0.59814005999999997 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[292]" 
+		" -type \"float2\" 0.59814005999999997 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[293]" 
+		" -type \"float2\" 0.66177005 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[294]" 
+		" -type \"float2\" 0.59814005999999997 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[295]" 
+		" -type \"float2\" 0.66177005 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[296]" 
+		" -type \"float2\" 0.51860499000000004 0.77188504000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[297]" 
+		" -type \"float2\" 0.51860499000000004 0.97549224000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[298]" 
+		" -type \"float2\" 0.52182698000000005 0.76866305000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[299]" 
+		" -type \"float2\" 0.59176445 0.76866305000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[300]" 
+		" -type \"float2\" 0.66492379000000001 0.97871434999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[301]" 
+		" -type \"float2\" 0.59498638000000004 0.97871434999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[302]" 
+		" -type \"float2\" 0.62903427999999995 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[303]" 
+		" -type \"float2\" 0.63010626999999997 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[304]" 
+		" -type \"float2\" 0.63010626999999997 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[305]" 
+		" -type \"float2\" 0.62903427999999995 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[306]" 
+		" -type \"float2\" 0.63117820000000002 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[307]" 
+		" -type \"float2\" 0.63117820000000002 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[308]" 
+		" -type \"float2\" 0.63225007 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[309]" 
+		" -type \"float2\" 0.63225007 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[310]" 
+		" -type \"float2\" 0.63332206000000002 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[311]" 
+		" -type \"float2\" 0.63332206000000002 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[312]" 
+		" -type \"float2\" 0.63439392999999999 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[313]" 
+		" -type \"float2\" 0.63439392999999999 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[314]" 
+		" -type \"float2\" 0.63546586000000005 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[315]" 
+		" -type \"float2\" 0.63546586000000005 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[316]" 
+		" -type \"float2\" 0.62903439999999999 0.14238112999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[317]" 
+		" -type \"float2\" 0.63010626999999997 0.14238112999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[318]" 
+		" -type \"float2\" 0.63064224000000002 0.14330941"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[319]" 
+		" -type \"float2\" 0.62849838000000002 0.14330941"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[320]" 
+		" -type \"float2\" 0.62849838000000002 0.15784723000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[321]" 
+		" -type \"float2\" 0.63064224000000002 0.15784723000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[322]" 
+		" -type \"float2\" 0.63010626999999997 0.15877551000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[323]" 
+		" -type \"float2\" 0.62903439999999999 0.15877551000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[324]" 
+		" -type \"float2\" 0.60969024999999999 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[325]" 
+		" -type \"float2\" 0.61049503000000005 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[326]" 
+		" -type \"float2\" 0.61049503000000005 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[327]" 
+		" -type \"float2\" 0.60969024999999999 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[328]" 
+		" -type \"float2\" 0.61049503000000005 0.15766484"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[329]" 
+		" -type \"float2\" 0.61930132000000004 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[330]" 
+		" -type \"float2\" 0.61930132000000004 0.15766484"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[331]" 
+		" -type \"float2\" 0.62010615999999996 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[332]" 
+		" -type \"float2\" 0.61930132000000004 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[333]" 
+		" -type \"float2\" 0.62010615999999996 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[334]" 
+		" -type \"float2\" 0.61930132000000004 0.14350075000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[335]" 
+		" -type \"float2\" 0.61049503000000005 0.14350075000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[336]" 
+		" -type \"float2\" 0.62891257 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[337]" 
+		" -type \"float2\" 0.62891257 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[338]" 
+		" -type \"float2\" 0.62903427999999995 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[339]" 
+		" -type \"float2\" 0.63010626999999997 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[340]" 
+		" -type \"float2\" 0.63010626999999997 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[341]" 
+		" -type \"float2\" 0.62903427999999995 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[342]" 
+		" -type \"float2\" 0.63117820000000002 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[343]" 
+		" -type \"float2\" 0.63117820000000002 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[344]" 
+		" -type \"float2\" 0.63225007 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[345]" 
+		" -type \"float2\" 0.63225007 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[346]" 
+		" -type \"float2\" 0.63332206000000002 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[347]" 
+		" -type \"float2\" 0.63332206000000002 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[348]" 
+		" -type \"float2\" 0.63439392999999999 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[349]" 
+		" -type \"float2\" 0.63439392999999999 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[350]" 
+		" -type \"float2\" 0.63546586000000005 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[351]" 
+		" -type \"float2\" 0.63546586000000005 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[352]" 
+		" -type \"float2\" 0.62903439999999999 0.14238112999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[353]" 
+		" -type \"float2\" 0.63010626999999997 0.14238112999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[354]" 
+		" -type \"float2\" 0.63064224000000002 0.14330941"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[355]" 
+		" -type \"float2\" 0.62849838000000002 0.14330941"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[356]" 
+		" -type \"float2\" 0.62849838000000002 0.15784723000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[357]" 
+		" -type \"float2\" 0.63064224000000002 0.15784723000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[358]" 
+		" -type \"float2\" 0.63010626999999997 0.15877551000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[359]" 
+		" -type \"float2\" 0.62903439999999999 0.15877551000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[360]" 
+		" -type \"float2\" 0.60969024999999999 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[361]" 
+		" -type \"float2\" 0.61049503000000005 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[362]" 
+		" -type \"float2\" 0.61049503000000005 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[363]" 
+		" -type \"float2\" 0.60969024999999999 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[364]" 
+		" -type \"float2\" 0.61049503000000005 0.15766484"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[365]" 
+		" -type \"float2\" 0.61930132000000004 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[366]" 
+		" -type \"float2\" 0.61930132000000004 0.15766484"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[367]" 
+		" -type \"float2\" 0.62010615999999996 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[368]" 
+		" -type \"float2\" 0.61930132000000004 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[369]" 
+		" -type \"float2\" 0.62010615999999996 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[370]" 
+		" -type \"float2\" 0.61930132000000004 0.14350075000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[371]" 
+		" -type \"float2\" 0.61049503000000005 0.14350075000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[372]" 
+		" -type \"float2\" 0.62891257 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[373]" 
+		" -type \"float2\" 0.62891257 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[374]" 
+		" -type \"float2\" 0.62903427999999995 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[375]" 
+		" -type \"float2\" 0.63010626999999997 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[376]" 
+		" -type \"float2\" 0.63010626999999997 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[377]" 
+		" -type \"float2\" 0.62903427999999995 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[378]" 
+		" -type \"float2\" 0.63117820000000002 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[379]" 
+		" -type \"float2\" 0.63117820000000002 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[380]" 
+		" -type \"float2\" 0.63225007 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[381]" 
+		" -type \"float2\" 0.63225007 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[382]" 
+		" -type \"float2\" 0.63332206000000002 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[383]" 
+		" -type \"float2\" 0.63332206000000002 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[384]" 
+		" -type \"float2\" 0.63439392999999999 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[385]" 
+		" -type \"float2\" 0.63439392999999999 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[386]" 
+		" -type \"float2\" 0.63546586000000005 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[387]" 
+		" -type \"float2\" 0.63546586000000005 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[388]" 
+		" -type \"float2\" 0.62903439999999999 0.14238112999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[389]" 
+		" -type \"float2\" 0.63010626999999997 0.14238112999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[390]" 
+		" -type \"float2\" 0.63064224000000002 0.14330941"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[391]" 
+		" -type \"float2\" 0.62849838000000002 0.14330941"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[392]" 
+		" -type \"float2\" 0.62849838000000002 0.15784723000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[393]" 
+		" -type \"float2\" 0.63064224000000002 0.15784723000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[394]" 
+		" -type \"float2\" 0.63010626999999997 0.15877551000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[395]" 
+		" -type \"float2\" 0.62903439999999999 0.15877551000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[396]" 
+		" -type \"float2\" 0.60969024999999999 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[397]" 
+		" -type \"float2\" 0.61049503000000005 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[398]" 
+		" -type \"float2\" 0.61049503000000005 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[399]" 
+		" -type \"float2\" 0.60969024999999999 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[400]" 
+		" -type \"float2\" 0.61049503000000005 0.15766484"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[401]" 
+		" -type \"float2\" 0.61930132000000004 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[402]" 
+		" -type \"float2\" 0.61930132000000004 0.15766484"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[403]" 
+		" -type \"float2\" 0.62010615999999996 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[404]" 
+		" -type \"float2\" 0.61930132000000004 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[405]" 
+		" -type \"float2\" 0.62010615999999996 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[406]" 
+		" -type \"float2\" 0.61930132000000004 0.14350075000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[407]" 
+		" -type \"float2\" 0.61049503000000005 0.14350075000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[408]" 
+		" -type \"float2\" 0.62891257 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[409]" 
+		" -type \"float2\" 0.62891257 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[410]" 
+		" -type \"float2\" 0.62903427999999995 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[411]" 
+		" -type \"float2\" 0.63010626999999997 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[412]" 
+		" -type \"float2\" 0.63010626999999997 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[413]" 
+		" -type \"float2\" 0.62903427999999995 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[414]" 
+		" -type \"float2\" 0.63117820000000002 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[415]" 
+		" -type \"float2\" 0.63117820000000002 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[416]" 
+		" -type \"float2\" 0.63225007 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[417]" 
+		" -type \"float2\" 0.63225007 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[418]" 
+		" -type \"float2\" 0.63332206000000002 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[419]" 
+		" -type \"float2\" 0.63332206000000002 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[420]" 
+		" -type \"float2\" 0.63439392999999999 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[421]" 
+		" -type \"float2\" 0.63439392999999999 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[422]" 
+		" -type \"float2\" 0.63546586000000005 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[423]" 
+		" -type \"float2\" 0.63546586000000005 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[424]" 
+		" -type \"float2\" 0.62903439999999999 0.14238112999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[425]" 
+		" -type \"float2\" 0.63010626999999997 0.14238112999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[426]" 
+		" -type \"float2\" 0.63064224000000002 0.14330941"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[427]" 
+		" -type \"float2\" 0.62849838000000002 0.14330941"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[428]" 
+		" -type \"float2\" 0.62849838000000002 0.15784723000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[429]" 
+		" -type \"float2\" 0.63064224000000002 0.15784723000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[430]" 
+		" -type \"float2\" 0.63010626999999997 0.15877551000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[431]" 
+		" -type \"float2\" 0.62903439999999999 0.15877551000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[432]" 
+		" -type \"float2\" 0.60969024999999999 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[433]" 
+		" -type \"float2\" 0.61049503000000005 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[434]" 
+		" -type \"float2\" 0.61049503000000005 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[435]" 
+		" -type \"float2\" 0.60969024999999999 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[436]" 
+		" -type \"float2\" 0.61049503000000005 0.15766484"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[437]" 
+		" -type \"float2\" 0.61930132000000004 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[438]" 
+		" -type \"float2\" 0.61930132000000004 0.15766484"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[439]" 
+		" -type \"float2\" 0.62010615999999996 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[440]" 
+		" -type \"float2\" 0.61930132000000004 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[441]" 
+		" -type \"float2\" 0.62010615999999996 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[442]" 
+		" -type \"float2\" 0.61930132000000004 0.14350075000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[443]" 
+		" -type \"float2\" 0.61049503000000005 0.14350075000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[444]" 
+		" -type \"float2\" 0.62891257 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[445]" 
+		" -type \"float2\" 0.62891257 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[446]" 
+		" -type \"float2\" 0.62903427999999995 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[447]" 
+		" -type \"float2\" 0.63010626999999997 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[448]" 
+		" -type \"float2\" 0.63010626999999997 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[449]" 
+		" -type \"float2\" 0.62903427999999995 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[450]" 
+		" -type \"float2\" 0.63117820000000002 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[451]" 
+		" -type \"float2\" 0.63117820000000002 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[452]" 
+		" -type \"float2\" 0.63225007 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[453]" 
+		" -type \"float2\" 0.63225007 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[454]" 
+		" -type \"float2\" 0.63332206000000002 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[455]" 
+		" -type \"float2\" 0.63332206000000002 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[456]" 
+		" -type \"float2\" 0.63439392999999999 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[457]" 
+		" -type \"float2\" 0.63439392999999999 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[458]" 
+		" -type \"float2\" 0.63546586000000005 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[459]" 
+		" -type \"float2\" 0.63546586000000005 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[460]" 
+		" -type \"float2\" 0.62903439999999999 0.14238112999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[461]" 
+		" -type \"float2\" 0.63010626999999997 0.14238112999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[462]" 
+		" -type \"float2\" 0.63064224000000002 0.14330941"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[463]" 
+		" -type \"float2\" 0.62849838000000002 0.14330941"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[464]" 
+		" -type \"float2\" 0.62849838000000002 0.15784723000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[465]" 
+		" -type \"float2\" 0.63064224000000002 0.15784723000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[466]" 
+		" -type \"float2\" 0.63010626999999997 0.15877551000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[467]" 
+		" -type \"float2\" 0.62903439999999999 0.15877551000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[468]" 
+		" -type \"float2\" 0.60969024999999999 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[469]" 
+		" -type \"float2\" 0.61049503000000005 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[470]" 
+		" -type \"float2\" 0.61049503000000005 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[471]" 
+		" -type \"float2\" 0.60969024999999999 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[472]" 
+		" -type \"float2\" 0.61049503000000005 0.15766484"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[473]" 
+		" -type \"float2\" 0.61930132000000004 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[474]" 
+		" -type \"float2\" 0.61930132000000004 0.15766484"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[475]" 
+		" -type \"float2\" 0.62010615999999996 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[476]" 
+		" -type \"float2\" 0.61930132000000004 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[477]" 
+		" -type \"float2\" 0.62010615999999996 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[478]" 
+		" -type \"float2\" 0.61930132000000004 0.14350075000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[479]" 
+		" -type \"float2\" 0.61049503000000005 0.14350075000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[480]" 
+		" -type \"float2\" 0.62891257 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[481]" 
+		" -type \"float2\" 0.62891257 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[482]" 
+		" -type \"float2\" 0.62903427999999995 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[483]" 
+		" -type \"float2\" 0.63010626999999997 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[484]" 
+		" -type \"float2\" 0.63010626999999997 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[485]" 
+		" -type \"float2\" 0.62903427999999995 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[486]" 
+		" -type \"float2\" 0.63117820000000002 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[487]" 
+		" -type \"float2\" 0.63117820000000002 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[488]" 
+		" -type \"float2\" 0.63225007 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[489]" 
+		" -type \"float2\" 0.63225007 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[490]" 
+		" -type \"float2\" 0.63332206000000002 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[491]" 
+		" -type \"float2\" 0.63332206000000002 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[492]" 
+		" -type \"float2\" 0.63439392999999999 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[493]" 
+		" -type \"float2\" 0.63439392999999999 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[494]" 
+		" -type \"float2\" 0.63546586000000005 0.14423781999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[495]" 
+		" -type \"float2\" 0.63546586000000005 0.15691881999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[496]" 
+		" -type \"float2\" 0.62903439999999999 0.14238112999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[497]" 
+		" -type \"float2\" 0.63010626999999997 0.14238112999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[498]" 
+		" -type \"float2\" 0.63064224000000002 0.14330941"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[499]" 
+		" -type \"float2\" 0.62849838000000002 0.14330941"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[500]" 
+		" -type \"float2\" 0.62849838000000002 0.15784723000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[501]" 
+		" -type \"float2\" 0.63064224000000002 0.15784723000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[502]" 
+		" -type \"float2\" 0.63010626999999997 0.15877551000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[503]" 
+		" -type \"float2\" 0.62903439999999999 0.15877551000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[504]" 
+		" -type \"float2\" 0.60969024999999999 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[505]" 
+		" -type \"float2\" 0.61049503000000005 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[506]" 
+		" -type \"float2\" 0.61049503000000005 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[507]" 
+		" -type \"float2\" 0.60969024999999999 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[508]" 
+		" -type \"float2\" 0.61049503000000005 0.15766484"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[509]" 
+		" -type \"float2\" 0.61930132000000004 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[510]" 
+		" -type \"float2\" 0.61930132000000004 0.15766484"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[511]" 
+		" -type \"float2\" 0.62010615999999996 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[512]" 
+		" -type \"float2\" 0.61930132000000004 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[513]" 
+		" -type \"float2\" 0.62010615999999996 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[514]" 
+		" -type \"float2\" 0.61930132000000004 0.14350075000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[515]" 
+		" -type \"float2\" 0.61049503000000005 0.14350075000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[516]" 
+		" -type \"float2\" 0.62891257 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[517]" 
+		" -type \"float2\" 0.62891257 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[518]" 
+		" -type \"float2\" 0.70677674000000001 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[519]" 
+		" -type \"float2\" 0.68662405000000004 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[520]" 
+		" -type \"float2\" 0.68662405000000004 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[521]" 
+		" -type \"float2\" 0.70677674000000001 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[522]" 
+		" -type \"float2\" 0.70677674000000001 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[523]" 
+		" -type \"float2\" 0.68662405000000004 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[524]" 
+		" -type \"float2\" 0.68662405000000004 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[525]" 
+		" -type \"float2\" 0.70677674000000001 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[526]" 
+		" -type \"float2\" 0.68662405000000004 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[527]" 
+		" -type \"float2\" 0.70677674000000001 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[528]" 
+		" -type \"float2\" 0.70677674000000001 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[529]" 
+		" -type \"float2\" 0.68662405000000004 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[530]" 
+		" -type \"float2\" 0.68662405000000004 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[531]" 
+		" -type \"float2\" 0.70677674000000001 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[532]" 
+		" -type \"float2\" 0.70677674000000001 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[533]" 
+		" -type \"float2\" 0.68662405000000004 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[534]" 
+		" -type \"float2\" 0.68662405000000004 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[535]" 
+		" -type \"float2\" 0.70677674000000001 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[536]" 
+		" -type \"float2\" 0.70677674000000001 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[537]" 
+		" -type \"float2\" 0.68662405000000004 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[538]" 
+		" -type \"float2\" 0.68662405000000004 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[539]" 
+		" -type \"float2\" 0.70677674000000001 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[540]" 
+		" -type \"float2\" 0.70677674000000001 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[541]" 
+		" -type \"float2\" 0.68662405000000004 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[542]" 
+		" -type \"float2\" 0.70677674000000001 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[543]" 
+		" -type \"float2\" 0.68662405000000004 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[544]" 
+		" -type \"float2\" 0.68662405000000004 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[545]" 
+		" -type \"float2\" 0.70677674000000001 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[546]" 
+		" -type \"float2\" 0.70677674000000001 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[547]" 
+		" -type \"float2\" 0.68662405000000004 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[548]" 
+		" -type \"float2\" 0.68662405000000004 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[549]" 
+		" -type \"float2\" 0.70677674000000001 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[550]" 
+		" -type \"float2\" 0.66499352 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[551]" 
+		" -type \"float2\" 0.68563890000000005 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[552]" 
+		" -type \"float2\" 0.68563890000000005 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[553]" 
+		" -type \"float2\" 0.66499352 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[554]" 
+		" -type \"float2\" 0.68563890000000005 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[555]" 
+		" -type \"float2\" 0.66499352 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[556]" 
+		" -type \"float2\" 0.66499352 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[557]" 
+		" -type \"float2\" 0.68563890000000005 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[558]" 
+		" -type \"float2\" 0.68662405000000004 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[559]" 
+		" -type \"float2\" 0.70677674000000001 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[560]" 
+		" -type \"float2\" 0.70677674000000001 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[561]" 
+		" -type \"float2\" 0.68662405000000004 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[562]" 
+		" -type \"float2\" 0.70677674000000001 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[563]" 
+		" -type \"float2\" 0.68662405000000004 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[564]" 
+		" -type \"float2\" 0.68662405000000004 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[565]" 
+		" -type \"float2\" 0.70677674000000001 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[566]" 
+		" -type \"float2\" 0.72840726 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[567]" 
+		" -type \"float2\" 0.707762 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[568]" 
+		" -type \"float2\" 0.707762 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[569]" 
+		" -type \"float2\" 0.72840726 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[570]" 
+		" -type \"float2\" 0.707762 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[571]" 
+		" -type \"float2\" 0.72840726 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[572]" 
+		" -type \"float2\" 0.72840726 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[573]" 
+		" -type \"float2\" 0.707762 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[574]" 
+		" -type \"float2\" 0.707762 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[575]" 
+		" -type \"float2\" 0.72840726 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[576]" 
+		" -type \"float2\" 0.72840726 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[577]" 
+		" -type \"float2\" 0.707762 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[578]" 
+		" -type \"float2\" 0.66499352 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[579]" 
+		" -type \"float2\" 0.68563890000000005 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[580]" 
+		" -type \"float2\" 0.68563890000000005 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[581]" 
+		" -type \"float2\" 0.66499352 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[582]" 
+		" -type \"float2\" 0.707762 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[583]" 
+		" -type \"float2\" 0.72840726 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[584]" 
+		" -type \"float2\" 0.72840726 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[585]" 
+		" -type \"float2\" 0.707762 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[586]" 
+		" -type \"float2\" 0.66499352 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[587]" 
+		" -type \"float2\" 0.68563890000000005 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[588]" 
+		" -type \"float2\" 0.68563890000000005 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[589]" 
+		" -type \"float2\" 0.66499352 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[590]" 
+		" -type \"float2\" 0.707762 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[591]" 
+		" -type \"float2\" 0.72840726 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[592]" 
+		" -type \"float2\" 0.72840726 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[593]" 
+		" -type \"float2\" 0.707762 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[594]" 
+		" -type \"float2\" 0.66499352 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[595]" 
+		" -type \"float2\" 0.68563890000000005 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[596]" 
+		" -type \"float2\" 0.68563890000000005 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[597]" 
+		" -type \"float2\" 0.66499352 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[598]" 
+		" -type \"float2\" 0.707762 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[599]" 
+		" -type \"float2\" 0.72840726 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[600]" 
+		" -type \"float2\" 0.72840726 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[601]" 
+		" -type \"float2\" 0.707762 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[602]" 
+		" -type \"float2\" 0.66499352 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[603]" 
+		" -type \"float2\" 0.68563890000000005 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[604]" 
+		" -type \"float2\" 0.68563890000000005 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[605]" 
+		" -type \"float2\" 0.66499352 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[606]" 
+		" -type \"float2\" 0.68563890000000005 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[607]" 
+		" -type \"float2\" 0.66499352 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[608]" 
+		" -type \"float2\" 0.66499352 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[609]" 
+		" -type \"float2\" 0.68563890000000005 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[610]" 
+		" -type \"float2\" 0.72840726 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[611]" 
+		" -type \"float2\" 0.707762 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[612]" 
+		" -type \"float2\" 0.707762 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[613]" 
+		" -type \"float2\" 0.72840726 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[614]" 
+		" -type \"float2\" 0.68563890000000005 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[615]" 
+		" -type \"float2\" 0.66499352 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[616]" 
+		" -type \"float2\" 0.66499352 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[617]" 
+		" -type \"float2\" 0.68563890000000005 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[618]" 
+		" -type \"float2\" 0.72840726 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[619]" 
+		" -type \"float2\" 0.707762 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[620]" 
+		" -type \"float2\" 0.707762 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[621]" 
+		" -type \"float2\" 0.72840726 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[622]" 
+		" -type \"float2\" 0.68563890000000005 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[623]" 
+		" -type \"float2\" 0.66499352 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[624]" 
+		" -type \"float2\" 0.66499352 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[625]" 
+		" -type \"float2\" 0.68563890000000005 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[626]" 
+		" -type \"float2\" 0.72840726 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[627]" 
+		" -type \"float2\" 0.707762 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[628]" 
+		" -type \"float2\" 0.707762 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[629]" 
+		" -type \"float2\" 0.72840726 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[630]" 
+		" -type \"float2\" 0.68563890000000005 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[631]" 
+		" -type \"float2\" 0.66499352 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[632]" 
+		" -type \"float2\" 0.66499352 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[633]" 
+		" -type \"float2\" 0.68563890000000005 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[634]" 
+		" -type \"float2\" 0.72840726 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[635]" 
+		" -type \"float2\" 0.707762 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[636]" 
+		" -type \"float2\" 0.707762 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[637]" 
+		" -type \"float2\" 0.72840726 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[638]" 
+		" -type \"float2\" 0.707762 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[639]" 
+		" -type \"float2\" 0.72840726 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[640]" 
+		" -type \"float2\" 0.72840726 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[641]" 
+		" -type \"float2\" 0.707762 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[642]" 
+		" -type \"float2\" 0.66499352 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[643]" 
+		" -type \"float2\" 0.68563890000000005 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[644]" 
+		" -type \"float2\" 0.68563890000000005 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[645]" 
+		" -type \"float2\" 0.66499352 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[646]" 
+		" -type \"float2\" 0.68662405000000004 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[647]" 
+		" -type \"float2\" 0.70677674000000001 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[648]" 
+		" -type \"float2\" 0.70677674000000001 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[649]" 
+		" -type \"float2\" 0.68662405000000004 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[650]" 
+		" -type \"float2\" 0.68563890000000005 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[651]" 
+		" -type \"float2\" 0.66499352 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[652]" 
+		" -type \"float2\" 0.66499352 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[653]" 
+		" -type \"float2\" 0.68563890000000005 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[654]" 
+		" -type \"float2\" 0.72840726 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[655]" 
+		" -type \"float2\" 0.707762 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[656]" 
+		" -type \"float2\" 0.707762 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[657]" 
+		" -type \"float2\" 0.72840726 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[658]" 
+		" -type \"float2\" 0.70677674000000001 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[659]" 
+		" -type \"float2\" 0.68662405000000004 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[660]" 
+		" -type \"float2\" 0.68662405000000004 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[661]" 
+		" -type \"float2\" 0.70677674000000001 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[662]" 
+		" -type \"float2\" 0.60969024999999999 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[663]" 
+		" -type \"float2\" 0.61049503000000005 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[664]" 
+		" -type \"float2\" 0.61049503000000005 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[665]" 
+		" -type \"float2\" 0.60969024999999999 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[666]" 
+		" -type \"float2\" 0.61049503000000005 0.15766484"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[667]" 
+		" -type \"float2\" 0.61930132000000004 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[668]" 
+		" -type \"float2\" 0.61930132000000004 0.15766484"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[669]" 
+		" -type \"float2\" 0.62010615999999996 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[670]" 
+		" -type \"float2\" 0.61930132000000004 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[671]" 
+		" -type \"float2\" 0.62010615999999996 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[672]" 
+		" -type \"float2\" 0.61930132000000004 0.14350075000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[673]" 
+		" -type \"float2\" 0.61049503000000005 0.14350075000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[674]" 
+		" -type \"float2\" 0.62891257 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[675]" 
+		" -type \"float2\" 0.62891257 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[676]" 
+		" -type \"float2\" 0.58861065000000001 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[677]" 
+		" -type \"float2\" 0.58861065000000001 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[678]" 
+		" -type \"float2\" 0.56789493999999996 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[679]" 
+		" -type \"float2\" 0.56690644999999995 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[680]" 
+		" -type \"float2\" 0.54668497999999999 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[681]" 
+		" -type \"float2\" 0.54569643999999995 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[682]" 
+		" -type \"float2\" 0.52498071999999996 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[683]" 
+		" -type \"float2\" 0.52498071999999996 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[684]" 
+		" -type \"float2\" 0.54569643999999995 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[685]" 
+		" -type \"float2\" 0.54668497999999999 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[686]" 
+		" -type \"float2\" 0.56690644999999995 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[687]" 
+		" -type \"float2\" 0.56789493999999996 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[688]" 
+		" -type \"float2\" 0.52498071999999996 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[689]" 
+		" -type \"float2\" 0.54569643999999995 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[690]" 
+		" -type \"float2\" 0.56789493999999996 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[691]" 
+		" -type \"float2\" 0.58861065000000001 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[692]" 
+		" -type \"float2\" 0.56789493999999996 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[693]" 
+		" -type \"float2\" 0.58861065000000001 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[694]" 
+		" -type \"float2\" 0.54668497999999999 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[695]" 
+		" -type \"float2\" 0.56690644999999995 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[696]" 
+		" -type \"float2\" 0.52498071999999996 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[697]" 
+		" -type \"float2\" 0.54569643999999995 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[698]" 
+		" -type \"float2\" 0.54668497999999999 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[699]" 
+		" -type \"float2\" 0.56690644999999995 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[700]" 
+		" -type \"float2\" 0.54668497999999999 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[701]" 
+		" -type \"float2\" 0.54569643999999995 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[702]" 
+		" -type \"float2\" 0.54569643999999995 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[703]" 
+		" -type \"float2\" 0.54668497999999999 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[704]" 
+		" -type \"float2\" 0.54569643999999995 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[705]" 
+		" -type \"float2\" 0.54569643999999995 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[706]" 
+		" -type \"float2\" 0.54668497999999999 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[707]" 
+		" -type \"float2\" 0.54668497999999999 0.93908691"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[708]" 
+		" -type \"float2\" 0.54569643999999995 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[709]" 
+		" -type \"float2\" 0.54668497999999999 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[710]" 
+		" -type \"float2\" 0.54569643999999995 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[711]" 
+		" -type \"float2\" 0.54668497999999999 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[712]" 
+		" -type \"float2\" 0.56690644999999995 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[713]" 
+		" -type \"float2\" 0.56789493999999996 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[714]" 
+		" -type \"float2\" 0.56690644999999995 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[715]" 
+		" -type \"float2\" 0.56789493999999996 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[716]" 
+		" -type \"float2\" 0.58861065000000001 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[717]" 
+		" -type \"float2\" 0.58861065000000001 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[718]" 
+		" -type \"float2\" 0.52498071999999996 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[719]" 
+		" -type \"float2\" 0.52498071999999996 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[720]" 
+		" -type \"float2\" 0.54569643999999995 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[721]" 
+		" -type \"float2\" 0.54668497999999999 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[722]" 
+		" -type \"float2\" 0.56690644999999995 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[723]" 
+		" -type \"float2\" 0.56789493999999996 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[724]" 
+		" -type \"float2\" 0.52498071999999996 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[725]" 
+		" -type \"float2\" 0.56789493999999996 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[726]" 
+		" -type \"float2\" 0.58861065000000001 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[727]" 
+		" -type \"float2\" 0.58861065000000001 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[728]" 
+		" -type \"float2\" 0.52498071999999996 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[729]" 
+		" -type \"float2\" 0.54569643999999995 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[730]" 
+		" -type \"float2\" 0.54668497999999999 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[731]" 
+		" -type \"float2\" 0.56690644999999995 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[732]" 
+		" -type \"float2\" 0.58861065000000001 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[733]" 
+		" -type \"float2\" 0.58861065000000001 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[734]" 
+		" -type \"float2\" 0.56789493999999996 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[735]" 
+		" -type \"float2\" 0.56690644999999995 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[736]" 
+		" -type \"float2\" 0.54668497999999999 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[737]" 
+		" -type \"float2\" 0.54569643999999995 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[738]" 
+		" -type \"float2\" 0.52498071999999996 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[739]" 
+		" -type \"float2\" 0.52498071999999996 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[740]" 
+		" -type \"float2\" 0.54569643999999995 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[741]" 
+		" -type \"float2\" 0.54668497999999999 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[742]" 
+		" -type \"float2\" 0.56690644999999995 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[743]" 
+		" -type \"float2\" 0.56789493999999996 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[744]" 
+		" -type \"float2\" 0.52498071999999996 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[745]" 
+		" -type \"float2\" 0.54569643999999995 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[746]" 
+		" -type \"float2\" 0.56789493999999996 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[747]" 
+		" -type \"float2\" 0.58861065000000001 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[748]" 
+		" -type \"float2\" 0.56789493999999996 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[749]" 
+		" -type \"float2\" 0.58861065000000001 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[750]" 
+		" -type \"float2\" 0.54668497999999999 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[751]" 
+		" -type \"float2\" 0.56690644999999995 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[752]" 
+		" -type \"float2\" 0.52498071999999996 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[753]" 
+		" -type \"float2\" 0.54569643999999995 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[754]" 
+		" -type \"float2\" 0.54668497999999999 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[755]" 
+		" -type \"float2\" 0.56690644999999995 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[756]" 
+		" -type \"float2\" 0.58861065000000001 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[757]" 
+		" -type \"float2\" 0.58861065000000001 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[758]" 
+		" -type \"float2\" 0.56789493999999996 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[759]" 
+		" -type \"float2\" 0.56690644999999995 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[760]" 
+		" -type \"float2\" 0.52498071999999996 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[761]" 
+		" -type \"float2\" 0.52498071999999996 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[762]" 
+		" -type \"float2\" 0.54569643999999995 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[763]" 
+		" -type \"float2\" 0.54668497999999999 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[764]" 
+		" -type \"float2\" 0.56690644999999995 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[765]" 
+		" -type \"float2\" 0.56789493999999996 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[766]" 
+		" -type \"float2\" 0.52498071999999996 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[767]" 
+		" -type \"float2\" 0.56789493999999996 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[768]" 
+		" -type \"float2\" 0.58861065000000001 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[769]" 
+		" -type \"float2\" 0.56789493999999996 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[770]" 
+		" -type \"float2\" 0.58861065000000001 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[771]" 
+		" -type \"float2\" 0.56690644999999995 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[772]" 
+		" -type \"float2\" 0.52498071999999996 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[773]" 
+		" -type \"float2\" 0.54569643999999995 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[774]" 
+		" -type \"float2\" 0.54668497999999999 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[775]" 
+		" -type \"float2\" 0.56690644999999995 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[776]" 
+		" -type \"float2\" 0.54668497999999999 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[777]" 
+		" -type \"float2\" 0.54569643999999995 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[778]" 
+		" -type \"float2\" 0.54569643999999995 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[779]" 
+		" -type \"float2\" 0.54668497999999999 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[780]" 
+		" -type \"float2\" 0.54569643999999995 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[781]" 
+		" -type \"float2\" 0.54569643999999995 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[782]" 
+		" -type \"float2\" 0.54668497999999999 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[783]" 
+		" -type \"float2\" 0.54668497999999999 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[784]" 
+		" -type \"float2\" 0.56789493999999996 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[785]" 
+		" -type \"float2\" 0.56690644999999995 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[786]" 
+		" -type \"float2\" 0.56690644999999995 0.93908691"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[787]" 
+		" -type \"float2\" 0.56789493999999996 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[788]" 
+		" -type \"float2\" 0.58861065000000001 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[789]" 
+		" -type \"float2\" 0.58861065000000001 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[790]" 
+		" -type \"float2\" 0.56789493999999996 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[791]" 
+		" -type \"float2\" 0.56690644999999995 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[792]" 
+		" -type \"float2\" 0.52498071999999996 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[793]" 
+		" -type \"float2\" 0.52498071999999996 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[794]" 
+		" -type \"float2\" 0.52498071999999996 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[795]" 
+		" -type \"float2\" 0.58861065000000001 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[796]" 
+		" -type \"float2\" 0.56789493999999996 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[797]" 
+		" -type \"float2\" 0.58861065000000001 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[798]" 
+		" -type \"float2\" 0.56690644999999995 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[799]" 
+		" -type \"float2\" 0.52498071999999996 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[800]" 
+		" -type \"float2\" 0.56789493999999996 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[801]" 
+		" -type \"float2\" 0.56690644999999995 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[802]" 
+		" -type \"float2\" 0.56690644999999995 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[803]" 
+		" -type \"float2\" 0.56789493999999996 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[804]" 
+		" -type \"float2\" 0.56690644999999995 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[805]" 
+		" -type \"float2\" 0.56789493999999996 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[806]" 
+		" -type \"float2\" 0.56690644999999995 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[807]" 
+		" -type \"float2\" 0.56789493999999996 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[808]" 
+		" -type \"float2\" 0.54569643999999995 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[809]" 
+		" -type \"float2\" 0.54668497999999999 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[810]" 
+		" -type \"float2\" 0.54569643999999995 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[811]" 
+		" -type \"float2\" 0.54668497999999999 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[812]" 
+		" -type \"float2\" 0.70677674000000001 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[813]" 
+		" -type \"float2\" 0.68662405000000004 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[814]" 
+		" -type \"float2\" 0.68662405000000004 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[815]" 
+		" -type \"float2\" 0.70677674000000001 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[816]" 
+		" -type \"float2\" 0.70677674000000001 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[817]" 
+		" -type \"float2\" 0.68662405000000004 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[818]" 
+		" -type \"float2\" 0.68662405000000004 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[819]" 
+		" -type \"float2\" 0.70677674000000001 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[820]" 
+		" -type \"float2\" 0.68662405000000004 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[821]" 
+		" -type \"float2\" 0.70677674000000001 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[822]" 
+		" -type \"float2\" 0.70677674000000001 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[823]" 
+		" -type \"float2\" 0.68662405000000004 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[824]" 
+		" -type \"float2\" 0.68662405000000004 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[825]" 
+		" -type \"float2\" 0.70677674000000001 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[826]" 
+		" -type \"float2\" 0.70677674000000001 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[827]" 
+		" -type \"float2\" 0.68662405000000004 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[828]" 
+		" -type \"float2\" 0.66177005 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[829]" 
+		" -type \"float2\" 0.66177005 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[830]" 
+		" -type \"float2\" 0.64105427000000004 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[831]" 
+		" -type \"float2\" 0.64006591000000002 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[832]" 
+		" -type \"float2\" 0.61984432 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[833]" 
+		" -type \"float2\" 0.61885583 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[834]" 
+		" -type \"float2\" 0.59814005999999997 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[835]" 
+		" -type \"float2\" 0.59814005999999997 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[836]" 
+		" -type \"float2\" 0.61885583 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[837]" 
+		" -type \"float2\" 0.61984432 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[838]" 
+		" -type \"float2\" 0.64006591000000002 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[839]" 
+		" -type \"float2\" 0.64105427000000004 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[840]" 
+		" -type \"float2\" 0.59814005999999997 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[841]" 
+		" -type \"float2\" 0.61885583 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[842]" 
+		" -type \"float2\" 0.64105427000000004 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[843]" 
+		" -type \"float2\" 0.66177005 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[844]" 
+		" -type \"float2\" 0.64105427000000004 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[845]" 
+		" -type \"float2\" 0.66177005 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[846]" 
+		" -type \"float2\" 0.61984432 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[847]" 
+		" -type \"float2\" 0.64006591000000002 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[848]" 
+		" -type \"float2\" 0.59814005999999997 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[849]" 
+		" -type \"float2\" 0.61885583 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[850]" 
+		" -type \"float2\" 0.61984432 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[851]" 
+		" -type \"float2\" 0.64006591000000002 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[852]" 
+		" -type \"float2\" 0.61984432 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[853]" 
+		" -type \"float2\" 0.61885583 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[854]" 
+		" -type \"float2\" 0.61885583 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[855]" 
+		" -type \"float2\" 0.61984432 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[856]" 
+		" -type \"float2\" 0.61885583 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[857]" 
+		" -type \"float2\" 0.61885583 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[858]" 
+		" -type \"float2\" 0.61984432 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[859]" 
+		" -type \"float2\" 0.61984432 0.93908691"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[860]" 
+		" -type \"float2\" 0.61885583 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[861]" 
+		" -type \"float2\" 0.61984432 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[862]" 
+		" -type \"float2\" 0.61885583 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[863]" 
+		" -type \"float2\" 0.61984432 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[864]" 
+		" -type \"float2\" 0.64006591000000002 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[865]" 
+		" -type \"float2\" 0.64105427000000004 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[866]" 
+		" -type \"float2\" 0.64006591000000002 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[867]" 
+		" -type \"float2\" 0.64105427000000004 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[868]" 
+		" -type \"float2\" 0.66177005 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[869]" 
+		" -type \"float2\" 0.66177005 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[870]" 
+		" -type \"float2\" 0.59814005999999997 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[871]" 
+		" -type \"float2\" 0.59814005999999997 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[872]" 
+		" -type \"float2\" 0.61885583 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[873]" 
+		" -type \"float2\" 0.61984432 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[874]" 
+		" -type \"float2\" 0.64006591000000002 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[875]" 
+		" -type \"float2\" 0.64105427000000004 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[876]" 
+		" -type \"float2\" 0.59814005999999997 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[877]" 
+		" -type \"float2\" 0.64105427000000004 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[878]" 
+		" -type \"float2\" 0.66177005 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[879]" 
+		" -type \"float2\" 0.66177005 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[880]" 
+		" -type \"float2\" 0.59814005999999997 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[881]" 
+		" -type \"float2\" 0.61885583 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[882]" 
+		" -type \"float2\" 0.61984432 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[883]" 
+		" -type \"float2\" 0.64006591000000002 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[884]" 
+		" -type \"float2\" 0.66177005 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[885]" 
+		" -type \"float2\" 0.66177005 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[886]" 
+		" -type \"float2\" 0.64105427000000004 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[887]" 
+		" -type \"float2\" 0.64006591000000002 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[888]" 
+		" -type \"float2\" 0.61984432 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[889]" 
+		" -type \"float2\" 0.61885583 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[890]" 
+		" -type \"float2\" 0.59814005999999997 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[891]" 
+		" -type \"float2\" 0.59814005999999997 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[892]" 
+		" -type \"float2\" 0.61885583 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[893]" 
+		" -type \"float2\" 0.61984432 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[894]" 
+		" -type \"float2\" 0.64006591000000002 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[895]" 
+		" -type \"float2\" 0.64105427000000004 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[896]" 
+		" -type \"float2\" 0.59814005999999997 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[897]" 
+		" -type \"float2\" 0.61885583 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[898]" 
+		" -type \"float2\" 0.64105427000000004 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[899]" 
+		" -type \"float2\" 0.66177005 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[900]" 
+		" -type \"float2\" 0.64105427000000004 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[901]" 
+		" -type \"float2\" 0.66177005 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[902]" 
+		" -type \"float2\" 0.61984432 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[903]" 
+		" -type \"float2\" 0.64006591000000002 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[904]" 
+		" -type \"float2\" 0.59814005999999997 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[905]" 
+		" -type \"float2\" 0.61885583 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[906]" 
+		" -type \"float2\" 0.61984432 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[907]" 
+		" -type \"float2\" 0.64006591000000002 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[908]" 
+		" -type \"float2\" 0.66177005 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[909]" 
+		" -type \"float2\" 0.66177005 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[910]" 
+		" -type \"float2\" 0.64105427000000004 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[911]" 
+		" -type \"float2\" 0.64006591000000002 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[912]" 
+		" -type \"float2\" 0.59814005999999997 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[913]" 
+		" -type \"float2\" 0.59814005999999997 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[914]" 
+		" -type \"float2\" 0.61885583 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[915]" 
+		" -type \"float2\" 0.61984432 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[916]" 
+		" -type \"float2\" 0.64006591000000002 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[917]" 
+		" -type \"float2\" 0.64105427000000004 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[918]" 
+		" -type \"float2\" 0.59814005999999997 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[919]" 
+		" -type \"float2\" 0.64105427000000004 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[920]" 
+		" -type \"float2\" 0.66177005 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[921]" 
+		" -type \"float2\" 0.64105427000000004 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[922]" 
+		" -type \"float2\" 0.66177005 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[923]" 
+		" -type \"float2\" 0.64006591000000002 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[924]" 
+		" -type \"float2\" 0.59814005999999997 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[925]" 
+		" -type \"float2\" 0.61885583 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[926]" 
+		" -type \"float2\" 0.61984432 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[927]" 
+		" -type \"float2\" 0.64006591000000002 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[928]" 
+		" -type \"float2\" 0.61984432 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[929]" 
+		" -type \"float2\" 0.61885583 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[930]" 
+		" -type \"float2\" 0.61885583 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[931]" 
+		" -type \"float2\" 0.61984432 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[932]" 
+		" -type \"float2\" 0.61885583 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[933]" 
+		" -type \"float2\" 0.61885583 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[934]" 
+		" -type \"float2\" 0.61984432 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[935]" 
+		" -type \"float2\" 0.61984432 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[936]" 
+		" -type \"float2\" 0.64105427000000004 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[937]" 
+		" -type \"float2\" 0.64006591000000002 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[938]" 
+		" -type \"float2\" 0.64006591000000002 0.93908691"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[939]" 
+		" -type \"float2\" 0.64105427000000004 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[940]" 
+		" -type \"float2\" 0.66177005 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[941]" 
+		" -type \"float2\" 0.66177005 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[942]" 
+		" -type \"float2\" 0.64105427000000004 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[943]" 
+		" -type \"float2\" 0.64006591000000002 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[944]" 
+		" -type \"float2\" 0.59814005999999997 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[945]" 
+		" -type \"float2\" 0.59814005999999997 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[946]" 
+		" -type \"float2\" 0.59814005999999997 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[947]" 
+		" -type \"float2\" 0.66177005 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[948]" 
+		" -type \"float2\" 0.64105427000000004 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[949]" 
+		" -type \"float2\" 0.66177005 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[950]" 
+		" -type \"float2\" 0.64006591000000002 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[951]" 
+		" -type \"float2\" 0.59814005999999997 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[952]" 
+		" -type \"float2\" 0.64105427000000004 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[953]" 
+		" -type \"float2\" 0.64006591000000002 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[954]" 
+		" -type \"float2\" 0.64006591000000002 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[955]" 
+		" -type \"float2\" 0.64105427000000004 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[956]" 
+		" -type \"float2\" 0.64006591000000002 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[957]" 
+		" -type \"float2\" 0.64105427000000004 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[958]" 
+		" -type \"float2\" 0.64006591000000002 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[959]" 
+		" -type \"float2\" 0.64105427000000004 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[960]" 
+		" -type \"float2\" 0.61885583 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[961]" 
+		" -type \"float2\" 0.61984432 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[962]" 
+		" -type \"float2\" 0.61885583 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[963]" 
+		" -type \"float2\" 0.61984432 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[964]" 
+		" -type \"float2\" 0.68662405000000004 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[965]" 
+		" -type \"float2\" 0.70677674000000001 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[966]" 
+		" -type \"float2\" 0.70677674000000001 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[967]" 
+		" -type \"float2\" 0.68662405000000004 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[968]" 
+		" -type \"float2\" 0.68662405000000004 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[969]" 
+		" -type \"float2\" 0.70677674000000001 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[970]" 
+		" -type \"float2\" 0.70677674000000001 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[971]" 
+		" -type \"float2\" 0.68662405000000004 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[972]" 
+		" -type \"float2\" 0.70677674000000001 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[973]" 
+		" -type \"float2\" 0.68662405000000004 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[974]" 
+		" -type \"float2\" 0.68662405000000004 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[975]" 
+		" -type \"float2\" 0.70677674000000001 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[976]" 
+		" -type \"float2\" 0.70677674000000001 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[977]" 
+		" -type \"float2\" 0.68662405000000004 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[978]" 
+		" -type \"float2\" 0.68662405000000004 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[979]" 
+		" -type \"float2\" 0.70677674000000001 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[980]" 
+		" -type \"float2\" 0.59498638000000004 0.97549224000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[981]" 
+		" -type \"float2\" 0.66492379000000001 0.97549224000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[982]" 
+		" -type \"float2\" 0.66492379000000001 0.97871434999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[983]" 
+		" -type \"float2\" 0.59498638000000004 0.97871434999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[984]" 
+		" -type \"float2\" 0.59176445 0.77188504000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[985]" 
+		" -type \"float2\" 0.52182698000000005 0.77188504000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[986]" 
+		" -type \"float2\" 0.52182698000000005 0.76866305000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[987]" 
+		" -type \"float2\" 0.59176445 0.76866305000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[988]" 
+		" -type \"float2\" 0.51860499000000004 0.77188504000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[989]" 
+		" -type \"float2\" 0.52182698000000005 0.97549224000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[990]" 
+		" -type \"float2\" 0.51860499000000004 0.97549224000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[991]" 
+		" -type \"float2\" 0.59498638000000004 0.77188504000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[992]" 
+		" -type \"float2\" 0.59176445 0.97549224000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[993]" 
+		" -type \"float2\" 0.66492379000000001 0.77188504000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[994]" 
+		" -type \"float2\" 0.66177005 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[995]" 
+		" -type \"float2\" 0.59814005999999997 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[996]" 
+		" -type \"float2\" 0.66177005 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[997]" 
+		" -type \"float2\" 0.59814005999999997 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[998]" 
+		" -type \"float2\" 0.52498071999999996 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[999]" 
+		" -type \"float2\" 0.58861065000000001 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1000]" 
+		" -type \"float2\" 0.52498071999999996 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1001]" 
+		" -type \"float2\" 0.58861065000000001 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1002]" 
+		" -type \"float2\" 0.59814005999999997 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1003]" 
+		" -type \"float2\" 0.66177005 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1004]" 
+		" -type \"float2\" 0.58861065000000001 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1005]" 
+		" -type \"float2\" 0.52498071999999996 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1006]" 
+		" -type \"float2\" 0.58861065000000001 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1007]" 
+		" -type \"float2\" 0.59814005999999997 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1008]" 
+		" -type \"float2\" 0.52498071999999996 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1009]" 
+		" -type \"float2\" 0.66177005 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1010]" 
+		" -type \"float2\" 0.66499352 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1011]" 
+		" -type \"float2\" 0.68563890000000005 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1012]" 
+		" -type \"float2\" 0.68563890000000005 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1013]" 
+		" -type \"float2\" 0.66499352 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1014]" 
+		" -type \"float2\" 0.68563890000000005 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1015]" 
+		" -type \"float2\" 0.66499352 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1016]" 
+		" -type \"float2\" 0.66499352 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1017]" 
+		" -type \"float2\" 0.68563890000000005 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1018]" 
+		" -type \"float2\" 0.68662405000000004 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1019]" 
+		" -type \"float2\" 0.70677674000000001 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1020]" 
+		" -type \"float2\" 0.70677674000000001 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1021]" 
+		" -type \"float2\" 0.68662405000000004 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1022]" 
+		" -type \"float2\" 0.70677674000000001 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1023]" 
+		" -type \"float2\" 0.68662405000000004 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1024]" 
+		" -type \"float2\" 0.68662405000000004 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1025]" 
+		" -type \"float2\" 0.70677674000000001 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1026]" 
+		" -type \"float2\" 0.72840726 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1027]" 
+		" -type \"float2\" 0.707762 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1028]" 
+		" -type \"float2\" 0.707762 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1029]" 
+		" -type \"float2\" 0.72840726 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1030]" 
+		" -type \"float2\" 0.707762 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1031]" 
+		" -type \"float2\" 0.72840726 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1032]" 
+		" -type \"float2\" 0.72840726 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1033]" 
+		" -type \"float2\" 0.707762 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1034]" 
+		" -type \"float2\" 0.707762 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1035]" 
+		" -type \"float2\" 0.72840726 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1036]" 
+		" -type \"float2\" 0.72840726 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1037]" 
+		" -type \"float2\" 0.707762 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1038]" 
+		" -type \"float2\" 0.66499352 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1039]" 
+		" -type \"float2\" 0.68563890000000005 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1040]" 
+		" -type \"float2\" 0.68563890000000005 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1041]" 
+		" -type \"float2\" 0.66499352 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1042]" 
+		" -type \"float2\" 0.707762 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1043]" 
+		" -type \"float2\" 0.72840726 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1044]" 
+		" -type \"float2\" 0.72840726 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1045]" 
+		" -type \"float2\" 0.707762 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1046]" 
+		" -type \"float2\" 0.66499352 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1047]" 
+		" -type \"float2\" 0.68563890000000005 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1048]" 
+		" -type \"float2\" 0.68563890000000005 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1049]" 
+		" -type \"float2\" 0.66499352 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1050]" 
+		" -type \"float2\" 0.707762 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1051]" 
+		" -type \"float2\" 0.72840726 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1052]" 
+		" -type \"float2\" 0.72840726 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1053]" 
+		" -type \"float2\" 0.707762 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1054]" 
+		" -type \"float2\" 0.66499352 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1055]" 
+		" -type \"float2\" 0.68563890000000005 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1056]" 
+		" -type \"float2\" 0.68563890000000005 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1057]" 
+		" -type \"float2\" 0.66499352 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1058]" 
+		" -type \"float2\" 0.707762 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1059]" 
+		" -type \"float2\" 0.72840726 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1060]" 
+		" -type \"float2\" 0.72840726 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1061]" 
+		" -type \"float2\" 0.707762 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1062]" 
+		" -type \"float2\" 0.66499352 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1063]" 
+		" -type \"float2\" 0.68563890000000005 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1064]" 
+		" -type \"float2\" 0.68563890000000005 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1065]" 
+		" -type \"float2\" 0.66499352 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1066]" 
+		" -type \"float2\" 0.68563890000000005 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1067]" 
+		" -type \"float2\" 0.66499352 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1068]" 
+		" -type \"float2\" 0.66499352 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1069]" 
+		" -type \"float2\" 0.68563890000000005 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1070]" 
+		" -type \"float2\" 0.72840726 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1071]" 
+		" -type \"float2\" 0.707762 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1072]" 
+		" -type \"float2\" 0.707762 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1073]" 
+		" -type \"float2\" 0.72840726 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1074]" 
+		" -type \"float2\" 0.68563890000000005 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1075]" 
+		" -type \"float2\" 0.66499352 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1076]" 
+		" -type \"float2\" 0.66499352 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1077]" 
+		" -type \"float2\" 0.68563890000000005 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1078]" 
+		" -type \"float2\" 0.72840726 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1079]" 
+		" -type \"float2\" 0.707762 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1080]" 
+		" -type \"float2\" 0.707762 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1081]" 
+		" -type \"float2\" 0.72840726 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1082]" 
+		" -type \"float2\" 0.68563890000000005 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1083]" 
+		" -type \"float2\" 0.66499352 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1084]" 
+		" -type \"float2\" 0.66499352 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1085]" 
+		" -type \"float2\" 0.68563890000000005 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1086]" 
+		" -type \"float2\" 0.72840726 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1087]" 
+		" -type \"float2\" 0.707762 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1088]" 
+		" -type \"float2\" 0.707762 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1089]" 
+		" -type \"float2\" 0.72840726 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1090]" 
+		" -type \"float2\" 0.68563890000000005 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1091]" 
+		" -type \"float2\" 0.66499352 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1092]" 
+		" -type \"float2\" 0.66499352 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1093]" 
+		" -type \"float2\" 0.68563890000000005 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1094]" 
+		" -type \"float2\" 0.72840726 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1095]" 
+		" -type \"float2\" 0.707762 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1096]" 
+		" -type \"float2\" 0.707762 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1097]" 
+		" -type \"float2\" 0.72840726 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1098]" 
+		" -type \"float2\" 0.707762 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1099]" 
+		" -type \"float2\" 0.72840726 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1100]" 
+		" -type \"float2\" 0.72840726 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1101]" 
+		" -type \"float2\" 0.707762 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1102]" 
+		" -type \"float2\" 0.66499352 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1103]" 
+		" -type \"float2\" 0.68563890000000005 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1104]" 
+		" -type \"float2\" 0.68563890000000005 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1105]" 
+		" -type \"float2\" 0.66499352 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1106]" 
+		" -type \"float2\" 0.68662405000000004 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1107]" 
+		" -type \"float2\" 0.70677674000000001 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1108]" 
+		" -type \"float2\" 0.70677674000000001 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1109]" 
+		" -type \"float2\" 0.68662405000000004 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1110]" 
+		" -type \"float2\" 0.68563890000000005 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1111]" 
+		" -type \"float2\" 0.66499352 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1112]" 
+		" -type \"float2\" 0.66499352 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1113]" 
+		" -type \"float2\" 0.68563890000000005 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1114]" 
+		" -type \"float2\" 0.72840726 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1115]" 
+		" -type \"float2\" 0.707762 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1116]" 
+		" -type \"float2\" 0.707762 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1117]" 
+		" -type \"float2\" 0.72840726 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1118]" 
+		" -type \"float2\" 0.70677674000000001 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1119]" 
+		" -type \"float2\" 0.68662405000000004 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1120]" 
+		" -type \"float2\" 0.68662405000000004 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1121]" 
+		" -type \"float2\" 0.70677674000000001 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1122]" 
+		" -type \"float2\" 0.60969024999999999 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1123]" 
+		" -type \"float2\" 0.61049503000000005 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1124]" 
+		" -type \"float2\" 0.61049503000000005 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1125]" 
+		" -type \"float2\" 0.60969024999999999 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1126]" 
+		" -type \"float2\" 0.61049503000000005 0.15766484"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1127]" 
+		" -type \"float2\" 0.61930132000000004 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1128]" 
+		" -type \"float2\" 0.61930132000000004 0.15766484"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1129]" 
+		" -type \"float2\" 0.62010615999999996 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1130]" 
+		" -type \"float2\" 0.61930132000000004 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1131]" 
+		" -type \"float2\" 0.62010615999999996 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1132]" 
+		" -type \"float2\" 0.61930132000000004 0.14350075000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1133]" 
+		" -type \"float2\" 0.61049503000000005 0.14350075000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1134]" 
+		" -type \"float2\" 0.62891257 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1135]" 
+		" -type \"float2\" 0.62891257 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1136]" 
+		" -type \"float2\" 0.60969024999999999 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1137]" 
+		" -type \"float2\" 0.61049503000000005 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1138]" 
+		" -type \"float2\" 0.61049503000000005 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1139]" 
+		" -type \"float2\" 0.60969024999999999 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1140]" 
+		" -type \"float2\" 0.61049503000000005 0.15766484"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1141]" 
+		" -type \"float2\" 0.61930132000000004 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1142]" 
+		" -type \"float2\" 0.61930132000000004 0.15766484"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1143]" 
+		" -type \"float2\" 0.62010615999999996 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1144]" 
+		" -type \"float2\" 0.61930132000000004 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1145]" 
+		" -type \"float2\" 0.62010615999999996 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1146]" 
+		" -type \"float2\" 0.61930132000000004 0.14350075000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1147]" 
+		" -type \"float2\" 0.61049503000000005 0.14350075000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1148]" 
+		" -type \"float2\" 0.62891257 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1149]" 
+		" -type \"float2\" 0.62891257 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1150]" 
+		" -type \"float2\" 0.60969024999999999 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1151]" 
+		" -type \"float2\" 0.61049503000000005 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1152]" 
+		" -type \"float2\" 0.61049503000000005 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1153]" 
+		" -type \"float2\" 0.60969024999999999 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1154]" 
+		" -type \"float2\" 0.61049503000000005 0.15766484"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1155]" 
+		" -type \"float2\" 0.61930132000000004 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1156]" 
+		" -type \"float2\" 0.61930132000000004 0.15766484"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1157]" 
+		" -type \"float2\" 0.62010615999999996 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1158]" 
+		" -type \"float2\" 0.61930132000000004 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1159]" 
+		" -type \"float2\" 0.62010615999999996 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1160]" 
+		" -type \"float2\" 0.61930132000000004 0.14350075000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1161]" 
+		" -type \"float2\" 0.61049503000000005 0.14350075000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1162]" 
+		" -type \"float2\" 0.62891257 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1163]" 
+		" -type \"float2\" 0.62891257 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1164]" 
+		" -type \"float2\" 0.58861065000000001 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1165]" 
+		" -type \"float2\" 0.58861065000000001 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1166]" 
+		" -type \"float2\" 0.56789493999999996 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1167]" 
+		" -type \"float2\" 0.56690644999999995 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1168]" 
+		" -type \"float2\" 0.54668497999999999 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1169]" 
+		" -type \"float2\" 0.54569643999999995 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1170]" 
+		" -type \"float2\" 0.52498071999999996 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1171]" 
+		" -type \"float2\" 0.52498071999999996 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1172]" 
+		" -type \"float2\" 0.54569643999999995 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1173]" 
+		" -type \"float2\" 0.54668497999999999 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1174]" 
+		" -type \"float2\" 0.56690644999999995 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1175]" 
+		" -type \"float2\" 0.56789493999999996 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1176]" 
+		" -type \"float2\" 0.52498071999999996 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1177]" 
+		" -type \"float2\" 0.54569643999999995 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1178]" 
+		" -type \"float2\" 0.56789493999999996 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1179]" 
+		" -type \"float2\" 0.58861065000000001 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1180]" 
+		" -type \"float2\" 0.56789493999999996 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1181]" 
+		" -type \"float2\" 0.58861065000000001 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1182]" 
+		" -type \"float2\" 0.54668497999999999 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1183]" 
+		" -type \"float2\" 0.56690644999999995 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1184]" 
+		" -type \"float2\" 0.52498071999999996 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1185]" 
+		" -type \"float2\" 0.54569643999999995 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1186]" 
+		" -type \"float2\" 0.54668497999999999 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1187]" 
+		" -type \"float2\" 0.56690644999999995 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1188]" 
+		" -type \"float2\" 0.54668497999999999 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1189]" 
+		" -type \"float2\" 0.54569643999999995 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1190]" 
+		" -type \"float2\" 0.54569643999999995 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1191]" 
+		" -type \"float2\" 0.54668497999999999 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1192]" 
+		" -type \"float2\" 0.54569643999999995 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1193]" 
+		" -type \"float2\" 0.54569643999999995 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1194]" 
+		" -type \"float2\" 0.54668497999999999 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1195]" 
+		" -type \"float2\" 0.54668497999999999 0.93908691"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1196]" 
+		" -type \"float2\" 0.54569643999999995 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1197]" 
+		" -type \"float2\" 0.54668497999999999 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1198]" 
+		" -type \"float2\" 0.54569643999999995 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1199]" 
+		" -type \"float2\" 0.54668497999999999 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1200]" 
+		" -type \"float2\" 0.56690644999999995 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1201]" 
+		" -type \"float2\" 0.56789493999999996 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1202]" 
+		" -type \"float2\" 0.56690644999999995 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1203]" 
+		" -type \"float2\" 0.56789493999999996 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1204]" 
+		" -type \"float2\" 0.58861065000000001 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1205]" 
+		" -type \"float2\" 0.58861065000000001 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1206]" 
+		" -type \"float2\" 0.52498071999999996 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1207]" 
+		" -type \"float2\" 0.52498071999999996 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1208]" 
+		" -type \"float2\" 0.54569643999999995 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1209]" 
+		" -type \"float2\" 0.54668497999999999 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1210]" 
+		" -type \"float2\" 0.56690644999999995 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1211]" 
+		" -type \"float2\" 0.56789493999999996 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1212]" 
+		" -type \"float2\" 0.52498071999999996 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1213]" 
+		" -type \"float2\" 0.56789493999999996 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1214]" 
+		" -type \"float2\" 0.58861065000000001 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1215]" 
+		" -type \"float2\" 0.58861065000000001 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1216]" 
+		" -type \"float2\" 0.52498071999999996 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1217]" 
+		" -type \"float2\" 0.54569643999999995 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1218]" 
+		" -type \"float2\" 0.54668497999999999 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1219]" 
+		" -type \"float2\" 0.56690644999999995 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1220]" 
+		" -type \"float2\" 0.58861065000000001 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1221]" 
+		" -type \"float2\" 0.58861065000000001 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1222]" 
+		" -type \"float2\" 0.56789493999999996 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1223]" 
+		" -type \"float2\" 0.56690644999999995 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1224]" 
+		" -type \"float2\" 0.54668497999999999 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1225]" 
+		" -type \"float2\" 0.54569643999999995 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1226]" 
+		" -type \"float2\" 0.52498071999999996 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1227]" 
+		" -type \"float2\" 0.52498071999999996 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1228]" 
+		" -type \"float2\" 0.54569643999999995 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1229]" 
+		" -type \"float2\" 0.54668497999999999 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1230]" 
+		" -type \"float2\" 0.56690644999999995 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1231]" 
+		" -type \"float2\" 0.56789493999999996 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1232]" 
+		" -type \"float2\" 0.52498071999999996 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1233]" 
+		" -type \"float2\" 0.54569643999999995 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1234]" 
+		" -type \"float2\" 0.56789493999999996 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1235]" 
+		" -type \"float2\" 0.58861065000000001 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1236]" 
+		" -type \"float2\" 0.56789493999999996 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1237]" 
+		" -type \"float2\" 0.58861065000000001 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1238]" 
+		" -type \"float2\" 0.54668497999999999 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1239]" 
+		" -type \"float2\" 0.56690644999999995 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1240]" 
+		" -type \"float2\" 0.52498071999999996 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1241]" 
+		" -type \"float2\" 0.54569643999999995 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1242]" 
+		" -type \"float2\" 0.54668497999999999 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1243]" 
+		" -type \"float2\" 0.56690644999999995 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1244]" 
+		" -type \"float2\" 0.58861065000000001 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1245]" 
+		" -type \"float2\" 0.58861065000000001 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1246]" 
+		" -type \"float2\" 0.56789493999999996 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1247]" 
+		" -type \"float2\" 0.56690644999999995 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1248]" 
+		" -type \"float2\" 0.52498071999999996 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1249]" 
+		" -type \"float2\" 0.52498071999999996 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1250]" 
+		" -type \"float2\" 0.54569643999999995 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1251]" 
+		" -type \"float2\" 0.54668497999999999 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1252]" 
+		" -type \"float2\" 0.56690644999999995 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1253]" 
+		" -type \"float2\" 0.56789493999999996 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1254]" 
+		" -type \"float2\" 0.52498071999999996 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1255]" 
+		" -type \"float2\" 0.56789493999999996 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1256]" 
+		" -type \"float2\" 0.58861065000000001 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1257]" 
+		" -type \"float2\" 0.56789493999999996 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1258]" 
+		" -type \"float2\" 0.58861065000000001 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1259]" 
+		" -type \"float2\" 0.56690644999999995 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1260]" 
+		" -type \"float2\" 0.52498071999999996 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1261]" 
+		" -type \"float2\" 0.54569643999999995 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1262]" 
+		" -type \"float2\" 0.54668497999999999 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1263]" 
+		" -type \"float2\" 0.56690644999999995 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1264]" 
+		" -type \"float2\" 0.54668497999999999 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1265]" 
+		" -type \"float2\" 0.54569643999999995 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1266]" 
+		" -type \"float2\" 0.54569643999999995 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1267]" 
+		" -type \"float2\" 0.54668497999999999 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1268]" 
+		" -type \"float2\" 0.54569643999999995 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1269]" 
+		" -type \"float2\" 0.54569643999999995 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1270]" 
+		" -type \"float2\" 0.54668497999999999 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1271]" 
+		" -type \"float2\" 0.54668497999999999 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1272]" 
+		" -type \"float2\" 0.56789493999999996 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1273]" 
+		" -type \"float2\" 0.56690644999999995 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1274]" 
+		" -type \"float2\" 0.56690644999999995 0.93908691"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1275]" 
+		" -type \"float2\" 0.56789493999999996 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1276]" 
+		" -type \"float2\" 0.58861065000000001 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1277]" 
+		" -type \"float2\" 0.58861065000000001 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1278]" 
+		" -type \"float2\" 0.56789493999999996 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1279]" 
+		" -type \"float2\" 0.56690644999999995 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1280]" 
+		" -type \"float2\" 0.52498071999999996 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1281]" 
+		" -type \"float2\" 0.52498071999999996 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1282]" 
+		" -type \"float2\" 0.52498071999999996 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1283]" 
+		" -type \"float2\" 0.58861065000000001 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1284]" 
+		" -type \"float2\" 0.56789493999999996 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1285]" 
+		" -type \"float2\" 0.58861065000000001 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1286]" 
+		" -type \"float2\" 0.56690644999999995 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1287]" 
+		" -type \"float2\" 0.52498071999999996 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1288]" 
+		" -type \"float2\" 0.56789493999999996 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1289]" 
+		" -type \"float2\" 0.56690644999999995 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1290]" 
+		" -type \"float2\" 0.56690644999999995 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1291]" 
+		" -type \"float2\" 0.56789493999999996 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1292]" 
+		" -type \"float2\" 0.56690644999999995 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1293]" 
+		" -type \"float2\" 0.56789493999999996 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1294]" 
+		" -type \"float2\" 0.56690644999999995 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1295]" 
+		" -type \"float2\" 0.56789493999999996 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1296]" 
+		" -type \"float2\" 0.54569643999999995 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1297]" 
+		" -type \"float2\" 0.54668497999999999 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1298]" 
+		" -type \"float2\" 0.54569643999999995 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1299]" 
+		" -type \"float2\" 0.54668497999999999 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1300]" 
+		" -type \"float2\" 0.70677674000000001 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1301]" 
+		" -type \"float2\" 0.68662405000000004 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1302]" 
+		" -type \"float2\" 0.68662405000000004 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1303]" 
+		" -type \"float2\" 0.70677674000000001 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1304]" 
+		" -type \"float2\" 0.70677674000000001 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1305]" 
+		" -type \"float2\" 0.68662405000000004 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1306]" 
+		" -type \"float2\" 0.68662405000000004 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1307]" 
+		" -type \"float2\" 0.70677674000000001 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1308]" 
+		" -type \"float2\" 0.68662405000000004 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1309]" 
+		" -type \"float2\" 0.70677674000000001 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1310]" 
+		" -type \"float2\" 0.70677674000000001 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1311]" 
+		" -type \"float2\" 0.68662405000000004 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1312]" 
+		" -type \"float2\" 0.68662405000000004 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1313]" 
+		" -type \"float2\" 0.70677674000000001 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1314]" 
+		" -type \"float2\" 0.70677674000000001 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1315]" 
+		" -type \"float2\" 0.68662405000000004 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1316]" 
+		" -type \"float2\" 0.66177005 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1317]" 
+		" -type \"float2\" 0.66177005 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1318]" 
+		" -type \"float2\" 0.64105427000000004 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1319]" 
+		" -type \"float2\" 0.64006591000000002 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1320]" 
+		" -type \"float2\" 0.61984432 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1321]" 
+		" -type \"float2\" 0.61885583 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1322]" 
+		" -type \"float2\" 0.59814005999999997 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1323]" 
+		" -type \"float2\" 0.59814005999999997 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1324]" 
+		" -type \"float2\" 0.61885583 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1325]" 
+		" -type \"float2\" 0.61984432 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1326]" 
+		" -type \"float2\" 0.64006591000000002 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1327]" 
+		" -type \"float2\" 0.64105427000000004 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1328]" 
+		" -type \"float2\" 0.59814005999999997 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1329]" 
+		" -type \"float2\" 0.61885583 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1330]" 
+		" -type \"float2\" 0.64105427000000004 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1331]" 
+		" -type \"float2\" 0.66177005 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1332]" 
+		" -type \"float2\" 0.64105427000000004 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1333]" 
+		" -type \"float2\" 0.66177005 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1334]" 
+		" -type \"float2\" 0.61984432 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1335]" 
+		" -type \"float2\" 0.64006591000000002 0.84123671"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1336]" 
+		" -type \"float2\" 0.59814005999999997 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1337]" 
+		" -type \"float2\" 0.61885583 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1338]" 
+		" -type \"float2\" 0.61984432 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1339]" 
+		" -type \"float2\" 0.64006591000000002 0.84024834999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1340]" 
+		" -type \"float2\" 0.61984432 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1341]" 
+		" -type \"float2\" 0.61885583 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1342]" 
+		" -type \"float2\" 0.61885583 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1343]" 
+		" -type \"float2\" 0.61984432 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1344]" 
+		" -type \"float2\" 0.61885583 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1345]" 
+		" -type \"float2\" 0.61885583 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1346]" 
+		" -type \"float2\" 0.61984432 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1347]" 
+		" -type \"float2\" 0.61984432 0.93908691"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1348]" 
+		" -type \"float2\" 0.61885583 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1349]" 
+		" -type \"float2\" 0.61984432 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1350]" 
+		" -type \"float2\" 0.61885583 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1351]" 
+		" -type \"float2\" 0.61984432 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1352]" 
+		" -type \"float2\" 0.64006591000000002 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1353]" 
+		" -type \"float2\" 0.64105427000000004 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1354]" 
+		" -type \"float2\" 0.64006591000000002 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1355]" 
+		" -type \"float2\" 0.64105427000000004 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1356]" 
+		" -type \"float2\" 0.66177005 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1357]" 
+		" -type \"float2\" 0.66177005 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1358]" 
+		" -type \"float2\" 0.59814005999999997 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1359]" 
+		" -type \"float2\" 0.59814005999999997 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1360]" 
+		" -type \"float2\" 0.61885583 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1361]" 
+		" -type \"float2\" 0.61984432 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1362]" 
+		" -type \"float2\" 0.64006591000000002 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1363]" 
+		" -type \"float2\" 0.64105427000000004 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1364]" 
+		" -type \"float2\" 0.59814005999999997 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1365]" 
+		" -type \"float2\" 0.64105427000000004 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1366]" 
+		" -type \"float2\" 0.66177005 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1367]" 
+		" -type \"float2\" 0.66177005 0.80829059999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1368]" 
+		" -type \"float2\" 0.59814005999999997 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1369]" 
+		" -type \"float2\" 0.61885583 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1370]" 
+		" -type \"float2\" 0.61984432 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1371]" 
+		" -type \"float2\" 0.64006591000000002 0.80730212000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1372]" 
+		" -type \"float2\" 0.66177005 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1373]" 
+		" -type \"float2\" 0.66177005 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1374]" 
+		" -type \"float2\" 0.64105427000000004 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1375]" 
+		" -type \"float2\" 0.64006591000000002 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1376]" 
+		" -type \"float2\" 0.61984432 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1377]" 
+		" -type \"float2\" 0.61885583 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1378]" 
+		" -type \"float2\" 0.59814005999999997 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1379]" 
+		" -type \"float2\" 0.59814005999999997 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1380]" 
+		" -type \"float2\" 0.61885583 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1381]" 
+		" -type \"float2\" 0.61984432 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1382]" 
+		" -type \"float2\" 0.64006591000000002 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1383]" 
+		" -type \"float2\" 0.64105427000000004 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1384]" 
+		" -type \"float2\" 0.59814005999999997 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1385]" 
+		" -type \"float2\" 0.61885583 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1386]" 
+		" -type \"float2\" 0.64105427000000004 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1387]" 
+		" -type \"float2\" 0.66177005 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1388]" 
+		" -type \"float2\" 0.64105427000000004 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1389]" 
+		" -type \"float2\" 0.66177005 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1390]" 
+		" -type \"float2\" 0.61984432 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1391]" 
+		" -type \"float2\" 0.64006591000000002 0.87418293999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1392]" 
+		" -type \"float2\" 0.59814005999999997 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1393]" 
+		" -type \"float2\" 0.61885583 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1394]" 
+		" -type \"float2\" 0.61984432 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1395]" 
+		" -type \"float2\" 0.64006591000000002 0.87319433999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1396]" 
+		" -type \"float2\" 0.66177005 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1397]" 
+		" -type \"float2\" 0.66177005 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1398]" 
+		" -type \"float2\" 0.64105427000000004 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1399]" 
+		" -type \"float2\" 0.64006591000000002 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1400]" 
+		" -type \"float2\" 0.59814005999999997 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1401]" 
+		" -type \"float2\" 0.59814005999999997 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1402]" 
+		" -type \"float2\" 0.61885583 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1403]" 
+		" -type \"float2\" 0.61984432 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1404]" 
+		" -type \"float2\" 0.64006591000000002 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1405]" 
+		" -type \"float2\" 0.64105427000000004 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1406]" 
+		" -type \"float2\" 0.59814005999999997 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1407]" 
+		" -type \"float2\" 0.64105427000000004 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1408]" 
+		" -type \"float2\" 0.66177005 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1409]" 
+		" -type \"float2\" 0.64105427000000004 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1410]" 
+		" -type \"float2\" 0.66177005 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1411]" 
+		" -type \"float2\" 0.64006591000000002 0.90712917000000004"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1412]" 
+		" -type \"float2\" 0.59814005999999997 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1413]" 
+		" -type \"float2\" 0.61885583 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1414]" 
+		" -type \"float2\" 0.61984432 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1415]" 
+		" -type \"float2\" 0.64006591000000002 0.90614068999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1416]" 
+		" -type \"float2\" 0.61984432 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1417]" 
+		" -type \"float2\" 0.61885583 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1418]" 
+		" -type \"float2\" 0.61885583 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1419]" 
+		" -type \"float2\" 0.61984432 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1420]" 
+		" -type \"float2\" 0.61885583 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1421]" 
+		" -type \"float2\" 0.61885583 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1422]" 
+		" -type \"float2\" 0.61984432 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1423]" 
+		" -type \"float2\" 0.61984432 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1424]" 
+		" -type \"float2\" 0.64105427000000004 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1425]" 
+		" -type \"float2\" 0.64006591000000002 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1426]" 
+		" -type \"float2\" 0.64006591000000002 0.93908691"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1427]" 
+		" -type \"float2\" 0.64105427000000004 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1428]" 
+		" -type \"float2\" 0.66177005 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1429]" 
+		" -type \"float2\" 0.66177005 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1430]" 
+		" -type \"float2\" 0.64105427000000004 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1431]" 
+		" -type \"float2\" 0.64006591000000002 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1432]" 
+		" -type \"float2\" 0.59814005999999997 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1433]" 
+		" -type \"float2\" 0.59814005999999997 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1434]" 
+		" -type \"float2\" 0.59814005999999997 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1435]" 
+		" -type \"float2\" 0.66177005 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1436]" 
+		" -type \"float2\" 0.64105427000000004 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1437]" 
+		" -type \"float2\" 0.66177005 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1438]" 
+		" -type \"float2\" 0.64006591000000002 0.94007516000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1439]" 
+		" -type \"float2\" 0.59814005999999997 0.93908667999999995"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1440]" 
+		" -type \"float2\" 0.64105427000000004 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1441]" 
+		" -type \"float2\" 0.64006591000000002 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1442]" 
+		" -type \"float2\" 0.64006591000000002 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1443]" 
+		" -type \"float2\" 0.64105427000000004 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1444]" 
+		" -type \"float2\" 0.64006591000000002 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1445]" 
+		" -type \"float2\" 0.64105427000000004 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1446]" 
+		" -type \"float2\" 0.64006591000000002 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1447]" 
+		" -type \"float2\" 0.64105427000000004 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1448]" 
+		" -type \"float2\" 0.61885583 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1449]" 
+		" -type \"float2\" 0.61984432 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1450]" 
+		" -type \"float2\" 0.61885583 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1451]" 
+		" -type \"float2\" 0.61984432 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1452]" 
+		" -type \"float2\" 0.68662405000000004 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1453]" 
+		" -type \"float2\" 0.70677674000000001 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1454]" 
+		" -type \"float2\" 0.70677674000000001 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1455]" 
+		" -type \"float2\" 0.68662405000000004 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1456]" 
+		" -type \"float2\" 0.68662405000000004 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1457]" 
+		" -type \"float2\" 0.70677674000000001 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1458]" 
+		" -type \"float2\" 0.70677674000000001 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1459]" 
+		" -type \"float2\" 0.68662405000000004 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1460]" 
+		" -type \"float2\" 0.70677674000000001 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1461]" 
+		" -type \"float2\" 0.68662405000000004 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1462]" 
+		" -type \"float2\" 0.68662405000000004 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1463]" 
+		" -type \"float2\" 0.70677674000000001 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1464]" 
+		" -type \"float2\" 0.70677674000000001 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1465]" 
+		" -type \"float2\" 0.68662405000000004 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1466]" 
+		" -type \"float2\" 0.68662405000000004 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1467]" 
+		" -type \"float2\" 0.70677674000000001 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1468]" 
+		" -type \"float2\" 0.59498638000000004 0.97549224000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1469]" 
+		" -type \"float2\" 0.66492379000000001 0.97549224000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1470]" 
+		" -type \"float2\" 0.66492379000000001 0.97871434999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1471]" 
+		" -type \"float2\" 0.59498638000000004 0.97871434999999996"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1472]" 
+		" -type \"float2\" 0.59176445 0.77188504000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1473]" 
+		" -type \"float2\" 0.52182698000000005 0.77188504000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1474]" 
+		" -type \"float2\" 0.52182698000000005 0.76866305000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1475]" 
+		" -type \"float2\" 0.59176445 0.76866305000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1476]" 
+		" -type \"float2\" 0.51860499000000004 0.77188504000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1477]" 
+		" -type \"float2\" 0.52182698000000005 0.97549224000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1478]" 
+		" -type \"float2\" 0.51860499000000004 0.97549224000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1479]" 
+		" -type \"float2\" 0.59498638000000004 0.77188504000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1480]" 
+		" -type \"float2\" 0.59176445 0.97549224000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1481]" 
+		" -type \"float2\" 0.66492379000000001 0.77188504000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1482]" 
+		" -type \"float2\" 0.66177005 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1483]" 
+		" -type \"float2\" 0.59814005999999997 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1484]" 
+		" -type \"float2\" 0.66177005 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1485]" 
+		" -type \"float2\" 0.59814005999999997 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1486]" 
+		" -type \"float2\" 0.52498071999999996 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1487]" 
+		" -type \"float2\" 0.58861065000000001 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1488]" 
+		" -type \"float2\" 0.52498071999999996 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1489]" 
+		" -type \"float2\" 0.58861065000000001 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1490]" 
+		" -type \"float2\" 0.59814005999999997 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1491]" 
+		" -type \"float2\" 0.66177005 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1492]" 
+		" -type \"float2\" 0.58861065000000001 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1493]" 
+		" -type \"float2\" 0.52498071999999996 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1494]" 
+		" -type \"float2\" 0.58861065000000001 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1495]" 
+		" -type \"float2\" 0.59814005999999997 0.97252715000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1496]" 
+		" -type \"float2\" 0.52498071999999996 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1497]" 
+		" -type \"float2\" 0.66177005 0.77485013000000003"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1498]" 
+		" -type \"float2\" 0.66499352 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1499]" 
+		" -type \"float2\" 0.68563890000000005 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1500]" 
+		" -type \"float2\" 0.68563890000000005 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1501]" 
+		" -type \"float2\" 0.66499352 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1502]" 
+		" -type \"float2\" 0.68563890000000005 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1503]" 
+		" -type \"float2\" 0.66499352 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1504]" 
+		" -type \"float2\" 0.66499352 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1505]" 
+		" -type \"float2\" 0.68563890000000005 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1506]" 
+		" -type \"float2\" 0.68662405000000004 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1507]" 
+		" -type \"float2\" 0.70677674000000001 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1508]" 
+		" -type \"float2\" 0.70677674000000001 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1509]" 
+		" -type \"float2\" 0.68662405000000004 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1510]" 
+		" -type \"float2\" 0.70677674000000001 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1511]" 
+		" -type \"float2\" 0.68662405000000004 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1512]" 
+		" -type \"float2\" 0.68662405000000004 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1513]" 
+		" -type \"float2\" 0.70677674000000001 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1514]" 
+		" -type \"float2\" 0.72840726 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1515]" 
+		" -type \"float2\" 0.707762 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1516]" 
+		" -type \"float2\" 0.707762 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1517]" 
+		" -type \"float2\" 0.72840726 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1518]" 
+		" -type \"float2\" 0.707762 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1519]" 
+		" -type \"float2\" 0.72840726 0.46784076000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1520]" 
+		" -type \"float2\" 0.72840726 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1521]" 
+		" -type \"float2\" 0.707762 0.43549904"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1522]" 
+		" -type \"float2\" 0.707762 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1523]" 
+		" -type \"float2\" 0.72840726 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1524]" 
+		" -type \"float2\" 0.72840726 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1525]" 
+		" -type \"float2\" 0.707762 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1526]" 
+		" -type \"float2\" 0.66499352 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1527]" 
+		" -type \"float2\" 0.68563890000000005 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1528]" 
+		" -type \"float2\" 0.68563890000000005 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1529]" 
+		" -type \"float2\" 0.66499352 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1530]" 
+		" -type \"float2\" 0.707762 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1531]" 
+		" -type \"float2\" 0.72840726 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1532]" 
+		" -type \"float2\" 0.72840726 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1533]" 
+		" -type \"float2\" 0.707762 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1534]" 
+		" -type \"float2\" 0.66499352 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1535]" 
+		" -type \"float2\" 0.68563890000000005 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1536]" 
+		" -type \"float2\" 0.68563890000000005 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1537]" 
+		" -type \"float2\" 0.66499352 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1538]" 
+		" -type \"float2\" 0.707762 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1539]" 
+		" -type \"float2\" 0.72840726 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1540]" 
+		" -type \"float2\" 0.72840726 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1541]" 
+		" -type \"float2\" 0.707762 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1542]" 
+		" -type \"float2\" 0.66499352 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1543]" 
+		" -type \"float2\" 0.68563890000000005 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1544]" 
+		" -type \"float2\" 0.68563890000000005 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1545]" 
+		" -type \"float2\" 0.66499352 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1546]" 
+		" -type \"float2\" 0.707762 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1547]" 
+		" -type \"float2\" 0.72840726 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1548]" 
+		" -type \"float2\" 0.72840726 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1549]" 
+		" -type \"float2\" 0.707762 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1550]" 
+		" -type \"float2\" 0.66499352 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1551]" 
+		" -type \"float2\" 0.68563890000000005 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1552]" 
+		" -type \"float2\" 0.68563890000000005 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1553]" 
+		" -type \"float2\" 0.66499352 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1554]" 
+		" -type \"float2\" 0.68563890000000005 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1555]" 
+		" -type \"float2\" 0.66499352 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1556]" 
+		" -type \"float2\" 0.66499352 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1557]" 
+		" -type \"float2\" 0.68563890000000005 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1558]" 
+		" -type \"float2\" 0.72840726 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1559]" 
+		" -type \"float2\" 0.707762 0.33601125999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1560]" 
+		" -type \"float2\" 0.707762 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1561]" 
+		" -type \"float2\" 0.72840726 0.30416222999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1562]" 
+		" -type \"float2\" 0.68563890000000005 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1563]" 
+		" -type \"float2\" 0.66499352 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1564]" 
+		" -type \"float2\" 0.66499352 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1565]" 
+		" -type \"float2\" 0.68563890000000005 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1566]" 
+		" -type \"float2\" 0.72840726 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1567]" 
+		" -type \"float2\" 0.707762 0.36884542999999997"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1568]" 
+		" -type \"float2\" 0.707762 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1569]" 
+		" -type \"float2\" 0.72840726 0.33699641000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1570]" 
+		" -type \"float2\" 0.68563890000000005 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1571]" 
+		" -type \"float2\" 0.66499352 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1572]" 
+		" -type \"float2\" 0.66499352 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1573]" 
+		" -type \"float2\" 0.68563890000000005 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1574]" 
+		" -type \"float2\" 0.72840726 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1575]" 
+		" -type \"float2\" 0.707762 0.40167961000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1576]" 
+		" -type \"float2\" 0.707762 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1577]" 
+		" -type \"float2\" 0.72840726 0.36983058000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1578]" 
+		" -type \"float2\" 0.68563890000000005 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1579]" 
+		" -type \"float2\" 0.66499352 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1580]" 
+		" -type \"float2\" 0.66499352 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1581]" 
+		" -type \"float2\" 0.68563890000000005 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1582]" 
+		" -type \"float2\" 0.72840726 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1583]" 
+		" -type \"float2\" 0.707762 0.43451378000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1584]" 
+		" -type \"float2\" 0.707762 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1585]" 
+		" -type \"float2\" 0.72840726 0.40266475000000002"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1586]" 
+		" -type \"float2\" 0.707762 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1587]" 
+		" -type \"float2\" 0.72840726 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1588]" 
+		" -type \"float2\" 0.72840726 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1589]" 
+		" -type \"float2\" 0.707762 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1590]" 
+		" -type \"float2\" 0.66499352 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1591]" 
+		" -type \"float2\" 0.68563890000000005 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1592]" 
+		" -type \"float2\" 0.68563890000000005 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1593]" 
+		" -type \"float2\" 0.66499352 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1594]" 
+		" -type \"float2\" 0.68662405000000004 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1595]" 
+		" -type \"float2\" 0.70677674000000001 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1596]" 
+		" -type \"float2\" 0.70677674000000001 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1597]" 
+		" -type \"float2\" 0.68662405000000004 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1598]" 
+		" -type \"float2\" 0.68563890000000005 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1599]" 
+		" -type \"float2\" 0.66499352 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1600]" 
+		" -type \"float2\" 0.66499352 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1601]" 
+		" -type \"float2\" 0.68563890000000005 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1602]" 
+		" -type \"float2\" 0.72840726 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1603]" 
+		" -type \"float2\" 0.707762 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1604]" 
+		" -type \"float2\" 0.707762 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1605]" 
+		" -type \"float2\" 0.72840726 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1606]" 
+		" -type \"float2\" 0.70677674000000001 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1607]" 
+		" -type \"float2\" 0.68662405000000004 0.30317708999999998"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1608]" 
+		" -type \"float2\" 0.68662405000000004 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1609]" 
+		" -type \"float2\" 0.70677674000000001 0.27083549000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1610]" 
+		" -type \"float2\" 0.60969024999999999 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1611]" 
+		" -type \"float2\" 0.61049503000000005 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1612]" 
+		" -type \"float2\" 0.61049503000000005 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1613]" 
+		" -type \"float2\" 0.60969024999999999 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1614]" 
+		" -type \"float2\" 0.61049503000000005 0.15766484"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1615]" 
+		" -type \"float2\" 0.61930132000000004 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1616]" 
+		" -type \"float2\" 0.61930132000000004 0.15766484"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1617]" 
+		" -type \"float2\" 0.62010615999999996 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1618]" 
+		" -type \"float2\" 0.61930132000000004 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1619]" 
+		" -type \"float2\" 0.62010615999999996 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1620]" 
+		" -type \"float2\" 0.61930132000000004 0.14350075000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1621]" 
+		" -type \"float2\" 0.61049503000000005 0.14350075000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1622]" 
+		" -type \"float2\" 0.62891257 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1623]" 
+		" -type \"float2\" 0.62891257 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1624]" 
+		" -type \"float2\" 0.60969024999999999 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1625]" 
+		" -type \"float2\" 0.61049503000000005 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1626]" 
+		" -type \"float2\" 0.61049503000000005 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1627]" 
+		" -type \"float2\" 0.60969024999999999 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1628]" 
+		" -type \"float2\" 0.61049503000000005 0.15766484"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1629]" 
+		" -type \"float2\" 0.61930132000000004 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1630]" 
+		" -type \"float2\" 0.61930132000000004 0.15766484"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1631]" 
+		" -type \"float2\" 0.62010615999999996 0.15686016999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1632]" 
+		" -type \"float2\" 0.61930132000000004 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1633]" 
+		" -type \"float2\" 0.62010615999999996 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1634]" 
+		" -type \"float2\" 0.61930132000000004 0.14350075000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1635]" 
+		" -type \"float2\" 0.61049503000000005 0.14350075000000001"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1636]" 
+		" -type \"float2\" 0.62891257 0.14430552999999999"
+		2 "|Asset_4:polySurface67|Asset_4:polySurface67Shape" "uvSet[0].uvSetPoints[1637]" 
+		" -type \"float2\" 0.62891257 0.15686016999999999"
+		3 "Asset_4:groupId132.groupId" "|Asset_4:polySurface67|Asset_4:polySurface67Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Asset_4:polySurface67|Asset_4:polySurface67Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Asset_4:polySurface67|Asset_4:polySurface67Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Asset_4:groupId131.groupId" "|Asset_4:polySurface67|Asset_4:polySurface67Shape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
+		""
+		3 "|Asset_4:polySurface67|Asset_4:polySurface67Shape.compInstObjGroups.compObjectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Asset_4:groupId132.message" ":initialShadingGroup.groupNodes" "-na"
+		5 3 "Asset_3RN1" "|Asset_4:polySurface67|Asset_4:polySurface67Shape.instObjGroups" 
+		"Asset_3RN1.placeHolderList[1]" "";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode animCurveTL -n "polySurface8_translateX";
+	rename -uid "1CFBE29D-4730-5FA2-716A-0294A5388264";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "polySurface8_translateY";
+	rename -uid "525465EA-4DDB-D2B3-B065-1B9FAF69744D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTL -n "polySurface8_translateZ";
+	rename -uid "22F4297C-4B0E-337E-8A39-0697A574ACA3";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTU -n "polySurface8_visibility";
+	rename -uid "46053C5C-4ECA-6458-79F5-CE986A81B479";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+	setAttr ".kot[0]"  5;
+createNode animCurveTA -n "polySurface8_rotateX";
+	rename -uid "E0D322F3-4511-2436-4CD8-6680A0CC560F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "polySurface8_rotateY";
+	rename -uid "C2D72195-4474-0705-777D-389F44BA2E1D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "polySurface8_rotateZ";
+	rename -uid "4AEA30CE-417E-D192-20FB-35A094DF1133";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTU -n "polySurface8_scaleX";
+	rename -uid "230A9C37-41FF-A4D5-0568-358BBF5037A3";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "polySurface8_scaleY";
+	rename -uid "D727DCF2-4E8E-E783-198B-6688E93A53A0";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+createNode animCurveTU -n "polySurface8_scaleZ";
+	rename -uid "C57425E4-4164-926C-A92C-C1A685E3157E";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -10155,9 +11115,9 @@ select -ne :openPBR_shader1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 84 ".dsm";
+	setAttr -s 23 ".dsm";
 	setAttr ".ro" yes;
-	setAttr -s 95 ".gn";
+	setAttr -s 42 ".gn";
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :defaultRenderGlobals;
@@ -10183,74 +11143,28 @@ connectAttr "polyTweakUV3.out" "Asset_1RN.phl[1]";
 connectAttr "Asset_1RN.phl[2]" "openPBRSurface1SG.dsm" -na;
 connectAttr "polyTweakUV3.uvtk[0]" "Asset_1RN.phl[3]";
 connectAttr "Asset_1RN.phl[4]" "polyTweakUV3.ip";
-connectAttr "polyTweakUV4.out" "Asset_3RN.phl[1]";
-connectAttr "Asset_3RN.phl[2]" "openPBRSurface1SG.dsm" -na;
-connectAttr "polyTweakUV4.uvtk[0]" "Asset_3RN.phl[3]";
-connectAttr "Asset_3RN.phl[4]" "polyTweakUV4.ip";
-connectAttr "groupId19.id" "pCubeShape1.iog.og[0].gid";
-connectAttr ":initialShadingGroup.mwc" "pCubeShape1.iog.og[0].gco";
-connectAttr "groupId20.id" "pCubeShape1.ciog.cog[0].cgid";
-connectAttr "pCube2_translateX.o" "pCube2.tx";
-connectAttr "pCube2_translateY.o" "pCube2.ty";
-connectAttr "pCube2_translateZ.o" "pCube2.tz";
-connectAttr "pCube2_rotateY.o" "pCube2.ry";
-connectAttr "pCube2_rotateX.o" "pCube2.rx";
-connectAttr "pCube2_rotateZ.o" "pCube2.rz";
-connectAttr "pCube2_scaleX.o" "pCube2.sx";
-connectAttr "pCube2_scaleY.o" "pCube2.sy";
-connectAttr "pCube2_scaleZ.o" "pCube2.sz";
-connectAttr "pCube2_visibility.o" "pCube2.v";
-connectAttr "groupId17.id" "pCubeShape2.iog.og[0].gid";
-connectAttr ":initialShadingGroup.mwc" "pCubeShape2.iog.og[0].gco";
-connectAttr "groupId18.id" "pCubeShape2.ciog.cog[0].cgid";
-connectAttr "groupId23.id" "pCubeShape3.iog.og[0].gid";
-connectAttr ":initialShadingGroup.mwc" "pCubeShape3.iog.og[0].gco";
-connectAttr "groupId24.id" "pCubeShape3.ciog.cog[0].cgid";
-connectAttr "groupId15.id" "polySurfaceShape2.iog.og[0].gid";
-connectAttr ":initialShadingGroup.mwc" "polySurfaceShape2.iog.og[0].gco";
-connectAttr "groupId9.id" "polySurfaceShape3.iog.og[0].gid";
-connectAttr ":initialShadingGroup.mwc" "polySurfaceShape3.iog.og[0].gco";
-connectAttr "groupId25.id" "pCubeShape8.iog.og[0].gid";
-connectAttr ":initialShadingGroup.mwc" "pCubeShape8.iog.og[0].gco";
-connectAttr "groupId26.id" "pCubeShape8.ciog.cog[0].cgid";
-connectAttr "groupId21.id" "pCubeShape9.iog.og[0].gid";
-connectAttr ":initialShadingGroup.mwc" "pCubeShape9.iog.og[0].gco";
-connectAttr "groupId22.id" "pCubeShape9.ciog.cog[0].cgid";
-connectAttr "groupId27.id" "pCubeShape11.iog.og[0].gid";
-connectAttr ":initialShadingGroup.mwc" "pCubeShape11.iog.og[0].gco";
-connectAttr "groupId28.id" "pCubeShape11.ciog.cog[0].cgid";
-connectAttr "groupId16.id" "polySurfaceShape5.iog.og[0].gid";
-connectAttr ":initialShadingGroup.mwc" "polySurfaceShape5.iog.og[0].gco";
-connectAttr "groupId14.id" "polySurfaceShape5.ciog.cog[0].cgid";
-connectAttr "groupParts2.og" "polySurfaceShape6.i";
-connectAttr "groupId31.id" "polySurfaceShape6.iog.og[0].gid";
-connectAttr ":initialShadingGroup.mwc" "polySurfaceShape6.iog.og[0].gco";
-connectAttr "groupParts3.og" "polySurfaceShape7.i";
-connectAttr "groupId32.id" "polySurfaceShape7.iog.og[0].gid";
-connectAttr ":initialShadingGroup.mwc" "polySurfaceShape7.iog.og[0].gco";
-connectAttr "polyBevel1.out" "polySurfaceShape8.i";
-connectAttr "groupId33.id" "polySurfaceShape8.iog.og[0].gid";
+connectAttr "Asset_3RN1.phl[1]" "openPBRSurface1SG.dsm" -na;
+connectAttr "groupId41.id" "polySurfaceShape8.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape8.iog.og[0].gco";
-connectAttr "groupParts5.og" "polySurfaceShape9.i";
-connectAttr "groupId34.id" "polySurfaceShape9.iog.og[0].gid";
-connectAttr ":initialShadingGroup.mwc" "polySurfaceShape9.iog.og[0].gco";
-connectAttr "groupParts7.og" "polySurfaceShape11.i";
-connectAttr "groupId36.id" "polySurfaceShape11.iog.og[0].gid";
+connectAttr "groupId42.id" "polySurfaceShape11.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape11.iog.og[0].gco";
-connectAttr "groupParts9.og" "polySurfaceShape13.i";
-connectAttr "groupId38.id" "polySurfaceShape13.iog.og[0].gid";
+connectAttr "groupId43.id" "polySurfaceShape13.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurfaceShape13.iog.og[0].gco";
-connectAttr "polySeparate1.out[8]" "polySurfaceShape14.i";
-connectAttr "groupParts1.og" "pCube12Shape.i";
-connectAttr "groupId29.id" "pCube12Shape.iog.og[0].gid";
-connectAttr ":initialShadingGroup.mwc" "pCube12Shape.iog.og[0].gco";
-connectAttr "groupId30.id" "pCube12Shape.ciog.cog[0].cgid";
-connectAttr "groupParts10.og" "polySurface8Shape.i";
-connectAttr "groupId39.id" "polySurface8Shape.iog.og[0].gid";
+connectAttr "polySurface8_translateX.o" "polySurface8.tx";
+connectAttr "polySurface8_translateY.o" "polySurface8.ty";
+connectAttr "polySurface8_translateZ.o" "polySurface8.tz";
+connectAttr "polySurface8_visibility.o" "polySurface8.v";
+connectAttr "polySurface8_rotateX.o" "polySurface8.rx";
+connectAttr "polySurface8_rotateY.o" "polySurface8.ry";
+connectAttr "polySurface8_rotateZ.o" "polySurface8.rz";
+connectAttr "polySurface8_scaleX.o" "polySurface8.sx";
+connectAttr "polySurface8_scaleY.o" "polySurface8.sy";
+connectAttr "polySurface8_scaleZ.o" "polySurface8.sz";
+connectAttr "groupId44.id" "polySurface8Shape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "polySurface8Shape.iog.og[0].gco";
 connectAttr "groupId40.id" "polySurface8Shape.ciog.cog[0].cgid";
-connectAttr "polyCube1.out" "pCubeShape12.i";
-connectAttr "polySplit15.out" "pCubeShape13.i";
+connectAttr "polyCube1.out" "pCubeShape13.i";
+connectAttr "polyCube2.out" "pCubeShape14.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "Surface1SG.message" ":defaultLightSet.message";
@@ -10269,6 +11183,7 @@ connectAttr ":defaultArnoldFilter.msg" ":defaultArnoldRenderOptions.filt";
 connectAttr ":defaultArnoldDriver.msg" ":defaultArnoldRenderOptions.drvr";
 connectAttr "Surface1SG.msg" "materialInfo1.sg";
 connectAttr "file7.oc" "Scene_2_Mat.bc";
+connectAttr "Asset_3RN.phl[5]" "openPBRSurface1SG.dsm" -na;
 connectAttr "NightstandShape.iog" "openPBRSurface1SG.dsm" -na;
 connectAttr "Scene_2_Mat.oc" "openPBRSurface1SG.ss";
 connectAttr "openPBRSurface1SG.msg" "materialInfo2.sg";
@@ -10436,65 +11351,10 @@ connectAttr "file7.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].d
 		;
 connectAttr "place2dTexture7.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
 		;
-connectAttr "pCubeShape2.o" "polyUnite1.ip[0]";
-connectAttr "pCubeShape1.o" "polyUnite1.ip[1]";
-connectAttr "pCubeShape9.o" "polyUnite1.ip[2]";
-connectAttr "pCubeShape3.o" "polyUnite1.ip[3]";
-connectAttr "polySurfaceShape3.o" "polyUnite1.ip[4]";
-connectAttr "pCubeShape8.o" "polyUnite1.ip[5]";
-connectAttr "polySurfaceShape2.o" "polyUnite1.ip[6]";
-connectAttr "pCubeShape11.o" "polyUnite1.ip[7]";
-connectAttr "polySurfaceShape5.o" "polyUnite1.ip[8]";
-connectAttr "pCubeShape2.wm" "polyUnite1.im[0]";
-connectAttr "pCubeShape1.wm" "polyUnite1.im[1]";
-connectAttr "pCubeShape9.wm" "polyUnite1.im[2]";
-connectAttr "pCubeShape3.wm" "polyUnite1.im[3]";
-connectAttr "polySurfaceShape3.wm" "polyUnite1.im[4]";
-connectAttr "pCubeShape8.wm" "polyUnite1.im[5]";
-connectAttr "polySurfaceShape2.wm" "polyUnite1.im[6]";
-connectAttr "pCubeShape11.wm" "polyUnite1.im[7]";
-connectAttr "polySurfaceShape5.wm" "polyUnite1.im[8]";
-connectAttr "polyUnite1.out" "groupParts1.ig";
-connectAttr "groupId29.id" "groupParts1.gi";
-connectAttr "pCube12Shape.o" "polySeparate1.ip";
-connectAttr "polySeparate1.out[0]" "groupParts2.ig";
-connectAttr "groupId31.id" "groupParts2.gi";
-connectAttr "polySeparate1.out[1]" "groupParts3.ig";
-connectAttr "groupId32.id" "groupParts3.gi";
-connectAttr "polySeparate1.out[2]" "groupParts4.ig";
-connectAttr "groupId33.id" "groupParts4.gi";
-connectAttr "polySeparate1.out[3]" "groupParts5.ig";
-connectAttr "groupId34.id" "groupParts5.gi";
-connectAttr "polySeparate1.out[5]" "groupParts7.ig";
-connectAttr "groupId36.id" "groupParts7.gi";
-connectAttr "polySeparate1.out[7]" "groupParts9.ig";
-connectAttr "groupId38.id" "groupParts9.gi";
-connectAttr "polySurfaceShape9.o" "polyUnite2.ip[0]";
-connectAttr "polySurfaceShape7.o" "polyUnite2.ip[1]";
-connectAttr "polySurfaceShape6.o" "polyUnite2.ip[2]";
-connectAttr "polySurfaceShape9.wm" "polyUnite2.im[0]";
-connectAttr "polySurfaceShape7.wm" "polyUnite2.im[1]";
-connectAttr "polySurfaceShape6.wm" "polyUnite2.im[2]";
-connectAttr "polyUnite2.out" "groupParts10.ig";
-connectAttr "groupId39.id" "groupParts10.gi";
-connectAttr "groupParts4.og" "polyBevel1.ip";
-connectAttr "polySurfaceShape8.wm" "polyBevel1.mp";
-connectAttr "polyCube2.out" "polySubdFace1.ip";
-connectAttr "polySubdFace1.out" "polySplit1.ip";
-connectAttr "polySplit1.out" "polySplit2.ip";
-connectAttr "polySplit2.out" "polySplit3.ip";
-connectAttr "polySplit3.out" "polySplit4.ip";
-connectAttr "polySplit4.out" "polySplit5.ip";
-connectAttr "polySplit5.out" "polySplit6.ip";
-connectAttr "polySplit6.out" "polySplit7.ip";
-connectAttr "polySplit7.out" "polySplit8.ip";
-connectAttr "polySplit8.out" "polySplit9.ip";
-connectAttr "polySplit9.out" "polySplit10.ip";
-connectAttr "polySplit10.out" "polySplit11.ip";
-connectAttr "polySplit11.out" "polySplit12.ip";
-connectAttr "polySplit12.out" "polySplit13.ip";
-connectAttr "polySplit13.out" "polySplit14.ip";
-connectAttr "polySplit14.out" "polySplit15.ip";
+connectAttr "polyTweakUV4.uvtk[0]" "Asset_3RN.phl[6]";
+connectAttr "polyTweakUV4.out" "Asset_3RN.phl[7]";
+connectAttr "sharedReferenceNode.sr" "Asset_3RN.sr";
+connectAttr "Asset_3RN.phl[4]" "polyTweakUV4.ip";
 connectAttr "Surface1SG.pa" ":renderPartition.st" -na;
 connectAttr "openPBRSurface1SG.pa" ":renderPartition.st" -na;
 connectAttr "Scene_2_Mat.msg" ":defaultShaderList1.s" -na;
@@ -10513,59 +11373,18 @@ connectAttr "file4.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file5.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file6.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file7.msg" ":defaultTextureList1.tx" -na;
-connectAttr "polySurfaceShape3.iog.og[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "polySurfaceShape5.iog.og[1]" ":initialShadingGroup.dsm" -na;
-connectAttr "polySurfaceShape5.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "polySurfaceShape2.iog.og[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "polySurfaceShape5.iog.og[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "pCubeShape2.iog.og[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "pCubeShape2.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "pCubeShape1.iog.og[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "pCubeShape1.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "pCubeShape9.iog.og[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "pCubeShape9.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "pCubeShape3.iog.og[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "pCubeShape3.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "pCubeShape8.iog.og[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "pCubeShape8.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "pCubeShape11.iog.og[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "pCubeShape11.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "pCube12Shape.iog.og[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "pCube12Shape.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "polySurfaceShape6.iog.og[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "polySurfaceShape7.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurfaceShape14.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "polySurface8Shape.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "polySurfaceShape8.iog.og[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "polySurfaceShape9.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "polySurfaceShape11.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "polySurfaceShape13.iog.og[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "polySurfaceShape14.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "polySurface8Shape.iog.og[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "polySurface8Shape.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "pCubeShape12.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pCubeShape13.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "groupId9.msg" ":initialShadingGroup.gn" -na;
-connectAttr "groupId15.msg" ":initialShadingGroup.gn" -na;
-connectAttr "groupId16.msg" ":initialShadingGroup.gn" -na;
-connectAttr "groupId17.msg" ":initialShadingGroup.gn" -na;
-connectAttr "groupId18.msg" ":initialShadingGroup.gn" -na;
-connectAttr "groupId19.msg" ":initialShadingGroup.gn" -na;
-connectAttr "groupId20.msg" ":initialShadingGroup.gn" -na;
-connectAttr "groupId21.msg" ":initialShadingGroup.gn" -na;
-connectAttr "groupId22.msg" ":initialShadingGroup.gn" -na;
-connectAttr "groupId23.msg" ":initialShadingGroup.gn" -na;
-connectAttr "groupId24.msg" ":initialShadingGroup.gn" -na;
-connectAttr "groupId25.msg" ":initialShadingGroup.gn" -na;
-connectAttr "groupId26.msg" ":initialShadingGroup.gn" -na;
-connectAttr "groupId27.msg" ":initialShadingGroup.gn" -na;
-connectAttr "groupId28.msg" ":initialShadingGroup.gn" -na;
-connectAttr "groupId29.msg" ":initialShadingGroup.gn" -na;
-connectAttr "groupId31.msg" ":initialShadingGroup.gn" -na;
-connectAttr "groupId32.msg" ":initialShadingGroup.gn" -na;
-connectAttr "groupId33.msg" ":initialShadingGroup.gn" -na;
-connectAttr "groupId34.msg" ":initialShadingGroup.gn" -na;
+connectAttr "pCubeShape14.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId35.msg" ":initialShadingGroup.gn" -na;
-connectAttr "groupId36.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId37.msg" ":initialShadingGroup.gn" -na;
-connectAttr "groupId38.msg" ":initialShadingGroup.gn" -na;
-connectAttr "groupId39.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId41.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId42.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId43.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId44.msg" ":initialShadingGroup.gn" -na;
 // End of Scene_2.ma
